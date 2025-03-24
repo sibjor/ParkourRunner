@@ -29,6 +29,8 @@ static SDL_Renderer *renderer = NULL;
 
 std::vector<SDL_Surface *> spriteSheets;
 
+unsigned int lastTime = 0, currentTime;
+
 bool LoadSpritePath(std::string path)
 {
 
@@ -54,6 +56,9 @@ bool LoadSpritePath(std::string path)
     }
 
     std::cout << "Loaded " << spriteSheets.size() << " sprite sheets" << std::endl;
+    currentTime = SDL_GetTicks();
+    std::cout << "Time to load sprite sheets: " << currentTime - lastTime << "ms" << std::endl;
+    lastTime = currentTime;
     return true;
 }
 
