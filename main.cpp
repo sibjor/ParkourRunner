@@ -19,6 +19,7 @@
 #include <vector>
 #include <string>
 #include <filesystem>
+#include <iostream>
 
 namespace fs = std::filesystem;
 
@@ -52,6 +53,7 @@ bool LoadSpritePath(std::string path)
         }
     }
 
+    std::cout << "Loaded " << spriteSheets.size() << " sprite sheets" << std::endl;
     return true;
 }
 
