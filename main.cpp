@@ -56,7 +56,7 @@ bool LoadSpritePath(std::string path)
     }
 
     std::cout << "Loaded " << spriteSheets.size() << " sprite sheets" << std::endl;
-    currentTime = SDL_GetTicks();
+    currentTime = SDL_GetTicks(); // Get milliseconds from when SDL was initialized
     std::cout << "Time to load sprite sheets: " << currentTime - lastTime << "ms" << std::endl;
     lastTime = currentTime;
     return true;
