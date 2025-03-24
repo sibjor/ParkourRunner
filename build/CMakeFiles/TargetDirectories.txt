@@ -1,0 +1,8 @@
+/home/sixten/Dokument/ParkourRunner/build/CMakeFiles/sibjor.dir
+/home/sixten/Dokument/ParkourRunner/build/CMakeFiles/edit_cache.dir
+/home/sixten/Dokument/ParkourRunner/build/CMakeFiles/rebuild_cache.dir
+/home/sixten/Dokument/ParkourRunner/build/external/SDL/CMakeFiles/SDL3-shared.dir
+/home/sixten/Dokument/ParkourRunner/build/external/SDL/CMakeFiles/SDL3_test.dir
+/home/sixten/Dokument/ParkourRunner/build/external/SDL/CMakeFiles/SDL_uclibc.dir
+/home/sixten/Dokument/ParkourRunner/build/external/SDL/CMakeFiles/edit_cache.dir
+/home/sixten/Dokument/ParkourRunner/build/external/SDL/CMakeFiles/rebuild_cache.dir
