@@ -47,12 +47,12 @@ cmake_ninja_workdir = /home/sixten/Dokument/ParkourRunner/build/
 #############################################
 # Order-only phony target for sibjor
 
-build cmake_object_order_depends_target_sibjor: phony || cmake_object_order_depends_target_SDL3-shared
+build cmake_object_order_depends_target_sibjor: phony || cmake_object_order_depends_target_SDL3-shared cmake_object_order_depends_target_SDL3_image-shared
 
 build CMakeFiles/sibjor.dir/main.cpp.o: CXX_COMPILER__sibjor_unscanned_Debug /home/sixten/Dokument/ParkourRunner/main.cpp || cmake_object_order_depends_target_sibjor
   DEP_FILE = CMakeFiles/sibjor.dir/main.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  FLAGS = -g -fPIE
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include
   OBJECT_DIR = CMakeFiles/sibjor.dir
   OBJECT_FILE_DIR = CMakeFiles/sibjor.dir
 
@@ -64,9 +64,9 @@ build CMakeFiles/sibjor.dir/main.cpp.o: CXX_COMPILER__sibjor_unscanned_Debug /ho
 #############################################
 # Link the executable Debug/sibjor
 
-build Debug/sibjor: CXX_EXECUTABLE_LINKER__sibjor_Debug CMakeFiles/sibjor.dir/main.cpp.o | Debug/libSDL3.so.0.3.0 /home/sixten/Dokument/ParkourRunner/external/SDL/src/dynapi/SDL_dynapi.sym || Debug/libSDL3.so Debug/libSDL3.so
+build Debug/sibjor: CXX_EXECUTABLE_LINKER__sibjor_Debug CMakeFiles/sibjor.dir/main.cpp.o | Debug/libSDL3_image.so.0.3.0 Debug/libSDL3.so.0.3.0 /home/sixten/Dokument/ParkourRunner/external/SDL/src/dynapi/SDL_dynapi.sym || Debug/libSDL3.so Debug/libSDL3_image.so Debug/libSDL3_image.so Debug/libSDL3.so
   FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/home/sixten/Dokument/ParkourRunner/build/Debug  Debug/libSDL3.so.0.3.0
+  LINK_LIBRARIES = -Wl,-rpath,/home/sixten/Dokument/ParkourRunner/build/Debug  Debug/libSDL3_image.so.0.3.0  Debug/libSDL3.so.0.3.0
   OBJECT_DIR = CMakeFiles/sibjor.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -2413,70 +2413,70 @@ build cmake_object_order_depends_target_SDL3_test: phony || external/SDL/CMakeFi
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_assert.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_common.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_compare.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_crc32.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_font.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_fuzzer.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_harness.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_log.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_md5.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
 
 build external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o: C_COMPILER__SDL3_test_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_memory.c || cmake_object_order_depends_target_SDL3_test
   DEP_FILE = external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o.d
-  FLAGS = -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL3_test.dir/src/test
@@ -2509,7 +2509,7 @@ build cmake_object_order_depends_target_SDL_uclibc: phony || external/SDL/CMakeF
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_atan2.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2517,7 +2517,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o: C_COMPILER__S
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_exp.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2525,7 +2525,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o: C_COMPILER__SDL
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_fmod.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2533,7 +2533,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o: C_COMPILER__SD
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_log.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2541,7 +2541,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o: C_COMPILER__SDL
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_log10.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2549,7 +2549,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o: C_COMPILER__S
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_pow.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2557,7 +2557,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o: C_COMPILER__SDL
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_rem_pio2.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2565,7 +2565,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o: C_COMPILER
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_sqrt.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2573,7 +2573,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o: C_COMPILER__SD
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_cos.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2581,7 +2581,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o: C_COMPILER__SDL
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_rem_pio2.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2589,7 +2589,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o: C_COMPILER
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_sin.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2597,7 +2597,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o: C_COMPILER__SDL
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_tan.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2605,7 +2605,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o: C_COMPILER__SDL
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_atan.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2613,7 +2613,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o: C_COMPILER__SD
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_copysign.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2621,7 +2621,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o: C_COMPILER
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_cos.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2629,7 +2629,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o: C_COMPILER__SDL
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_fabs.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2637,7 +2637,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o: C_COMPILER__SD
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_floor.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2645,7 +2645,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o: C_COMPILER__S
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isinf.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2653,7 +2653,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o: C_COMPILER__S
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isinff.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2661,7 +2661,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o: C_COMPILER__
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isnan.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2669,7 +2669,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o: C_COMPILER__S
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isnanf.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2677,7 +2677,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o: C_COMPILER__
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_modf.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2685,7 +2685,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o: C_COMPILER__SD
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_scalbn.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2693,7 +2693,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o: C_COMPILER__
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_sin.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2701,7 +2701,7 @@ build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o: C_COMPILER__SDL
 build external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o: C_COMPILER__SDL_uclibc_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_tan.c || cmake_object_order_depends_target_SDL_uclibc
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o.d
-  FLAGS = -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
   INCLUDES = -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
   OBJECT_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -3142,15 +3142,244 @@ build external/SDL/wayland-generated-protocols/xdg-toplevel-icon-v1-client-proto
   restat = 1
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/sixten/Dokument/ParkourRunner/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target SDL3_image-shared
+
+
+#############################################
+# Order-only phony target for SDL3_image-shared
+
+build cmake_object_order_depends_target_SDL3_image-shared: phony || cmake_object_order_depends_target_SDL3-shared
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_WIC.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_avif.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_bmp.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_gif.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_jpg.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_jxl.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_lbm.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_pcx.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_png.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_pnm.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_qoi.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_stb.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_svg.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_tga.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_tif.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_webp.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xcf.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xpm.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xv.c || cmake_object_order_depends_target_SDL3_image-shared
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o.d
+  FLAGS = -g -fPIC -fvisibility=hidden -Wall -Wextra
+  INCLUDES = -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target SDL3_image-shared
+
+
+#############################################
+# Link the shared library Debug/libSDL3_image.so.0.3.0
+
+build Debug/libSDL3_image.so.0.3.0: C_SHARED_LIBRARY_LINKER__SDL3_image-shared_Debug external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o | Debug/libSDL3.so.0.3.0 /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/SDL_image.sym /home/sixten/Dokument/ParkourRunner/external/SDL/src/dynapi/SDL_dynapi.sym || Debug/libSDL3.so Debug/libSDL3.so
+  LANGUAGE_COMPILE_FLAGS = -g
+  LINK_FLAGS = -Wl,--version-script=/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/SDL_image.sym -Wl,--no-undefined
+  LINK_LIBRARIES = -Wl,-rpath,/home/sixten/Dokument/ParkourRunner/build/Debug  Debug/libSDL3.so.0.3.0
+  OBJECT_DIR = external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libSDL3_image.so.0
+  SONAME_FLAG = -Wl,-soname,
+  TARGET_FILE = Debug/libSDL3_image.so.0.3.0
+  TARGET_IMPLIB = external/SDL_image/
+  TARGET_PDB = SDL3_image.so.dbg
+
+
+#############################################
+# Create library symlink Debug/libSDL3_image.so
+
+build Debug/libSDL3_image.so.0 Debug/libSDL3_image.so: CMAKE_SYMLINK_LIBRARY Debug/libSDL3_image.so.0.3.0
+  POST_BUILD = :
+
+
+#############################################
+# Utility command for edit_cache
+
+build external/SDL_image/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/sixten/Dokument/ParkourRunner/build/external/SDL_image && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build external/SDL_image/edit_cache: phony external/SDL_image/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build external/SDL_image/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/sixten/Dokument/ParkourRunner/build/external/SDL_image && /usr/bin/cmake --regenerate-during-build -S/home/sixten/Dokument/ParkourRunner -B/home/sixten/Dokument/ParkourRunner/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build external/SDL_image/rebuild_cache: phony external/SDL_image/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build SDL3-shared: phony Debug/libSDL3.so
+
+build SDL3_image-shared: phony Debug/libSDL3_image.so
 
 build SDL3_test: phony external/SDL/libSDL3_test.a
 
 build SDL_uclibc: phony external/SDL/libSDL_uclibc.a
 
 build libSDL3.so: phony Debug/libSDL3.so
+
+build libSDL3_image.so: phony Debug/libSDL3_image.so
 
 build libSDL3_test.a: phony external/SDL/libSDL3_test.a
 
@@ -3176,20 +3405,27 @@ build all: phony Debug/sibjor
 build external/SDL/all: phony Debug/libSDL3.so external/SDL/libSDL3_test.a external/SDL/libSDL_uclibc.a
 
 # =============================================================================
+
+#############################################
+# Folder: /home/sixten/Dokument/ParkourRunner/build/external/SDL_image
+
+build external/SDL_image/all: phony Debug/libSDL3_image.so
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/sixten/Dokument/ParkourRunner/.git/modules/external/SDL/HEAD /home/sixten/Dokument/ParkourRunner/.git/modules/external/SDL/refs/heads/main /home/sixten/Dokument/ParkourRunner/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/3rdparty.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/FindLibUSB.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/GetGitRevisionDescription.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/GetGitRevisionDescription.cmake.in /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/PreseedEmscriptenCache.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/PreseedMSVCCache.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/SDL3Config.cmake.in /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/macros.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlchecks.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlcompilers.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlcpu.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlmanpages.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlplatform.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdltargets.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/include/build_config/SDL_build_config.h.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/include/build_config/SDL_revision.h.cmake /usr/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake-3.28/Modules/CMakeCInformation.cmake /usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake /usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake /usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckCSourceRuns.cmake /usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake /usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.28/Modules/CheckLanguage.cmake /usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.28/Modules/CheckLinkerFlag.cmake /usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake /usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake /usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU.cmake /usr/share/cmake-3.28/Modules/FindALSA.cmake /usr/share/cmake-3.28/Modules/FindGit.cmake /usr/share/cmake-3.28/Modules/FindOpenGL.cmake /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.28/Modules/FindPackageMessage.cmake /usr/share/cmake-3.28/Modules/FindPkgConfig.cmake /usr/share/cmake-3.28/Modules/FindX11.cmake /usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.28/Modules/Internal/CheckLinkerFlag.cmake /usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake-3.28/Modules/Platform/Linux.cmake /usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.28.3/CMakeCCompiler.cmake CMakeFiles/3.28.3/CMakeCXXCompiler.cmake CMakeFiles/3.28.3/CMakeSystem.cmake external/SDL/CMakeFiles/SDL_build_config.h.intermediate external/SDL/CMakeFiles/git-data/grabRef.cmake
+build build.ninja: RERUN_CMAKE | /home/sixten/Dokument/ParkourRunner/.git/modules/external/SDL/HEAD /home/sixten/Dokument/ParkourRunner/.git/modules/external/SDL/refs/heads/main /home/sixten/Dokument/ParkourRunner/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/3rdparty.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/FindLibUSB.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/GetGitRevisionDescription.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/GetGitRevisionDescription.cmake.in /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/PreseedEmscriptenCache.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/PreseedMSVCCache.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/SDL3Config.cmake.in /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/macros.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlchecks.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlcompilers.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlcpu.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlmanpages.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlplatform.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdltargets.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/include/build_config/SDL_build_config.h.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/include/build_config/SDL_revision.h.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/Findwebp.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/GetGitRevisionDescription.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/PrivateSdlFunctions.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/sdlcpu.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/sdlmanpages.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/sdlplatform.cmake /usr/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake-3.28/Modules/CMakeCInformation.cmake /usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake /usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake /usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckCSourceRuns.cmake /usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake /usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.28/Modules/CheckLanguage.cmake /usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.28/Modules/CheckLinkerFlag.cmake /usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake /usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake /usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU.cmake /usr/share/cmake-3.28/Modules/FindALSA.cmake /usr/share/cmake-3.28/Modules/FindGit.cmake /usr/share/cmake-3.28/Modules/FindOpenGL.cmake /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.28/Modules/FindPackageMessage.cmake /usr/share/cmake-3.28/Modules/FindPkgConfig.cmake /usr/share/cmake-3.28/Modules/FindTIFF.cmake /usr/share/cmake-3.28/Modules/FindX11.cmake /usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.28/Modules/Internal/CheckLinkerFlag.cmake /usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake-3.28/Modules/Platform/Linux.cmake /usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.28.3/CMakeCCompiler.cmake CMakeFiles/3.28.3/CMakeCXXCompiler.cmake CMakeFiles/3.28.3/CMakeSystem.cmake external/SDL/CMakeFiles/SDL_build_config.h.intermediate external/SDL/CMakeFiles/git-data/grabRef.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/sixten/Dokument/ParkourRunner/.git/modules/external/SDL/HEAD /home/sixten/Dokument/ParkourRunner/.git/modules/external/SDL/refs/heads/main /home/sixten/Dokument/ParkourRunner/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/3rdparty.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/FindLibUSB.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/GetGitRevisionDescription.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/GetGitRevisionDescription.cmake.in /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/PreseedEmscriptenCache.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/PreseedMSVCCache.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/SDL3Config.cmake.in /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/macros.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlchecks.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlcompilers.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlcpu.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlmanpages.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlplatform.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdltargets.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/include/build_config/SDL_build_config.h.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/include/build_config/SDL_revision.h.cmake /usr/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake-3.28/Modules/CMakeCInformation.cmake /usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake /usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake /usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckCSourceRuns.cmake /usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake /usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.28/Modules/CheckLanguage.cmake /usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.28/Modules/CheckLinkerFlag.cmake /usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake /usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake /usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU.cmake /usr/share/cmake-3.28/Modules/FindALSA.cmake /usr/share/cmake-3.28/Modules/FindGit.cmake /usr/share/cmake-3.28/Modules/FindOpenGL.cmake /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.28/Modules/FindPackageMessage.cmake /usr/share/cmake-3.28/Modules/FindPkgConfig.cmake /usr/share/cmake-3.28/Modules/FindX11.cmake /usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.28/Modules/Internal/CheckLinkerFlag.cmake /usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake-3.28/Modules/Platform/Linux.cmake /usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.28.3/CMakeCCompiler.cmake CMakeFiles/3.28.3/CMakeCXXCompiler.cmake CMakeFiles/3.28.3/CMakeSystem.cmake external/SDL/CMakeFiles/SDL_build_config.h.intermediate external/SDL/CMakeFiles/git-data/grabRef.cmake: phony
+build /home/sixten/Dokument/ParkourRunner/.git/modules/external/SDL/HEAD /home/sixten/Dokument/ParkourRunner/.git/modules/external/SDL/refs/heads/main /home/sixten/Dokument/ParkourRunner/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/3rdparty.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/FindLibUSB.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/GetGitRevisionDescription.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/GetGitRevisionDescription.cmake.in /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/PreseedEmscriptenCache.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/PreseedMSVCCache.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/SDL3Config.cmake.in /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/macros.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlchecks.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlcompilers.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlcpu.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlmanpages.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdlplatform.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/cmake/sdltargets.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/include/build_config/SDL_build_config.h.cmake /home/sixten/Dokument/ParkourRunner/external/SDL/include/build_config/SDL_revision.h.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/CMakeLists.txt /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/Findwebp.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/GetGitRevisionDescription.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/PrivateSdlFunctions.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/sdlcpu.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/sdlmanpages.cmake /home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake/sdlplatform.cmake /usr/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake-3.28/Modules/CMakeCInformation.cmake /usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake /usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake /usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake /usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckCSourceRuns.cmake /usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake /usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.28/Modules/CheckLanguage.cmake /usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.28/Modules/CheckLinkerFlag.cmake /usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake /usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake /usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake /usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.28/Modules/Compiler/GNU.cmake /usr/share/cmake-3.28/Modules/FindALSA.cmake /usr/share/cmake-3.28/Modules/FindGit.cmake /usr/share/cmake-3.28/Modules/FindOpenGL.cmake /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.28/Modules/FindPackageMessage.cmake /usr/share/cmake-3.28/Modules/FindPkgConfig.cmake /usr/share/cmake-3.28/Modules/FindTIFF.cmake /usr/share/cmake-3.28/Modules/FindX11.cmake /usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake /usr/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake /usr/share/cmake-3.28/Modules/Internal/CheckLinkerFlag.cmake /usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake-3.28/Modules/Platform/Linux.cmake /usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.28.3/CMakeCCompiler.cmake CMakeFiles/3.28.3/CMakeCXXCompiler.cmake CMakeFiles/3.28.3/CMakeSystem.cmake external/SDL/CMakeFiles/SDL_build_config.h.intermediate external/SDL/CMakeFiles/git-data/grabRef.cmake: phony
 
 
 #############################################

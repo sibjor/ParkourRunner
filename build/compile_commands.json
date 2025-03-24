@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/g++ -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -o CMakeFiles/sibjor.dir/main.cpp.o -c /home/sixten/Dokument/ParkourRunner/main.cpp",
+  "command": "/usr/bin/g++ -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -g -fPIE -o CMakeFiles/sibjor.dir/main.cpp.o -c /home/sixten/Dokument/ParkourRunner/main.cpp",
   "file": "/home/sixten/Dokument/ParkourRunner/main.cpp",
   "output": "CMakeFiles/sibjor.dir/main.cpp.o"
 },
@@ -1705,212 +1705,332 @@
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_assert.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_assert.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_assert.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_common.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_common.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_common.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_compare.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_compare.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_compare.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_crc32.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_crc32.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_crc32.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_font.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_font.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_font.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_fuzzer.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_fuzzer.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_fuzzer.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_harness.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_harness.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_harness.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_log.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_log.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_log.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_md5.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_md5.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_md5.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_memory.c",
+  "command": "/usr/bin/gcc -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_memory.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/test/SDL_test_memory.c",
   "output": "external/SDL/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_atan2.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_atan2.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_atan2.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_exp.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_exp.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_exp.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_fmod.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_fmod.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_fmod.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_log.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_log.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_log.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_log10.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_log10.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_log10.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_pow.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_pow.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_pow.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_rem_pio2.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_rem_pio2.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_rem_pio2.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_sqrt.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_sqrt.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/e_sqrt.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_cos.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_cos.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_cos.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_rem_pio2.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_rem_pio2.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_rem_pio2.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_sin.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_sin.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_sin.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_tan.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_tan.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/k_tan.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_atan.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_atan.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_atan.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_copysign.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_copysign.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_copysign.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_cos.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_cos.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_cos.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_fabs.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_fabs.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_fabs.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_floor.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_floor.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_floor.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isinf.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isinf.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isinf.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isinff.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isinff.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isinff.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isnan.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isnan.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isnan.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isnanf.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isnanf.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_isnanf.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_modf.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_modf.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_modf.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_scalbn.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_scalbn.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_scalbn.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_sin.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_sin.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_sin.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o"
 },
 {
   "directory": "/home/sixten/Dokument/ParkourRunner/build",
-  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_tan.c",
+  "command": "/usr/bin/gcc -DUSING_GENERATED_CONFIG_H -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-config-debug/build_config -I/home/sixten/Dokument/ParkourRunner/external/SDL/src -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always -o external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_tan.c",
   "file": "/home/sixten/Dokument/ParkourRunner/external/SDL/src/libm/s_tan.c",
   "output": "external/SDL/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_WIC.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_WIC.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_avif.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_avif.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_bmp.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_bmp.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_gif.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_gif.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_jpg.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_jpg.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_jxl.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_jxl.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_lbm.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_lbm.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_pcx.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_pcx.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_png.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_png.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_pnm.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_pnm.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_qoi.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_qoi.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_stb.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_stb.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_svg.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_svg.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_tga.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_tga.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_tif.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_tif.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_webp.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_webp.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xcf.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xcf.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xpm.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xpm.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o"
+},
+{
+  "directory": "/home/sixten/Dokument/ParkourRunner/build",
+  "command": "/usr/bin/gcc -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=0 -DSDL_BUILD_MINOR_VERSION=3 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/home/sixten/Dokument/ParkourRunner/external/SDL_image/include -I/home/sixten/Dokument/ParkourRunner/build/external/SDL/include-revision -I/home/sixten/Dokument/ParkourRunner/external/SDL/include -g -fPIC -fvisibility=hidden -Wall -Wextra -o external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o -c /home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xv.c",
+  "file": "/home/sixten/Dokument/ParkourRunner/external/SDL_image/src/IMG_xv.c",
+  "output": "external/SDL_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o"
 }
 ]

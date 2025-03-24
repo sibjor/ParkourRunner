@@ -6,3 +6,6 @@
 /home/sixten/Dokument/ParkourRunner/build/external/SDL/CMakeFiles/SDL_uclibc.dir
 /home/sixten/Dokument/ParkourRunner/build/external/SDL/CMakeFiles/edit_cache.dir
 /home/sixten/Dokument/ParkourRunner/build/external/SDL/CMakeFiles/rebuild_cache.dir
+/home/sixten/Dokument/ParkourRunner/build/external/SDL_image/CMakeFiles/SDL3_image-shared.dir
+/home/sixten/Dokument/ParkourRunner/build/external/SDL_image/CMakeFiles/edit_cache.dir
+/home/sixten/Dokument/ParkourRunner/build/external/SDL_image/CMakeFiles/rebuild_cache.dir

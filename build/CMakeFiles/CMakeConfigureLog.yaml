@@ -6232,3 +6232,37 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "external/SDL_image/cmake/PrivateSdlFunctions.cmake:247 (check_c_source_compiles)"
+      - "external/SDL_image/cmake/PrivateSdlFunctions.cmake:288 (sdl_check_linker_flag)"
+      - "external/SDL_image/CMakeLists.txt:351 (sdl_target_link_options_no_undefined)"
+    checks:
+      - "Performing Test HAVE_WL_NO_UNDEFINED"
+    directories:
+      source: "/home/sixten/Dokument/ParkourRunner/build/CMakeFiles/CMakeScratch/TryCompile-ZhT8D6"
+      binary: "/home/sixten/Dokument/ParkourRunner/build/CMakeFiles/CMakeScratch/TryCompile-ZhT8D6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/sixten/Dokument/ParkourRunner/external/SDL_image/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_WL_NO_UNDEFINED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/sixten/Dokument/ParkourRunner/build/CMakeFiles/CMakeScratch/TryCompile-ZhT8D6'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_96492
+        [1/2] /usr/bin/gcc -DHAVE_WL_NO_UNDEFINED  -fPIE -o CMakeFiles/cmTC_96492.dir/src.c.o -c /home/sixten/Dokument/ParkourRunner/build/CMakeFiles/CMakeScratch/TryCompile-ZhT8D6/src.c
+        [2/2] : && /usr/bin/gcc  -Wl,--no-undefined CMakeFiles/cmTC_96492.dir/src.c.o -o cmTC_96492   && :
+        
+      exitCode: 0
+...
