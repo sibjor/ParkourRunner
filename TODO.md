@@ -12,4 +12,3 @@
 [ ] Move obstacles in relation to player movement (sidescrolling)
 [ ] Procedural generation of obstacles
 [ ] (Optional) Draw Background
-[ ] (Optional) 

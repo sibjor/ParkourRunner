@@ -62,6 +62,14 @@ bool LoadSpritePath(std::string path)
     return true;
 }
 
+void CleanSpriteSheets() {
+    for(auto surface : spriteSheets){
+        SDL_DestroySurface(surface);
+        spriteSheets.clear();
+    }
+
+}
+
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
@@ -109,4 +117,8 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 /* This function runs once at shutdown. */
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
+    CleanSpriteSheets();
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
 }
