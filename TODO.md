@@ -9,7 +9,8 @@
 [x] Refactor loose element into dedicated classes
 [ ] (Important) Implement SDL_GetTicks() in every sequence 
 [x] Implement similar the the profiling method stated above, but in vanilla C23
-[x] Load SpriteSheets as surfaces in vector
+[x] Remove some, rename some functions
+[] Load SpriteSheets as surfaces in vector
 [ ] Load SpriteSheets as textures in vector
 [ ] Slice whole indexes of the [Texture Vector(s)](https://www.reddit.com/r/sdl/comments/1bo7k1l/tutorial_for_spritestrips/?rdt=46632). 
 [ ] Animate a strip from a sheet - (use SDL_GetTicks / 100 for 1/10 of a second?)
