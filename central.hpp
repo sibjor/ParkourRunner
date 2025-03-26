@@ -92,11 +92,11 @@ public:
 
     
     /* From head to tail, measuring time between parties defined below*/
-    void ProfilerSDLBegin(std::string sequence);
-    void ProfilerSDLEnd();
+    void ProfilerSDLHead(std::string sequence);
+    void ProfilerSDLTail();
     void ResetSDLTimer();
-    void ProfilerCBegin(std::string sequence);
-    void ProfilerCEnd();
+    void ProfilerCHead(std::string sequence);
+    void ProfilerCTail();
     void ResetCTimer();
 
 

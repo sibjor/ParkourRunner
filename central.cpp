@@ -9,8 +9,7 @@ public:
     */
     Profiler()
     {
-        ProfilerSDLBegin("SDL Profiler initialized");
-        ProfilerCBegin("C Profiler initialized");
+        ProfileHeadAll();
     };
 
     /* Destructor of profiler
@@ -36,8 +35,8 @@ public:
     - awaits verification
     - resetting the SDL timer when preferred
     */
-    void ProfilerSDLBegin(std::string sequence);
-    void ProfilerSDLEnd();
+    void ProfilerSDLHead(std::string sequence);
+    void ProfilerSDLTail();
     void ResetSDLTimer()
     {
         beginSDLTimer = 0;
@@ -48,14 +47,26 @@ public:
     - time passed between parties
     - resetting the C timer when preferred
     */
-    void ProfilerCBegin(std::string sequence);
-    void ProfilerCEnd();
+    void ProfilerCHead(std::string sequence);
+    void ProfilerCTail();
     void ResetCTimer()
     {
         headCTimer = 0;
         tailCTimer = 0;
         differenceBetweenCTimers = 0;
     };
+
+    /* Could be necessary, 
+    - today I just felt
+    - somewhat pedantic finishing
+    - start of counting at 
+    - both C and SDL timers
+    */
+    void ProfileHeadAll(){
+        ProfilerSDLHead("SDL Profiler initialized");
+        ProfilerCTail("C Profiler initialized");
+        std::cout << "Timer initialized of both C and SDL" << std::endl;
+    }
 
     /* If not wanting to use destructor
     - one is given the oppurtunity to
@@ -65,8 +76,8 @@ public:
     - the timers
     */
     void ProfilerTailAll(){
-        ProfilerSDLEnd();
-        ProfilerCEnd();
+        ProfilerSDLTail();
+        ProfilerCTail();
     }
 
 private:
@@ -75,8 +86,8 @@ private:
     unsigned int differenceBetweenCTimers = tailCTimer - headCTimer;
 
     unsigned int beginSDLTimer = 0;
-    unsigned int tailCTimer;
-    unsigned int differenceBetweenSDLTimers = tailCTimer - beginSDLTimer;
+    unsigned int tailSDLTimer;
+    unsigned int differenceBetweenSDLTimers = tailSDLTimer - beginSDLTimer;
 };
 
 /* Class CharacterArtwork:
