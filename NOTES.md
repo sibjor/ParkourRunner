@@ -32,4 +32,11 @@ can reflect, visualize and generally understands the mathematic pattern. Remembe
 - Latency and throughput are only the same in sequental systems
 - Reason must prevail
 - Different hardware - different solution - differing entirely between architectures
+- The difference of sequence speeds between RAM vs L1, L2 (CPU cache) was presented, proving RAM to be many times slower than the other parties
+
+## Citations of Casey Murtatori, Clean Code
+- There are several aspects of clean code affecting the runtime of the program
+- Things like polymorphism are good, if:s and switches are bad
+- No internals - e.g. a function should never know a interal value?
+- Functions should only do one thing, trying to reduce size to smallest possible
 - 
