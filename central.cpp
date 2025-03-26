@@ -1,23 +1,19 @@
 #include "central.hpp"
 
-void ReportRecources(std::string since)
+void SDLProfiler(std::string context)
 {
     currentTime = SDL_GetTicks(); // Get milliseconds from when SDL was initialized
-    std::cout << "Closing : " << since << " executed since: " << currentTime - lastTime << "ms" << std::endl;
+    std::cout << "Closing : " << context << " executed since: " << currentTime - lastTime << "ms" << std::endl;
     lastTime = currentTime;
 }
 
 bool LoadSpriteSheets(std::string assetsDir)
 {
-    /* First step is to declare a vector, which
-        - will store SDL_Surface pointers, which
-        - will be loaded as SDL_Texture pointers
-        - then call SDL_RenderTexture(renderer, texture, NULL, NULL)
-        - then SDL_RenderPresent(renderer) 
-        - don't forget: art is of dimensions: 192x96 (pixels?)
-        - you were told to implement similar dimensions of w & h
-        - cited from teacher, referring to the practice of a GPU
-        */
+    /*
+    - Vector of SDL_Surface pointers
+    - which will store every element
+    - included in the assets/ directory
+    */
     std::vector<SDL_Surface *> spriteSheets;
 
     if (!fs::exists(assetsDir))
@@ -26,10 +22,14 @@ bool LoadSpriteSheets(std::string assetsDir)
         return false;
     }
 
-    for (const auto &entry : fs::directory_iterator(assetsDir))
+    /* 
+    - A loop iterating through assetDir "assets/" path 
+    - Both devided directories are visited, by using "fs::recursive_directory_iterator"
+    - (instead of) fs::directory iterator
+    */
+    for (const auto &entry : fs::recursive_directory_iterator(assetsDir))
     {
-        ;
-        if (entry.is_regular_file())
+        if (entry.is_regular_file() && entry.path().extension() == ".png")
         {
             const std::string fileassetsDir = entry.path().string();
             SDL_Surface *spriteSheet = IMG_Load(fileassetsDir.c_str());
@@ -49,7 +49,7 @@ bool LoadSpriteSheets(std::string assetsDir)
     return true;
 }
 
-bool CleanSpriteSheets(bool cleanAll = false)
+bool CleanSurfaces(bool cleanAll = false, std::vector<SDL_Surface *> spriteSheets)
 {
     if (cleanAll)
     {
@@ -60,4 +60,8 @@ bool CleanSpriteSheets(bool cleanAll = false)
         spriteSheets.clear();
     }
     return true;
+}
+
+bool CleanTextures(bool cleanAll = false, std::vector<SDL_Texture *> spriteTextures){
+    
 }

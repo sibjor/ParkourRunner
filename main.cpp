@@ -37,8 +37,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     {
         return SDL_APP_FAILURE;
     }
-    
-    ReportRecources("SDL_APP_CONTINUE");
+
+    SDLProfiler("SDL_APP_CONTINUE");
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
@@ -47,27 +47,28 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 {
     if (event->type == SDL_EVENT_QUIT)
     {
-        ReportRecources("SDL_APP_SUCCESS");
+        SDLProfiler("SDL_APP_SUCCESS");
         return SDL_APP_SUCCESS;
     }
 
-    ReportRecources("SDL_APP_CONTINUE");
+    SDLProfiler("SDL_APP_CONTINUE");
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
 /* This function runs once per frame, and is the heart of the program. */
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-    ReportRecources("SDL_APP_CONTINUE");
+    SDLProfiler("SDL_APP_CONTINUE");
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
 /* This function runs once at shutdown. */
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
-    CleanSpriteSheets();
+    CleanSurfaces(); // bool + vector
+    CleanTextures(); // bool + vector
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
-    ReportRecources("FINAL CLEANUP");
+    SDLProfiler("FINAL CLEANUP");
 }
