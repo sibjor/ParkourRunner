@@ -1,67 +1,125 @@
 #include "central.hpp"
 
-void SDLProfiler(std::string context)
+class Profiler
 {
-    currentTime = SDL_GetTicks(); // Get milliseconds from when SDL was initialized
-    std::cout << "Closing : " << context << " executed since: " << currentTime - lastTime << "ms" << std::endl;
-    lastTime = currentTime;
-}
 
-bool LoadSpriteSheets(std::string assetsDir)
-{
-    /*
-    - Vector of SDL_Surface pointers
-    - which will store every element
-    - included in the assets/ directory
+public:
+    /* Contructor of profiler
+    - initializes both C and SDL timers
     */
-    std::vector<SDL_Surface *> spriteSheets;
-
-    if (!fs::exists(assetsDir))
+    Profiler()
     {
-        SDL_Log("Couldn't find sprite sheets");
-        return false;
-    }
+        ProfilerSDLBegin("SDL Profiler initialized");
+        ProfilerCBegin("C Profiler initialized");
+    };
 
-    /* 
-    - A loop iterating through assetDir "assets/" path 
-    - Both devided directories are visited, by using "fs::recursive_directory_iterator"
-    - (instead of) fs::directory iterator
+    /* Destructor of profiler
+    - first stating the time passed
+    - of both SDL and C timers
+    - since last reset or
+    - since initialization
+    - then, afterwards
+    - resets both SDL and C
+    - timers to zero and then
+    - frees the memory
     */
-    for (const auto &entry : fs::recursive_directory_iterator(assetsDir))
+    ~Profiler()
     {
-        if (entry.is_regular_file() && entry.path().extension() == ".png")
-        {
-            const std::string fileassetsDir = entry.path().string();
-            SDL_Surface *spriteSheet = IMG_Load(fileassetsDir.c_str());
-            if (spriteSheet == NULL)
-            {
-                SDL_Log("Couldn't load sprite sheet: %s", SDL_GetError());
-                return false;
-            }
-            spriteSheets.push_back(spriteSheet);
-        }
+        ProfilerTailAll();
+        ResetSDLTimer();
+        ResetCTimer();
+        free(this);
+    };
+
+    /* From head to tail, since initialization of SDL
+    measuring time between parties defined below?
+    - awaits verification
+    - resetting the SDL timer when preferred
+    */
+    void ProfilerSDLBegin(std::string sequence);
+    void ProfilerSDLEnd();
+    void ResetSDLTimer()
+    {
+        beginSDLTimer = 0;
+        tailCTimer = 0;
+        differenceBetweenSDLTimers = 0;
+    };
+    /* From head to tails, recording and measuring
+    - time passed between parties
+    - resetting the C timer when preferred
+    */
+    void ProfilerCBegin(std::string sequence);
+    void ProfilerCEnd();
+    void ResetCTimer()
+    {
+        headCTimer = 0;
+        tailCTimer = 0;
+        differenceBetweenCTimers = 0;
+    };
+
+    /* If not wanting to use destructor
+    - one is given the oppurtunity to
+    - call both SDL & C timer endings
+    - at once
+    - Use destructor when resetting
+    - the timers
+    */
+    void ProfilerTailAll(){
+        ProfilerSDLEnd();
+        ProfilerCEnd();
     }
 
-    std::cout << "Loaded " << spriteSheets.size() << " sprite sheets" << std::endl;
-    currentTime = SDL_GetTicks(); // Get milliseconds from when SDL was initialized
-    std::cout << "Time to load sprite sheets: " << currentTime - lastTime << "ms" << std::endl;
-    lastTime = currentTime;
-    return true;
-}
+private:
+    clock_t headCTimer = 0;
+    clock_t tailCTimer;
+    unsigned int differenceBetweenCTimers = tailCTimer - headCTimer;
 
-bool CleanSurfaces(bool cleanAll = false, std::vector<SDL_Surface *> spriteSheets)
-{
-    if (cleanAll)
-    {
-        for (auto surface : spriteSheets)
-        {
-            SDL_DestroySurface(surface);
-        }
-        spriteSheets.clear();
-    }
-    return true;
-}
+    unsigned int beginSDLTimer = 0;
+    unsigned int tailCTimer;
+    unsigned int differenceBetweenSDLTimers = tailCTimer - beginSDLTimer;
+};
 
-bool CleanTextures(bool cleanAll = false, std::vector<SDL_Texture *> spriteTextures){
+/* Class CharacterArtwork:
+- Separation of concerns are implemented
+- having listened to citations of speech performance
+- by speaker, stating a function should be as small
+- as possible, preferrably responsible for one single
+- sequence of executed task of demand or interest
+*/
+class CharacterArtwork{
+
+    public:
+    /* The constructor should be held
+    - responsible of initialization
+    - of one or both sprite sheets
+    - of player character artwork
+    - used in the game
+    */
+    CharacterArtwork();
     
-}
+    /* The destructor is responsible for
+    - cleanup of player character artwork
+    - of the game.
+    */
+    ~CharacterArtwork();
+    void LoadMovementPack(std::string SpriteSheetDirectory){
+        for(auto &entry : fs::directory_iterator(SpriteSheetDirectory)){
+            surfacesMovementPack.push_back(IMG_Load(entry.path().c_str()));
+            texturesMovementPack.push_back(SDL_CreateTextureFromSurface(renderer, surfacesMovementPack.back()));
+        }
+    };
+    void LoadVaultPack(std::string SpriteSheetDirectory);
+    void LoadAllSpriteSheets();
+    
+    private:
+    // Movement pack
+    std::vector<SDL_Surface *> surfacesMovementPack;
+    std::vector<SDL_Texture *> texturesMovementPack;
+    // Vault pack
+    std::vector<SDL_Surface *> surfacesVaultPack;
+    std::vector<SDL_Texture *> texturesVaultPack;
+    // Movement & Vault pack together
+    std::vector<SDL_Surface *> surfacesAllSpriteSheets;
+    std::vector<SDL_Texture *> texturesAllSpriteSheets;
+
+};

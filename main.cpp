@@ -29,16 +29,6 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
         return SDL_APP_FAILURE;
     }
 
-    if (!LoadSpriteSheets("assets/Basic movement pack/SpriteSheet"))
-    {
-        return SDL_APP_FAILURE;
-    }
-    if (!LoadSpriteSheets("assets/Basic vault pack/SpriteSheet"))
-    {
-        return SDL_APP_FAILURE;
-    }
-
-    SDLProfiler("SDL_APP_CONTINUE");
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
@@ -47,28 +37,22 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 {
     if (event->type == SDL_EVENT_QUIT)
     {
-        SDLProfiler("SDL_APP_SUCCESS");
         return SDL_APP_SUCCESS;
     }
 
-    SDLProfiler("SDL_APP_CONTINUE");
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
 /* This function runs once per frame, and is the heart of the program. */
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-    SDLProfiler("SDL_APP_CONTINUE");
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
 /* This function runs once at shutdown. */
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
-    CleanSurfaces(); // bool + vector
-    CleanTextures(); // bool + vector
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
-    SDLProfiler("FINAL CLEANUP");
 }
