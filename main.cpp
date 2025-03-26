@@ -14,6 +14,7 @@
 #include "central.hpp"
 #include "character.hpp"
 #include "profiler.hpp"
+#include "gameloop.hpp"
 
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
