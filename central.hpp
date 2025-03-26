@@ -19,6 +19,10 @@ std::vector<SDL_Surface *> spriteSheets;
 
 unsigned int lastTime = 0, currentTime;
 
-void ReportRecources(string since);
-bool LoadSpriteSheets(std::string path);
-void CleanSpriteSheets();
+/* Function measuring time of execution since last timestamp
+   Included parameter should describe the first execution below*/
+void ReportRecources(std::string since);
+
+/* */
+bool LoadSpriteSheets(std::string assetsDir);
+bool CleanSpriteSheets(bool cleanAll = false);
