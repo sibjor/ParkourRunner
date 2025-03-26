@@ -21,7 +21,3 @@
 - ..project/library/collection )
 */
 namespace fs = std::filesystem;
-
-/* We will use this renderer to draw into this window every frame. */
-static SDL_Window *window = NULL;
-static SDL_Renderer *renderer = NULL;

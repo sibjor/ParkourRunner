@@ -43,25 +43,25 @@ public:
    }
 
     /* From head to tail, measuring time between parties defined below*/
-    void ProfilerSDLHead();
-    void ProfilerSDLTail();
-    void ResetSDLTimer();
+    bool ProfilerSDLHead();
+    bool ProfilerSDLTail();
+    bool ResetSDLTimer();
 
-    void ProfilerCHead();
-    void ProfilerCTail();
-    void ResetCTimer();
+    bool ProfilerCHead();
+    bool ProfilerCTail();
+    bool ResetCTimer();
 
-    void ProfilerHeadBoth(std::string comment);
-    void ProfilerTailBoth(std::string comment);
+    bool ProfilerHeadBoth(std::string comment);
+    bool ProfilerTailBoth(std::string comment);
     // Reset C and SDL timers
-    void ProfilerResetBoth(std::string comment);
+    bool ProfilerResetBoth(std::string comment);
 
     // The solo - universal timer
-    void ProfilerUniHead(std::string comment);
-    void ProfilerUniTail(std::string comment);
+    bool ProfilerUniHead(std::string comment);
+    bool ProfilerUniTail(std::string comment);
     // Only call this one in desctuctor
     // of its own dedicated object
-    void ProfilerUniReset(std::string comment);
+    bool ProfilerUniReset(std::string comment);
 
 private:
     /* The C time measuring parties */

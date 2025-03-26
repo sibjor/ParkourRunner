@@ -5,16 +5,16 @@
     - awaits verification
     - resetting the SDL timer when preferred
     */
-    void Profiler::ProfilerSDLHead()
+    bool Profiler::ProfilerSDLHead()
     {
         headSDLTimer = SDL_GetTicks();
     };
-    void Profiler::ProfilerSDLTail()
+    bool Profiler::ProfilerSDLTail()
     {
         tailSDLTimer = SDL_GetTicks();
         differenceBetweenSDLTimers = tailSDLTimer - headSDLTimer;
     };
-    void Profiler::ResetSDLTimer()
+    bool Profiler::ResetSDLTimer()
     {
         headSDLTimer = 0;
         tailSDLTimer = 0;
@@ -24,16 +24,16 @@
     - time passed between parties
     - resetting the C timer when preferred
     */
-    void Profiler::ProfilerCHead()
+    bool Profiler::ProfilerCHead()
     {
         headCTimer = clock();
     };
-    void Profiler::ProfilerCTail()
+    bool Profiler::ProfilerCTail()
     {
         tailCTimer = clock();
         differenceBetweenCTimers = tailCTimer - headCTimer;
     };
-    void Profiler::ResetCTimer()
+    bool Profiler::ResetCTimer()
     {
         headCTimer = 0;
         tailCTimer = 0;
@@ -46,7 +46,7 @@
     - collectively between
     - both C and SDL timers
     */
-    void Profiler::ProfilerHeadBoth(std::string comment)
+    bool Profiler::ProfilerHeadBoth(std::string comment)
     {
         ProfilerSDLHead();
         ProfilerCHead();
@@ -60,7 +60,7 @@
     - Use destructor when resetting
     - the timers
     */
-    void Profiler::ProfilerTailBoth(std::string comment)
+    bool Profiler::ProfilerTailBoth(std::string comment)
     {
         ProfilerSDLTail();
         ProfilerCTail();
@@ -74,7 +74,7 @@
     - possibly continuing
     - with object destruction
     */
-    void Profiler::ProfilerResetBoth(std::string comment)
+    bool Profiler::ProfilerResetBoth(std::string comment)
     {
         std::cout << comment << "Both C and SDL timers RESET at:\n\tC TIMER:" << differenceBetweenCTimers << "\n\tSDL TIMER: " << differenceBetweenSDLTimers << std::endl;
         ResetCTimer();
@@ -91,24 +91,21 @@
     - end of application
     */
     // The solo - universal timer
-    void Profiler::ProfilerUniHead(std::string comment)
+    bool Profiler::ProfilerUniHead(std::string comment)
     {
         headUniTimer = clock();
         std::cout << comment << "Universal timer STARTED at:\n\t" << headUniTimer << std::endl;
     };
-    void Profiler::ProfilerUniTail(std::string comment)
+    bool Profiler::ProfilerUniTail(std::string comment)
     {
         tailUnitTimer = clock();
-        differenceBetweenUniTimers = tailUnitTimer - headUniTimer;
-        std::cout << comment << "Time passed since first measure:\n\tUNIVERSAL " << differenceBetweenUniTimers << std::endl;
+        std::cout << comment << "Time passed since first measure:\n\tUNIVERSAL " << tailUnitTimer << std::endl;
     };
     // Only call this one in desctuctor
     // of its own dedicated object
-    void Profiler::ProfilerUniReset(std::string comment)
+    bool Profiler::ProfilerUniReset(std::string comment)
     {
-        tailUnitTimer = clock();
-        differenceBetweenUniTimers = tailUnitTimer - headUniTimer;
-        std::cout << comment << "Universal timer RESET at:\n\t" << "SINCE START: " << headUniTimer << "\n\tSINCE LAST: " << differenceBetweenUniTimers << std::endl;
+        std::cout << comment << "Universal timer RESET at:\n\t" << "CLOCK: " << differenceBetweenUniTimers << std::endl;
 
         headUniTimer = 0;
         tailUnitTimer = 0;

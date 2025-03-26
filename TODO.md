@@ -7,6 +7,7 @@
 ## Index of TODO list
 [x] Verify SDL_GetTicks()
 [x] Refactor loose element into dedicated classes
+[ ] Trim C Timer to 4 + decimal? Adjacent as SDL_GetTicks
 [ ] (Important) Implement SDL_GetTicks() in every sequence 
 [x] Implement similar the the profiling method stated above, but in vanilla C23
 [x] Remove some, rename some functions

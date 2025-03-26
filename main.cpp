@@ -15,8 +15,6 @@
 #include "character.hpp"
 #include "profiler.hpp"
 
-Profiler *profiler = new Profiler();
-
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
@@ -31,6 +29,11 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     if (!SDL_CreateWindowAndRenderer("sibjor@github.com", WINDOW_WIDTH, WINDOW_HEIGHT, 0, &window, &renderer))
     {
         SDL_Log("Couldn't create window/renderer: %s", SDL_GetError());
+        return SDL_APP_FAILURE;
+    }
+    if(!characterArtwork)
+    {
+        SDL_Log("Couldn't create characterArtwork: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
 
@@ -54,7 +57,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
     - Profiler should only be nested inside of scope, to avoid spamming */
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-    
+
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
