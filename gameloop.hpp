@@ -10,13 +10,16 @@
 static SDL_Window *window = NULL;
 extern SDL_Renderer *renderer = NULL;
 
-/* The characterArtwork object*/
-CharacterArtwork *characterArtwork = new CharacterArtwork();
 /* The profiler object*/
 Profiler *profiler = new Profiler();
+/* The characterArtwork object*/
+CharacterArtwork *characterArtwork = new CharacterArtwork();
+/* The GameLoop object*/
+GameLoop *gameLoop = new GameLoop();
 
-class GameLoop{
-    public:
+class GameLoop
+{
+public:
     /* Constructor
         - not declaring flags (?)
         - as e.g. SDL_AppFailure
@@ -24,22 +27,32 @@ class GameLoop{
         - in defenition stated
         - in adjacent source file
         */
-    bool GameLoop::Gameloop(){
-        if(!GameLoopInit()){
+    bool GameLoop::Gameloop()
+    {
+        if (!GameLoopInit())
+        {
             SDL_Log("Couldn't initialize the game loop: %s", SDL_GetError());
         }
-        else{
+        if (!GameLoopActive())
+        {
+            SDL_Log("Couldn't activate the game loop: %s", SDL_GetError());
+        }
+        else
+        {
             GameLoopInit();
+            GameLoopActive();
         }
     };
     /* Destructor*/
-    ~GameLoop(){
+    ~GameLoop()
+    {
         // Free memory
         free(this);
     };
+
     /* Clean practices */
     bool GameLoopInit();
     bool GameLoopActive();
 
-    private:
+private:
 };
