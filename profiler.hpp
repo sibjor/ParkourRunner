@@ -1,3 +1,5 @@
+#pragma once
+
 #include "central.hpp"
 
 /* class Profiler:
@@ -10,17 +12,7 @@ class Profiler
 {
 
 public:
-    /* Contructor of profiler
-    - commences with initializing
-    - the universal timer, afterwards
-    - initializing C and SDL timers
-    */
-   Profiler()
-   {
-       // Initialize timers
-       ProfilerUniHead("*UNIVERSAL TIMER SELF CONSTRUCTION*, ");
-       ProfilerHeadBoth("**SDL & C TIMER SELF CONSTRUCTION**, ");
-   }
+   Profiler();
 
    /* Destructor of profiler
    - commencing reset of
@@ -28,19 +20,7 @@ public:
    - following the universal timer
    - and finally frees memory
    */
-   ~Profiler()
-   {
-       // Reset timers to zero
-       ProfilerResetBoth("**SDL & C TIMER SELF DESTRUCTION**, ");
-
-       // Reset universal timer
-       // in the destructor
-       // as recommended
-       ProfilerUniReset("*UNIVERSAL TIMER SELF DESTRUCTION*, ");
-
-       // Free memory
-       free(this);
-   }
+   ~Profiler();
 
     /* From head to tail, measuring time between parties defined below*/
     bool ProfilerSDLHead();

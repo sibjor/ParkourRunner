@@ -1,3 +1,5 @@
+#pragma once
+
 #include "central.hpp"
 
 /* Class CharacterArtwork:
@@ -24,7 +26,7 @@ public:
     - of player character artwork
     - used in the game
     */
-   CharacterArtwork::CharacterArtwork()
+   CharacterArtwork()
     {
         // Initialize and render the surfaces and textures
         LoadAndRenderAll();
@@ -63,4 +65,5 @@ public:
     bool RenderAll();
 
 private:
+
 };

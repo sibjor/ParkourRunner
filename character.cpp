@@ -101,28 +101,25 @@ bool CharacterArtwork::LoadAndRenderAll()
 /* Rendering the textures of choice*/
 bool CharacterArtwork::RenderMovementPack()
 {
-    while (SDL_APP_CONTINUE)
-    {
         for (auto &texture : texturesMovementPack)
         {
             SDL_RenderTexture(renderer, texture, NULL, NULL);
             SDL_RenderPresent(renderer);
         }
-    }
+        return SDL_APP_CONTINUE;
 };
 bool CharacterArtwork::RenderVaultPack()
 {
-    while (SDL_APP_CONTINUE)
-    {
         for (auto &texture : texturesVaultPack)
         {
             SDL_RenderTexture(renderer, texture, NULL, NULL);
             SDL_RenderPresent(renderer);
         }
-    }
+        return SDL_APP_CONTINUE;
 };
 bool CharacterArtwork::RenderAll()
 {
     RenderMovementPack();
     RenderVaultPack();
+    return SDL_APP_CONTINUE;
 };

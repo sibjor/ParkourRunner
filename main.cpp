@@ -16,10 +16,13 @@
 #include "profiler.hpp"
 #include "gameloop.hpp"
 
+/* We will use this renderer to draw into this window every frame. */
+static SDL_Window *window = NULL;
+static SDL_Renderer *renderer = NULL;
+
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
-    profiler->ProfilerHeadBoth("Inside SDL_AppInit, ");
 
     if (!SDL_Init(SDL_INIT_VIDEO))
     {
@@ -32,13 +35,18 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
         SDL_Log("Couldn't create window/renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
-    if(!characterArtwork)
-    {
-        SDL_Log("Couldn't create characterArtwork: %s", SDL_GetError());
+
+    if(!gameLoop->GameLoopInit()){
+        SDL_Log("Couldn't initialize the game loop: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
 
-    profiler->ProfilerResetBoth("Leaving SDL_AppInit, ");
+    else{
+        // Initialize the game loop
+        // afterwards run the game loop
+        gameLoop->Gameloop();
+    }
+
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
@@ -73,6 +81,6 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
     // Calling destructor of profiler
     // It will reset the timers
     // and free memory
-    profiler->~Profiler();
+    delete profiler; // Properly delete the dynamically allocated profiler
     SDL_Quit();
 }
