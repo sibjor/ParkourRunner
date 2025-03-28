@@ -8,6 +8,7 @@
 [ ] Render something
 [ ] Color" enum class member hexadecimal values
 [x] Working SDL window, no bugs so far
+[ ] Finish profiling functions
 
 ## First TODO list
 [x] Verify SDL_GetTicks()
