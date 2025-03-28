@@ -19,6 +19,7 @@ class Utility{
 
         // Function to check if a file exists
         bool FileExists(const std::string &path);
+        
 
         // Function to get the current time as a string
         std::string GetCurrentTimeString();

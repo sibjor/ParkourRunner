@@ -45,17 +45,13 @@ public:
 
 private:
     /* The C time measuring parties */
-    clock_t headCTimer;
-    clock_t tailCTimer;
-    unsigned int differenceBetweenCTimers = tailCTimer - headCTimer;
+    clock_t timer_start_C;
+    clock_t timer_stop_C;
+    unsigned int differenceBetweenCTimers = timer_stop_C - timer_start_C;
 
     /* The SDL time measuring parties */
     unsigned int headSDLTimer = SDL_GetTicks();
     unsigned int tailSDLTimer = SDL_GetTicks();
     unsigned int differenceBetweenSDLTimers = tailSDLTimer - headSDLTimer;
 
-    /* The solo universal party */
-    clock_t headUniTimer;
-    clock_t tailUnitTimer;
-    unsigned int differenceBetweenUniTimers = tailUnitTimer - headUniTimer;
 };

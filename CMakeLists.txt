@@ -11,7 +11,7 @@ add_subdirectory(external/SDL EXCLUDE_FROM_ALL)
 add_subdirectory(external/SDL_image EXCLUDE_FROM_ALL)
 
 # Create your game executable target as usual
-add_executable(sibjor main.cpp profiler.cpp artwork.cpp gameloop.cpp utils.cpp)
+add_executable(sibjor main.cpp profiler.cpp artwork.cpp gameloop.cpp utils.cpp gui.cpp)
 
 # Link to the actual SDL3 library.
 target_link_libraries(sibjor PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)

@@ -59,9 +59,6 @@
 #define SDL_MAIN_USE_CALLBACKS 1 /* use the callbacks instead of main() */
 
 #include "central.hpp"
-#include "artwork.hpp"
-#include "profiler.hpp"
-#include "gameloop.hpp"
 
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
@@ -93,12 +90,10 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 /* This function runs when a new event (mouse input, keypresses, etc) occurs. */
 SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 {
-    profiler->ProfilerHeadBoth("Inside SDL_AppEvent, ");
     if (event->type == SDL_EVENT_QUIT)
     {
         return SDL_APP_SUCCESS;
     }
-    profiler->ProfilerResetBoth("Leaving SDL_AppEvent, ");
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 
@@ -113,7 +108,6 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 /* This function runs once at shutdown. */
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {   
-    profiler->ProfilerHeadBoth("Inside SDL_AppQuit, ");
     
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
@@ -121,6 +115,5 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
     // Calling destructor of profiler
     // It will reset the timers
     // and free memory
-    delete profiler; // Properly delete the dynamically allocated profiler
     SDL_Quit();
 }
