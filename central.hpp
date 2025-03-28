@@ -36,10 +36,6 @@
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
 
-// Self defined headers
-#include "profiler.hpp"
-#include "artwork.hpp"
-#include "gameloop.hpp"
 
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 960
