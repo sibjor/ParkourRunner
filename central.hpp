@@ -37,8 +37,8 @@
 #include <SDL3_image/SDL_image.h>
 
 
-#define WINDOW_WIDTH 1280
-#define WINDOW_HEIGHT 960
+#define WINDOW_WIDTH 1080
+#define WINDOW_HEIGHT 810
 
 /* We will use this renderer to draw into this window every frame. */
 static SDL_Window *window = NULL;
