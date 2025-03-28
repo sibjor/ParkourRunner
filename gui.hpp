@@ -23,3 +23,4 @@ enum class Shape2D : bool{
     TRIANGLE,
     RECTANGLE,
 };
+

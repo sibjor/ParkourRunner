@@ -76,14 +76,6 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
         return SDL_APP_FAILURE;
     }
 
-    // Initialize objects
-    InitObjects();
-    if (!InitObjects())
-    {
-        SDL_Log("Couldn't initialize objects: %s", SDL_GetError());
-        return SDL_APP_FAILURE;
-    }
-
     return SDL_APP_CONTINUE; /* carry on with the program! */
 }
 

@@ -4,7 +4,12 @@
 - Teacher has stated the sequence of a GPU - recommending to use measures of width and height, column or row - alike and the same, respecting how a GPU calculates to handle 2D graphics.
 - Please try finishing the basics, possibly recieving time which could be spent trying the shading framework of SDL3
 
-## Index of TODO list
+## TODO List of March 28!
+[ ] Render something
+[ ] Color" enum class member hexadecimal values
+[ ] 
+
+## First TODO list
 [x] Verify SDL_GetTicks()
 [x] Refactor loose element into dedicated classes
 [ ] Trim C Timer to 4 + decimal? Adjacent as SDL_GetTicks

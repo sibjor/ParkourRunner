@@ -7,6 +7,16 @@
 - [clock_t C++](https://en.cppreference.com/w/c/chrono/clock_t)
 - [SDL_GetTicks](https://wiki.libsdl.org/SDL3/SDL_GetTicks)
 
+
+## Strategy
+
+- All objects derives from "Root" class, defined in "central.hpp"
+- Objects are placed inside vectors for grouped benefits
+- A vector of objects can easily be cleaned or updated etc...
+- "enum classes" contain booleans used for categorizing contexts. 
+    Such booleans should activate or remove certian context.
+    Preferably, "switch cases" are used for steering such content
+    
 ## Stuff I've learnt:
 
 
