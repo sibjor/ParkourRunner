@@ -7,11 +7,7 @@
 */
 Profiler::Profiler()
 {
-    {
-        // Initialize timers
-        ProfilerUniHead("*UNIVERSAL TIMER SELF CONSTRUCTION*, ");
-        ProfilerHeadBoth("**SDL & C TIMER SELF CONSTRUCTION**, ");
-    }
+    std::cout << "Profiler initialized" << std::endl;
 }
 
 Profiler::~Profiler()

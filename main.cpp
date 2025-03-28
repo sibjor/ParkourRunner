@@ -1,29 +1,72 @@
-/*
- * This example code reads frames from a camera and draws it to the screen.
- *
- * This is a very simple approach that is often Good Enough. You can get
- * fancier with this: multiple cameras, front/back facing cameras on phones,
- * color spaces, choosing formats and framerates...this just requests
- * _anything_ and goes with what it is handed.
- *
- * This code is public domain. Feel free to use it for any purpose!
- */
+/*   
+
+***DETAILS & CREDITS:***
+{
+    - Title: PR-2D-H; "Parkour Runner 2D Horizontal"
+    - Dev: Sixten Algot Björling, student
+    - Profile: "sibjor", github account
+    - Page: https://github.com/sibjor
+    - Site: Forsbergs School, Kingdom of Sweden
+    - Date: March 2025
+    - Issued by: Sebastian Jensen, lecturer
+    
+    *** EXTERNAL MATERIAL ***
+
+        SDL, latest
+
+            License: Zlib, permitted usage, modification and distribution
+            Author: Sam Lantinga
+            Profile: "libsdl-org", github account
+            Links:  
+                - https://libsdl.org
+                - https://github.com/libsdl-org/SDL
+
+        SDL_image; latest
+            License: 
+                Zlib, permitted usage, modification and distribution
+            Author: 
+                "slouken", github account
+            Link: https://github.com/libsdl-org/SDL_image
+        Assets/Artwork:
+            License: Permitted distribution of compiled material
+            Artist: "Kainshiro"
+            Links: 
+                User: https://itch.io/profile/kainshiro
+                Artwork: 
+
+                ! Hopefully, as of today, 
+                ! reference to terms and rights 
+                ! granted "Dev" are 
+                ! linked below:
+
+                    - https://kainshiro.itch.io/pixel-art-basic-parkoursurvival-movement-pack
+                    - https://kainshiro.itch.io/basic-vault-animation-pack
+    *** COMMENTS ***
+        
+        sibjor: 
+            
+            "I hope spending time with this concept continuing studying
+            game programming techniques and technologies of use like SDL,
+            changing player perspective in versions. Experiments with e.g. 
+            algorithms, shaders, physics (?) in both or blend between
+            2D & 3D. Interesting right?"
+
+            "Flexible feel, smoothness & charming attitude"
+        
+                    
+} */
 
 #define SDL_MAIN_USE_CALLBACKS 1 /* use the callbacks instead of main() */
 
 #include "central.hpp"
-#include "character.hpp"
+#include "artwork.hpp"
 #include "profiler.hpp"
 #include "gameloop.hpp"
-
-/* We will use this renderer to draw into this window every frame. */
-static SDL_Window *window = NULL;
-static SDL_Renderer *renderer = NULL;
 
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
-
+    // SDL initialization
     if (!SDL_Init(SDL_INIT_VIDEO))
     {
         SDL_Log("Couldn't initialize SDL: %s", SDL_GetError());
@@ -36,15 +79,12 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
         return SDL_APP_FAILURE;
     }
 
-    if(!gameLoop->GameLoopInit()){
-        SDL_Log("Couldn't initialize the game loop: %s", SDL_GetError());
+    // Initialize objects
+    InitObjects();
+    if (!InitObjects())
+    {
+        SDL_Log("Couldn't initialize objects: %s", SDL_GetError());
         return SDL_APP_FAILURE;
-    }
-
-    else{
-        // Initialize the game loop
-        // afterwards run the game loop
-        gameLoop->Gameloop();
     }
 
     return SDL_APP_CONTINUE; /* carry on with the program! */

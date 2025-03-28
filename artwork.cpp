@@ -1,28 +1,38 @@
-#include "character.hpp"
-#include "gameloop.hpp"
+#include "artwork.hpp"
 
-/* First step is to declare a vector, which
-        - will store SDL_Surface pointers, which
-        - will after "SDL_CreateTextureFromSurface"
-        - be loaded as SDL_Texture pointers
-        - then call SDL_RenderTexture(renderer, texture, NULL, NULL)
-        - then SDL_RenderPresent(renderer)
-        - don't forget: art is of dimensions: 192x96 (pixels?)
-        - you were told to implement similar dimensions of w & h
-        - cited from teacher, referring to the practice of a GPU
-        */
+/* Constructor */
+Artwork::Artwork(){
+    std::cout << "Initializing Artwork..." << std::endl;
+}
 
-std::vector<SDL_Surface *> surfacesMovementPack;
-std::vector<SDL_Surface *> surfacesVaultPack;
-std::vector<SDL_Texture *> texturesMovementPack;
-std::vector<SDL_Texture *> texturesVaultPack;
+/* Destructor */
+Artwork::~Artwork()
+{
+    // Free the surfaces
+    for (auto &surface : surfacesMovementPack)
+    {
+        SDL_DestroySurface(surface);
+    }
+    for (auto &surface : surfacesVaultPack)
+    {
+        SDL_DestroySurface(surface);
+    }
 
-const std::string MovementPackPNGDirectory = "assets/Basic movement pack/SpriteSheet/";
-const std::string VaultPackPNGDirectory = "assets/Basic vault pack/SpriteSheet/";
+    // Free the textures
+    for (auto &texture : texturesMovementPack)
+    {
+        SDL_DestroyTexture(texture);
+    }
+    for (auto &texture : texturesVaultPack)
+    {
+        SDL_DestroyTexture(texture);
+    }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Free memory
+    free(this);
+}
 /* Loading the surfaces of choice*/
-bool CharacterArtwork::LoadMovementPackSurfaces()
+bool Artwork::LoadMovementPackSurfaces()
 {
     // Load the surfaces of the movement pack
     for (auto &entry : std::filesystem::directory_iterator(MovementPackPNGDirectory))
@@ -30,7 +40,7 @@ bool CharacterArtwork::LoadMovementPackSurfaces()
         surfacesMovementPack.push_back(IMG_Load(entry.path().c_str()));
     }
 };
-bool CharacterArtwork::LoadVaultPackSurfaces()
+bool Artwork::LoadVaultPackSurfaces()
 {
     // Load the surfaces of the vault pack
     for (auto &entry : std::filesystem::directory_iterator(VaultPackPNGDirectory))
@@ -38,7 +48,7 @@ bool CharacterArtwork::LoadVaultPackSurfaces()
         surfacesVaultPack.push_back(IMG_Load(entry.path().c_str()));
     }
 };
-bool CharacterArtwork::LoadAllSurfaces()
+bool Artwork::LoadAllSurfaces()
 {
     // Load all surfaces
     LoadMovementPackSurfaces();
@@ -46,7 +56,7 @@ bool CharacterArtwork::LoadAllSurfaces()
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Load the textures of choice*/
-bool CharacterArtwork::LoadMovementPackTextures()
+bool Artwork::LoadMovementPackTextures()
 {
     // Load the textures of the movement pack
     for (auto &surface : surfacesMovementPack)
@@ -54,7 +64,7 @@ bool CharacterArtwork::LoadMovementPackTextures()
         texturesMovementPack.push_back(SDL_CreateTextureFromSurface(renderer, surface));
     }
 };
-bool CharacterArtwork::LoadVaultPackTextures()
+bool Artwork::LoadVaultPackTextures()
 {
     // Load the textures of the vault pack
     for (auto &surface : surfacesVaultPack)
@@ -62,7 +72,7 @@ bool CharacterArtwork::LoadVaultPackTextures()
         texturesVaultPack.push_back(SDL_CreateTextureFromSurface(renderer, surface));
     }
 };
-bool CharacterArtwork::LoadAllTextures()
+bool Artwork::LoadAllTextures()
 {
     // Load all textures
     LoadMovementPackTextures();
@@ -71,7 +81,7 @@ bool CharacterArtwork::LoadAllTextures()
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Wrapping up the wrappers above */
 
-bool CharacterArtwork::LoadAndRenderAll()
+bool Artwork::LoadAndRenderAll()
 {
     if (!LoadAllSurfaces())
     {
@@ -83,7 +93,8 @@ bool CharacterArtwork::LoadAndRenderAll()
         SDL_Log("Couldn't load all textures: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
-    if (!RenderAll){
+    if (!RenderAll)
+    {
         SDL_Log("Couldn't render all textures: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
@@ -99,25 +110,25 @@ bool CharacterArtwork::LoadAndRenderAll()
 };
 
 /* Rendering the textures of choice*/
-bool CharacterArtwork::RenderMovementPack()
+bool Artwork::RenderMovementPack()
 {
-        for (auto &texture : texturesMovementPack)
-        {
-            SDL_RenderTexture(renderer, texture, NULL, NULL);
-            SDL_RenderPresent(renderer);
-        }
-        return SDL_APP_CONTINUE;
+    for (auto &texture : texturesMovementPack)
+    {
+        SDL_RenderTexture(renderer, texture, NULL, NULL);
+        SDL_RenderPresent(renderer);
+    }
+    return SDL_APP_CONTINUE;
 };
-bool CharacterArtwork::RenderVaultPack()
+bool Artwork::RenderVaultPack()
 {
-        for (auto &texture : texturesVaultPack)
-        {
-            SDL_RenderTexture(renderer, texture, NULL, NULL);
-            SDL_RenderPresent(renderer);
-        }
-        return SDL_APP_CONTINUE;
+    for (auto &texture : texturesVaultPack)
+    {
+        SDL_RenderTexture(renderer, texture, NULL, NULL);
+        SDL_RenderPresent(renderer);
+    }
+    return SDL_APP_CONTINUE;
 };
-bool CharacterArtwork::RenderAll()
+bool Artwork::RenderAll()
 {
     RenderMovementPack();
     RenderVaultPack();

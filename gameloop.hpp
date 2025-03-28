@@ -1,7 +1,5 @@
 #pragma once
 
-#include "character.hpp"
-#include "profiler.hpp"
 #include "central.hpp"
 
 /* This file aims to wraps up the aspects of the game,

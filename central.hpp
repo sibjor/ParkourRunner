@@ -1,5 +1,13 @@
 #pragma once
 
+/* Central:
+    - Acts as a "central" for common stuff
+    - Such as dependencies
+    - Variables
+    - Functions
+    - etc...
+    */
+
 // C++ Standard libraries
 #include <vector>
 #include <string>
@@ -17,18 +25,15 @@
 
 // Self defined headers
 #include "profiler.hpp"
-#include "character.hpp"
+#include "artwork.hpp"
 #include "gameloop.hpp"
 
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 960
 
-/* The profiler object*/
-Profiler *profiler = new Profiler();
-/* The characterArtwork object*/
-CharacterArtwork *characterArtwork = new CharacterArtwork();
-/* The GameLoop object*/
-GameLoop *gameLoop = new GameLoop();
+/* We will use this renderer to draw into this window every frame. */
+static SDL_Window *window = NULL;
+static SDL_Renderer *renderer = NULL;
 
 /* std::filesystem i pretty young...
 - implemented and standardized
@@ -38,3 +43,20 @@ GameLoop *gameLoop = new GameLoop();
 - ..project/library/collection )
 */
 namespace fs = std::filesystem;
+
+class Central
+{
+public:
+    // Objects
+    Profiler *profiler;
+    Artwork *playerSprite;
+    GameLoop *gameLoop;
+
+    Central();
+    ~Central();
+    bool InitObjects();
+    bool DestroyObjects();
+
+private:
+
+};
