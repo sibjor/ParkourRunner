@@ -55,7 +55,7 @@ static SDL_Renderer *renderer = NULL;
 */
 namespace fs = std::filesystem;
 
-enum class FirstLayer : bool
+enum class RootLayer : int
 {
     INITIALIZE,
     ACTIVE,
@@ -63,7 +63,7 @@ enum class FirstLayer : bool
     SHUTDOWN,
     ERROR,
 };
-enum class GameState : bool
+enum class GameState : int
 
 {
     STARTING,
@@ -76,7 +76,7 @@ enum class GameState : bool
     ERROR,
 };
 
-enum class GameMenu : bool
+enum class GameMenu : int
 {
     PROLOUGUE,
     MAIN_MENU,
@@ -85,6 +85,30 @@ enum class GameMenu : bool
     GAME_OVER_MENU,
     HIGHSCORE_MENU,
     ERROR,
+};
+
+enum class UI : int{
+    BUTTON,
+    TEXT,
+    CHECKBOX,
+    SLIDER,
+    DROPDOWN,
+    TOGGLE,
+
+};
+
+enum class Color : int{
+    RED,
+    GREEN,
+    BLUE,
+    WHITE,
+};
+
+enum class Shape2D : int{
+    CIRCLE,
+    SQUARE,
+    TRIANGLE,
+    RECTANGLE,
 };
 
 class Root

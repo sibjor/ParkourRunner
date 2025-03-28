@@ -7,7 +7,7 @@
 ## TODO List of March 28!
 [ ] Render something
 [ ] Color" enum class member hexadecimal values
-[ ] 
+[x] Working SDL window, no bugs so far
 
 ## First TODO list
 [x] Verify SDL_GetTicks()

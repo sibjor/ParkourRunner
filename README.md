@@ -13,10 +13,13 @@
 - All objects derives from "Root" class, defined in "central.hpp"
 - Objects are placed inside vectors for grouped benefits
 - A vector of objects can easily be cleaned or updated etc...
-- "enum classes" contain booleans used for categorizing contexts. 
-    Such booleans should activate or remove certian context.
+- "enum classes" contain integers used for categorizing contexts. 
+    Such integers should activate or remove certian context.
     Preferably, "switch cases" are used for steering such content
-    
+- The "Color" enum class should store hexadecimal values of respective color.
+- A classic "gameloop" is avoided because of web compability, read: [emscripten](#important)
+- 
+
 ## Stuff I've learnt:
 
 
