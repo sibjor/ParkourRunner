@@ -99,7 +99,7 @@ enum class Shapes2D : int
     CONTOUR,
 };
 
-enum class UI : int
+enum class UIComponent : int
 {
     BUTTON,
     TEXT,
@@ -303,7 +303,7 @@ public:
     virtual void Highscore();
 
     virtual void Pause();
-    
+
 
 private:
 };
