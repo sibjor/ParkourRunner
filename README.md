@@ -1,4 +1,19 @@
-# ParkourRunner
+# Runner
+
+## About
+
+Author: [sibjor](https://www.github.com/sibjor), Sixten Algot Björling
+Location: Forsbergs School, Kingdom of Sweden, Stockholm
+Issued by: 
+    Teacher: Sebastian Jensen
+    Game jam leader: Theodor Kvarnström
+
+Key design: 
+    
+    - 2D Sidescroller platformer
+    - Procedeurally generated world
+    - Protocols of law are manipulated by 
+
 
 ## Important 
 
@@ -7,6 +22,9 @@
 - [clock_t C++](https://en.cppreference.com/w/c/chrono/clock_t)
 - [SDL_GetTicks](https://wiki.libsdl.org/SDL3/SDL_GetTicks)
 
+## Good to know
+- "central.hpp" is meant to finally be a pre-compiled header
+- All planned usage of externally produced materials follows permitted terms stated in the relative license copy.
 
 ## Strategy
 
@@ -18,7 +36,8 @@
     Preferably, "switch cases" are used for steering such content
 - The "Color" enum class should store hexadecimal values of respective color.
 - A classic "gameloop" is avoided because of web compability, read: [emscripten](#important)
-- 
+- Graphical contexts should be stored as objects, which makes them easier to manipulate
+
 
 ## Stuff I've learnt:
 

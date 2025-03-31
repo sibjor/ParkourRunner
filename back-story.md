@@ -1,0 +1,29 @@
+# Back-story of "the Chains of Justice"
+
+## By the developer:
+
+"A project initiated March 2025, as a blend between education, private life and holiday,
+first one named: "Parkour Runner". By then, I was occupied with game programming education and 
+we fellow students had been given assignments from our teacher; some new methods, techniques
+and concepts to demonstrate through a finished release. I got inspired and
+chose to - even if low on money - aquire both a tablet, its pen, a handful of pixel art sprite strips
+and not to forget; my domain and server - (a linux microcontroller card). Invited to a "game jam" event at school intiated by students, luckily, the project from school had only been templated as a list of functions, to-do list, build commands, & git submodules almost 100% refactored. I decided to apply and merge both assignments into one project, a video game project to be released on the web with the help of "emscripten". The game jam theme being: "Atoms & Friction", I had a new vision; "Protocol 2D". The registrar by then holding my domains awaiting me to any time enter and point the domain to the IP address of choice, I had no more time to loose...
+
+"A synthesis of a molecule manipulate friction between atoms containing a positive or negatively charged
+ions - at least from how I remember... "
+
+"I began the design of a world to be visited and seen from inside a sewer, prison yard, rooftop, inside a factory, underground laboratory or some estate, with the possibility to unlock further city districs & suburbs - raising your wanted level. I came draw inspiration from the triple-AAA "Grand Theft Auto" by Rockstar Games, the tv-series "Breaking Bad", the french cinema production "Banlue 13" and the mobile game "Subway Surfers". Being pretty tired of "hyper-masculinity", I thought of methods to avoid such a trait. It came to my mind that I should spend time trying to implement a robust back-story of the "universe", illustrating a situation and climate of a society, as well as of the main player character, his fellow partners as well as class-layers of the different city-districts. Thus, the vision of a futuristic and somewhat corrupt-state governed class-layer society in a generated world, possibly described as a "free roam metroidvania" begun, commenced friday night...
+
+## Prolougue:
+
+- Remember to highlight the citations!
+
+"The city of New Kingdom is since long governed by "Validator 13" (V13) - a virtual machine permanently integrated as "master node", being both responsible and dependent to the cloud environment, namely a blockchain - strictly following the never changing script named - "the Root Protocol" - designed by one who yet of today is - unidentified, cited as "the Author" claiming to be responsible of publishing the source code in a text named "the Manifest of Time".
+
+"As of today, some, referred to as "labourers", often situated in so called "maintenance facilities" are enforced to deliver "distributed services", maintainig the blockchain and its nodes, legally brought upon them as cause of a broken agreement stated in a "smart-contract", defining the "consequence of dispute" describing which punishment to eventually be implemented. Lately people has been sentenced to "deprivation of ability" argumently as cause of "non-shown precense", "undelivered context","defiance of order", "sum of reward", "prohibited stay", "illegal manifacture", "vehicle theft", "uncertified possesion of arms", "uncertified possession of molecule", "stealing" etc... So far a few has been registered as "labourers", born at "maintenance facilities" born bound to pay the debt of their predecessors, a situation made possible since the last manipulation of "legacy inheritance" defined in "the Protocol of Justice" as result to the latest "voice of the cloud", currently allowing delegating debt to predecessors by legacy. Issued and, as usal, won by a certain "tribe" affording to distribute "certificates of anonymous publishment" to their peers, together scoring "average allocation", high or low where preferred, aquiring an "Authors Grant" describing their license to initiate a certian scheduled manipulation of the subject  targeted earlier..."
+
+"The blockchain reports the sums of "average debt" and "scheduled services", the earlier mentioned being several times larger than its antagonist - thus guaranteeing V13 to stay active and maintained, availible to validate, administer, monitor, eavesdrop, enforce, debit, chase or execute any "scheduled deliveries" initiated by agreement with itself or by subscribers signing their consent possibly enforced... "
+
+"The people of the lower strata has since long divided themselfes in different tribes, following their ways of life, profession and arts of speciality. Lately, mutating viruses are wide-spread in the lower strata impossibly can afford the cost of vaccines, thus forbidden to visit the middle and upper class districts of the city. Their district is thus currently in isolation, guarded by a group of past life-sentenced "labourers" who decided to leave their tribe behind to follow new orders of their maintenance facility masters, staying vaccinated by some mood-lifting vaccine that helps them let go of memories and empathy. Some people steal, some gamble, some fight and some has tried to escape the lower strata district, coming back for a final public sentence by court, a few as guards seen by the people as betrayers..."
+
+"You are an agent of an underground formation with the goal to bring justice to their tribe, seeking to revenge the previously fallen, mutated or the occupied of maintenance facilities. By aquiring protocols of synthesis, its compounds and catalysts you stay alive, human and possibly stronger than before - but don't consume all by yourself as you are in service of your tribe..."
