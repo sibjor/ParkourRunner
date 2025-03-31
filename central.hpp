@@ -231,6 +231,25 @@ class Artwork : RootLayer
 
 {
 public:
+    /* Hardcoded animations separated, unfortunately necessary... */
+
+    // Movement pack
+    std::string idleAnim = "assets/Basic movement pack/SpriteSheet/Idle.png";
+    std::string inAirAnim = "assets/Basic movement pack/SpriteSheet/in air.png";
+    std::string jumpingAnim = "assets/Basic movement pack/SpriteSheet/jumping.png";
+    std::string landingAnim = "assets/Basic movement pack/SpriteSheet/landing.png";
+    std::string rollAnim = "assets/Basic movement pack/SpriteSheet/Roll.png";
+    std::string runAnim = "assets/Basic movement pack/SpriteSheet/run.png";
+    std::string sprintAnim = "assets/Basic movement pack/SpriteSheet/sprint.png";
+
+    // Vault pack
+    std::string basicVaultAnim  = "assets/Basic vault pack/SpriteSheet/Basic vault.png";
+    std::string climbingAnim  = "assets/Basic vault pack/SpriteSheet/climbing.png";
+    std::string hangingAnim = "assets/Basic vault pack/SpriteSheet/hanging.png";
+    std::string longVaultAnim = "assets/Basic vault pack/SpriteSheet/long vault.png";
+    std::string onTopClimbingAnim = "assets/Basic vault pack/SpriteSheet/On top climbing.png";
+    std::string onTopVaultAnim = "assets/Basic vault pack/SpriteSheet/on top vault.png";
+    
     Artwork();
     ~Artwork();
 
@@ -283,6 +302,7 @@ private:
 class Scene : RootLayer
 {
 public:
+
 private:
 };
 
