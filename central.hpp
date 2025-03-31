@@ -183,6 +183,8 @@ class RootLayer
 {
 
 public:
+
+    /* Root Variables*/
     std::string lineSeparator = "----------------------------------------";
     std::string *name;
     std::string *address;
@@ -257,12 +259,10 @@ public:
 class Profiler : RootLayer
 {
 public:
-
     // PROFILER VARIABLES
     clock_t start = clock();
     clock_t end = clock();
     double elapsed = double(end - start) / CLOCKS_PER_SEC;
-
 
     Profiler();
     ~Profiler();
@@ -271,5 +271,4 @@ public:
     void CountTicksTo();
 
 private:
-
 };
