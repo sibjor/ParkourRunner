@@ -183,7 +183,6 @@ class RootLayer
 {
 
 public:
-
     /* Root Variables*/
     std::string lineSeparator = "----------------------------------------";
     std::string *name;
@@ -196,22 +195,9 @@ public:
     /* Destructor of the first layer */
     virtual ~RootLayer();
 
-    // CALL IN CONSTRUCTOR
-    void InitArtwork();
-    void InitAudio();
-    void InitGenerator();
-    void InitProgram();
+    virtual void LoadObject();
 
-    // CALL IN DESTRUCTOR
-
-    // NON-GAME
-    virtual void Prolougue();
-    virtual void MainMenu();
-    virtual void Settings();
-    virtual void Credits();
-    virtual void GameOver();
-    virtual void Highscore();
-    virtual void Pause();
+    virtual void LoadAllObjects();
 
     // UTILITIES
     std::string CurrentDateTime();
@@ -222,38 +208,6 @@ public:
 
     // SHUTDOWN
     virtual void QuitRootLayer();
-
-    // GRAPHICS
-    virtual void LoadObject();
-
-    virtual void LoadAllObjects();
-
-    virtual void RenderAllObjects();
-
-    virtual void RenderObject(std::string name);
-
-    virtual void RenderAllTextures();
-
-    virtual void RenderAllSurfaces();
-
-    virtual void RenderAllTexturesAndSurfaces();
-
-    virtual void RenderObject();
-
-    // HANDLERS
-    virtual void HandleState();
-
-    virtual void HandleInput();
-
-    virtual void HandleEvent();
-
-    virtual void HandleCollision();
-
-    virtual void HandleAnimation();
-
-    virtual void HandleSound();
-
-    virtual void HandleMusic();
 };
 
 class Profiler : RootLayer
@@ -269,6 +223,87 @@ public:
 
     void CountTicksFrom();
     void CountTicksTo();
+
+private:
+};
+
+class Artwork : RootLayer
+
+{
+public:
+    Artwork();
+    ~Artwork();
+
+    // ARTWORK RELATED
+    void InitArtwork();
+
+    void InitAudio();
+
+    void InitGenerator();
+
+    virtual void RenderAllObjects();
+
+    virtual void RenderObject(std::string name);
+
+    virtual void RenderAllTextures();
+
+    virtual void RenderAllSurfaces();
+
+    virtual void RenderAllTexturesAndSurfaces();
+
+    virtual void RenderObject();
+
+    // AUDIO
+
+    void HandleMusic();
+
+    void HandleSound();
+
+private:
+};
+
+class Handler : RootLayer
+{
+public:
+    // HANDLERS
+
+    void HandleCollision();
+
+    void HandleAnimation();
+
+    void HandleState();
+
+    void HandleInput();
+
+    void HandleEvent();
+
+private:
+};
+
+class Scene : RootLayer
+{
+public:
+private:
+};
+
+class UI : Scene
+{
+public:
+    // NON-GAME, UI RELATED
+    virtual void Prolougue();
+
+    virtual void MainMenu();
+
+    virtual void Settings();
+
+    virtual void Credits();
+
+    virtual void GameOver();
+
+    virtual void Highscore();
+
+    virtual void Pause();
+    
 
 private:
 };
