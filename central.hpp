@@ -141,9 +141,9 @@ enum class OutsideEnvironment : int
     PRISON_YARD,
     PARK,
     SCHOOL,
-    
 
-}
+
+};
 
 enum class Molecule : int
 {
@@ -152,36 +152,11 @@ enum class Molecule : int
     MOLECULE,
 };
 
-enum class Particle : int
+enum SynthesisProtocol : int
 {
-    PROTON,
-    NEUTRON,
-    ELECTRON,
-    POSITRON,
-    NEUTRINO,
-    PHOTON,
+
 };
-enum class Element : int
-{
-    HYDROGEN,
-    HELIUM,
-    LITHIUM,
-    BERYLLIUM,
-    BORON,
-    CARBON,
-    NITROGEN,
-    OXYGEN,
-    FLUORINE,
-    NEON,
-    SODIUM,
-    MAGNESIUM,
-    ALUMINUM,
-    SILICON,
-    PHOSPHORUS,
-    SULFUR,
-    CHLORINE,
-    ARGON,
-};
+
 enum class Compound : int
 {
     WATER,
@@ -217,31 +192,22 @@ public:
     std::vector <RootLayer*> *objects;
 
     // PROFILER VARIABLES
-    std::chrono::system_clock *currentTime;
-    std::vector<std::chrono::system_clock*> *timers;
-    std::chrono::duration<double> *elapsedTime = endTime - startTime;
+    clock_t start = clock();
+    clock_t end = clock();
+    double elapsed = double(end - start) / CLOCKS_PER_SEC;
 
     void CountTicksFrom();
     void CountTicksTo();
+
     // endTime - startTime = elapsedTime
     void PrintElapsedTime(std::string description);
 
-    /* Constructor of the first layer
-    - Starts the profiler
-    - Stores new objects in a vector for efficient maintenance
-
-    -  */
+    /* Constructor of the first layer */
     RootLayer();
-    /* Destructor of the first layer
-    - Cleans up objects stored in vectors e.g. "Profiler", "Main Loop", "Main Menu", "Game" or "Game Over" etc...
-    - Cleans up SDL_Surfaces
-    - Cleans up SDL_Textures
-    - Cleans up SDL_Renderers
-    - Cleans up SDL_Windows
-    - Self destructs
-    - 
-    */
+
+    /* Destructor of the first layer */
     virtual ~RootLayer();
+
     // CALL IN CONSTRUCTOR
     void InitArtwork();
     void InitAudio();
