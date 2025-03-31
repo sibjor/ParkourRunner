@@ -36,7 +36,6 @@
 #include <ctime>
 #include <iomanip>
 
-
 // Third-party libraries
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
@@ -100,7 +99,7 @@ enum class Shapes2D : int
     CONTOUR,
 };
 
-enum class UI : int 
+enum class UI : int
 {
     BUTTON,
     TEXT,
@@ -141,7 +140,6 @@ enum class OutsideEnvironment : int
     PRISON_YARD,
     PARK,
     SCHOOL,
-
 
 };
 
@@ -185,22 +183,10 @@ class RootLayer
 {
 
 public:
-
     std::string lineSeparator = "----------------------------------------";
     std::string *name;
     std::string *address;
-    std::vector <RootLayer*> *objects;
-
-    // PROFILER VARIABLES
-    clock_t start = clock();
-    clock_t end = clock();
-    double elapsed = double(end - start) / CLOCKS_PER_SEC;
-
-    void CountTicksFrom();
-    void CountTicksTo();
-
-    // endTime - startTime = elapsedTime
-    void PrintElapsedTime(std::string description);
+    std::vector<RootLayer *> *objects;
 
     /* Constructor of the first layer */
     RootLayer();
@@ -266,5 +252,24 @@ public:
     virtual void HandleSound();
 
     virtual void HandleMusic();
+};
+
+class Profiler : RootLayer
+{
+public:
+
+    // PROFILER VARIABLES
+    clock_t start = clock();
+    clock_t end = clock();
+    double elapsed = double(end - start) / CLOCKS_PER_SEC;
+
+
+    Profiler();
+    ~Profiler();
+
+    void CountTicksFrom();
+    void CountTicksTo();
+
+private:
 
 };
