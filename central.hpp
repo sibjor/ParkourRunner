@@ -60,6 +60,33 @@ enum class RootLayerLayer : int
     SHUTDOWN,
     ERROR,
 };
+
+enum class MenuScene : int
+{
+    PROLOGUE,
+    MAIN_MENU,
+    SETTINGS,
+    CREDITS,
+    GAME_OVER,
+    HIGHSCORE,
+    ERROR,
+};
+
+enum class GameScene : int
+{
+    INTRO,
+    DISTRICT_LOWER_CLASS,
+    DISTRICT_MIDDLE_CLASS,
+    DISTRICT_UPPER_CLASS,
+    PRISON_YARD,
+    PRISON_CELL,
+    PRISON_LABOUR,
+    TRAFFIC_IN_AIR,
+    TRAFFIC_ON_GROUND,
+    GAME_PAUSED,
+    GAME_OVER,
+
+};
 enum class GameState : int
 
 {
@@ -143,39 +170,166 @@ enum class OutsideEnvironment : int
 
 };
 
-enum class Molecule : int
+enum class SynthesisCompund : int
 {
-    ATOM,
+    REAGENT,
     CATALYST,
-    MOLECULE,
+    SOLVENT,
 };
 
-enum SynthesisProtocol : int
+/* HERE FOLLOWS THE CHEMISTRY ENUM CLASSES */ 
+
+enum class PeriodicTable : int
 {
-
+    HYDROGEN,
+    HELIUM,
+    LITHIUM,
+    BERYLLIUM,
+    BORON,
+    CARBON,
+    NITROGEN,
+    OXYGEN,
+    FLUORINE,
+    NEON,
+    SODIUM,
+    MAGNESIUM,
+    ALUMINUM,
+    SILICON,
+    PHOSPHORUS,
+    SULFUR,
+    CHLORINE,
+    ARGON,
 };
 
-enum class Compound : int
+enum class ChemicalBond : int
+{
+    SINGLE_BOND,
+    DOUBLE_BOND,
+    TRIPLE_BOND,
+    IONIC_BOND,
+    COVALENT_BOND,
+    POLAR_COVALENT_BOND,
+    METALLIC_BOND,
+};
+
+enum class ChemicalState : int
+{
+    SOLID,
+    LIQUID,
+    GAS,
+};
+
+enum class PHScale : int
+{
+    ACIDIC,
+    NEUTRAL,
+    ALKALINE,
+};
+
+enum class ChemicalReaction : int
+{
+    REDUCTION,
+    OXIDATION,
+    NATURALIZATION,
+};
+
+enum class Acid : int
+{
+    SULFURIC_ACID,
+    NITRIC_ACID,
+    HYDROCHLORIC_ACID,
+    ACETIC_ACID,
+    PHOSPHORIC_ACID,
+};
+
+enum class Base : int
+{
+    SODIUM_BICARBONATE,
+    SODIUM_HYDROXIDE,
+    POTASSIUM_HYDROXIDE,
+    CALCIUM_HYDROXIDE,
+    MAGNESIUM_HYDROXIDE,
+    AMMONIUM_HYDROXIDE,
+};
+
+enum class Solvent : int
 {
     WATER,
-    CARBON_DIOXIDE,
-    AMMONIA,
-    METHANE,
     ETHANOL,
-    GLUCOSE,
-    SODIUM_CHLORIDE,
-    CALCIUM_CARBONATE,
-    SULFURIC_ACID,
+    ACETONE,
+    METHANOL,
+    ETHYL_ACETATE,
     ACETIC_ACID,
+    HEXANE,
+    BENZENE,
+    TOLUENE,
+    CHLOROFORM,
 };
+
 enum class Catalyst : int
 {
-    ENZYME,
-    METAL,
-    NON_METAL,
-    ORGANIC,
-    INORGANIC,
+    PLATINUM,
+    PALLADIUM,
+    NICKEL,
+    IRIDIUM,
+    RHODIUM,
+    RUTHENIUM,
+    OSMIUM,
+    TUNGSTEN,
+    MOLYBDENUM,
+    TANTALUM,
 };
+
+enum class MoleculeType : int
+{
+    HORMONE,
+    NEUROTRANSMITTER,
+    INHIBITOR,
+    TOXIN,
+    PESTICIDE,
+    ENZYME,
+    PROTEIN,
+    CARBOHYDRATE,
+    LIPID,
+    DISINFECTANT,
+    ANTIBIOTIC,
+    MUTAGEN,
+
+};
+
+/* HERE FOLLOWS MEDICAL CONDITIONS AND MEDICINES */
+
+enum class MedicalCondition : int
+{
+    ANXIETY,
+    DEPRESSION,
+    SCHIZOPHRENIA,
+    BIPOLAR_DISORDER,
+    PTSD,
+    OCD,
+    ADHD,
+    AUTISM,
+    EATING_DISORDER,
+    ADDICTION,
+    INSOMNIA,
+};
+
+enum class DrugType : int 
+{
+    STIMULANT,
+    DEPRESSANT,
+    HALLUCINOGEN,
+    ANALGESIC,
+    ANESTHETIC,
+    ANTIDEPRESSANT,
+    ANTIPSYCHOTIC,
+    ANXIOLYTIC,
+    SEDATIVE,
+    TRANQUILIZER,
+    VACCINE,
+    ANTIBODY,
+};
+
 
 /* PLACE VARIABLES IN THEIR CLASS OF SCOPE!!! */
 
@@ -243,13 +397,13 @@ public:
     std::string sprintAnim = "assets/Basic movement pack/SpriteSheet/sprint.png";
 
     // Vault pack
-    std::string basicVaultAnim  = "assets/Basic vault pack/SpriteSheet/Basic vault.png";
-    std::string climbingAnim  = "assets/Basic vault pack/SpriteSheet/climbing.png";
+    std::string basicVaultAnim = "assets/Basic vault pack/SpriteSheet/Basic vault.png";
+    std::string climbingAnim = "assets/Basic vault pack/SpriteSheet/climbing.png";
     std::string hangingAnim = "assets/Basic vault pack/SpriteSheet/hanging.png";
     std::string longVaultAnim = "assets/Basic vault pack/SpriteSheet/long vault.png";
     std::string onTopClimbingAnim = "assets/Basic vault pack/SpriteSheet/On top climbing.png";
     std::string onTopVaultAnim = "assets/Basic vault pack/SpriteSheet/on top vault.png";
-    
+
     Artwork();
     ~Artwork();
 
@@ -302,6 +456,18 @@ private:
 class Scene : RootLayer
 {
 public:
+    // SCENE RELATED
+    virtual void InitScene(enum class SceneType sceneType);
+    virtual void RenderScene();
+    virtual void LoadScene();
+    virtual void CleanupScene();
+    virtual void LoopScene();
+    /* UpdateScene()
+    - */
+    virtual void UpdateScene();
+    virtual void HandleScene();
+    virtual void HandleSceneEvents();
+    virtual void HandleSceneInput();
 
 private:
 };
@@ -323,7 +489,6 @@ public:
     virtual void Highscore();
 
     virtual void Pause();
-
 
 private:
 };
