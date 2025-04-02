@@ -1,4 +1,4 @@
-#Notes of Parkour Runner
+# NOTES
 
 ## Citations of Chandler Carruth
 - Efficency prioritized over performance - as efficency structures the traffic of signals, already flowing (alike performace) - in the speed of light. 

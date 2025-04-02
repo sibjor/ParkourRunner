@@ -18,7 +18,7 @@
         - Profiling is implemented in the RootLayer class.
         - Varibles are declared in their respective scope or class.
         - Enums are meant to be implemented as a "switch" or "case" statement.
-        - Virtual functions can be overridden in the derived classes.
+        - functions can be overridden in the derived classes.
     */
 // C++ Standard libraries
 
@@ -90,14 +90,35 @@ enum class GameScene : int
 enum class GameState : int
 
 {
-    STARTING,
-    RUNNING,
+    // MENUS
+    PROLOUGUE,
+    MAIN_MENU,
+    HIGHSCORE_MENU,
+    SETTINGS,
+    CREDITS,
+    GAME_OVER_MENU,
+
+    // IN-GAME
+    INTRO,
+    ACTIVE,
     PAUSED,
-    GAME_OVER,
-    NEW_HIGHSCORE,
-    CLEANUP,
+    ACHIEVEMENT,
     EXIT,
     ERROR,
+};
+
+enum class GameMood : int
+{
+    HAPPY,
+    SAD,
+    ANGRY,
+    CONFUSED,
+    SCARED,
+    EXCITED,
+    BORED,
+    RELAXED,
+    NERVOUS,
+    CALM,
 };
 
 enum class Color : int
@@ -137,29 +158,7 @@ enum class UIComponent : int
     DROPDOWN,
 };
 
-enum class GameMenus : int
-{
-    PROLOUGUE,
-    MAIN_MENU,
-    HIGHSCORE_MENU,
-    SETTINGS,
-    CREDITS,
-    GAME_OVER_MENU,
-    ERROR,
-};
-
-enum class MenuBackground : int
-{
-    PROLOGUE,
-    MAIN_MENU,
-    GAME_OVER,
-    SETTINGS,
-    CREDITS,
-    HIGHSCORE,
-    ERROR,
-};
-
-enum class OutsideEnvironment : int
+enum class Environment : int
 {
     LOWER_CLASS,
     MIDDLE_CLASS,
@@ -167,7 +166,9 @@ enum class OutsideEnvironment : int
     PRISON_YARD,
     PARK,
     SCHOOL,
-
+    SEWER,
+    LABOUR_CAMP,
+    TRAFFIC_IN_AIR,
 };
 
 enum class SynthesisCompund : int
@@ -177,7 +178,7 @@ enum class SynthesisCompund : int
     SOLVENT,
 };
 
-/* HERE FOLLOWS THE CHEMISTRY ENUM CLASSES */ 
+/* HERE FOLLOWS THE CHEMISTRY ENUM CLASSES */
 
 enum class PeriodicTable : int
 {
@@ -314,7 +315,7 @@ enum class MedicalCondition : int
     INSOMNIA,
 };
 
-enum class DrugType : int 
+enum class DrugType : int
 {
     STIMULANT,
     DEPRESSANT,
@@ -330,6 +331,128 @@ enum class DrugType : int
     ANTIBODY,
 };
 
+/* Character Enum Classes */
+
+enum class CharacterAge : int
+{
+    BABY,
+    CHILD,
+    TEENAGER,
+    ADULT,
+    OLD_ADULT,
+    SENIOR,
+};
+
+enum class CharacterSex : int
+{
+    MALE,
+    FEMALE,
+    TRANS,
+    NON_BINARY,
+};
+
+enum class CharacterOccupation : int
+{
+    // Closer implementations
+    LABOURER,
+    GUARD,
+    SCIENTIST,
+    ENGINEER,
+    ARCHITECT,
+    DOCTOR,
+    AGENT,
+
+    // Other occupations
+    UNEMPLOYED,
+    STUDENT,
+    POLICE_OFFICER,
+    FIRE_FIGHTER,
+    PARAMEDIC,
+    NURSE,
+    TEACHER,
+    ARTIST,
+    MUSICIAN,
+    WRITER,
+
+};
+
+enum class CharacterMood : int
+{
+    HAPPY,
+    SAD,
+    ANGRY,
+    CONFUSED,
+    SCARED,
+    EXCITED,
+    BORED,
+    RELAXED,
+    NERVOUS,
+    CALM,
+};
+
+enum class CharacterStatus : int
+{
+    ALIVE,
+    DEAD,
+    TIRED,
+    EXHAUSTED,
+    HUNGRY,
+    THIRSTY,
+    WEAK,
+    HEALTHY,
+    STRONG,
+    INJURED,
+    SICK,
+    RECOVERING,
+    UNCONSCIOUS,
+    ON_SUBSTANCE,
+    INCAPACITATED,
+    PARALYZED,
+    INFECTED,
+    VACCINATED,
+    IMMUNE,
+    INFERTILE,
+};
+
+enum class CharacterTrait : int
+{
+    BRAVE,
+    COWARDLY,
+    HONEST,
+    DISHONEST,
+    LOYAL,
+    BETRAYING,
+    INTELLIGENT,
+    DUMB,
+    STRONG,
+    WEAK,
+    FAST,
+    SLOW,
+};
+
+/* Faction related */
+
+enum class Faction : int
+{
+    // Your faction
+    THE_SILENCE,
+
+    // Evil factions
+    THE_CHEMICAL_SOCIETY,
+    GUARDIANS_OF_THE_CHAIN,
+
+    // Lower strata tribes
+    SIMPLY_ARMED_RELATIONSHIPS,
+    SHEPHERDS_OF_THE_APOCALYPSE,
+    CARVERS_OF_HISTORY,
+    A_WANDERERS_PEACE,
+    THE_ROYAL_HONOR,
+
+};
+
+/* More enum classes to add such as blockchain hosted trading,
+price of hired blades, taxi, insurances, political voting, bribing etc..
+*/
 
 /* PLACE VARIABLES IN THEIR CLASS OF SCOPE!!! */
 
@@ -343,25 +466,25 @@ public:
     std::string *address;
     std::vector<RootLayer *> *objects;
 
-    /* Constructor of the first layer */
     RootLayer();
 
-    /* Destructor of the first layer */
-    virtual ~RootLayer();
+    ~RootLayer();
 
-    virtual void LoadObject();
+    void LoadObject();
 
-    virtual void LoadAllObjects();
+    void LoadAllObjects();
 
     // UTILITIES
     std::string CurrentDateTime();
-    virtual std::string NavigateToPath(std::string path);
-    virtual std::string NavigateToFile(std::string file);
-    virtual std::string NavigateToDirectory(std::string directory);
-    virtual std::string SelectContent(std::string fileNameContains);
+    std::string NavigateToPath(std::string path);
+    std::string NavigateToFile(std::string file);
+    std::string NavigateToDirectory(std::string directory);
+    std::string SelectContent(std::string fileNameContains);
 
     // SHUTDOWN
-    virtual void QuitRootLayer();
+    void QuitRootLayer();
+
+private:
 };
 
 class Profiler : RootLayer
@@ -381,73 +504,175 @@ public:
 private:
 };
 
-class Artwork : RootLayer
-
+class GameLayer : RootLayer
 {
 public:
-    /* Hardcoded animations separated, unfortunately necessary... */
+    // CELSIUS SCALE
+    std::vector<int> celsiusScale;
 
+    GameLayer()
+    {
+        // Initialize the Celsius scale from -273 to 1000
+        // Resulting in a vector of integers
+        // with 1274 elements
+        for (int i = -273; i <= 1000; ++i)
+        {
+            celsiusScale.push_back(i);
+        }
+    }
+    ~GameLayer()
+    {
+        celsiusScale.clear();
+    }
+
+private:
+};
+
+class Artwork : GameLayer
+{
+public:
+    // Player asset paths
     // Movement pack
-    std::string idleAnim = "assets/Basic movement pack/SpriteSheet/Idle.png";
-    std::string inAirAnim = "assets/Basic movement pack/SpriteSheet/in air.png";
-    std::string jumpingAnim = "assets/Basic movement pack/SpriteSheet/jumping.png";
-    std::string landingAnim = "assets/Basic movement pack/SpriteSheet/landing.png";
-    std::string rollAnim = "assets/Basic movement pack/SpriteSheet/Roll.png";
-    std::string runAnim = "assets/Basic movement pack/SpriteSheet/run.png";
-    std::string sprintAnim = "assets/Basic movement pack/SpriteSheet/sprint.png";
+
+    std::vector<std::string> playerMovementPack {
+        "assets/Basic movement pack/SpriteSheet/Idle.png",
+        "assets/Basic movement pack/SpriteSheet/in air.png",
+        "assets/Basic movement pack/SpriteSheet/jumping.png",
+        "assets/Basic movement pack/SpriteSheet/landing.png",
+        "assets/Basic movement pack/SpriteSheet/Roll.png",
+        "assets/Basic movement pack/SpriteSheet/run.png",
+        "assets/Basic movement pack/SpriteSheet/sprint.png",
+    };
 
     // Vault pack
-    std::string basicVaultAnim = "assets/Basic vault pack/SpriteSheet/Basic vault.png";
-    std::string climbingAnim = "assets/Basic vault pack/SpriteSheet/climbing.png";
-    std::string hangingAnim = "assets/Basic vault pack/SpriteSheet/hanging.png";
-    std::string longVaultAnim = "assets/Basic vault pack/SpriteSheet/long vault.png";
-    std::string onTopClimbingAnim = "assets/Basic vault pack/SpriteSheet/On top climbing.png";
-    std::string onTopVaultAnim = "assets/Basic vault pack/SpriteSheet/on top vault.png";
+    std::vector<std::string> playerVaultPack {
+        "assets/Basic vault pack/SpriteSheet/Basic vault.png",
+        "assets/Basic vault pack/SpriteSheet/climbing.png",
+        "assets/Basic vault pack/SpriteSheet/hanging.png",
+        "assets/Basic vault pack/SpriteSheet/long vault.png",
+        "assets/Basic vault pack/SpriteSheet/on top climbing.png",
+        "assets/Basic vault pack/SpriteSheet/on top vault.png",
+    };
 
     Artwork();
     ~Artwork();
 
-    // ARTWORK RELATED
-    void InitArtwork();
-
+    /* Audio */
     void InitAudio();
 
-    void InitGenerator();
+    void PlaySound();
+    void PlaySoundEffect();
 
-    virtual void RenderAllObjects();
+    void PlayVoice(Character *actor, CharacterMood *actorMood);
+    void PlayMurmurSound(Dialouge *dialogue, std::vector<Character *> *actors, CharacterMood *murmurMood);
 
-    virtual void RenderObject(std::string name);
+    /* Theme music of the game*/
+    void PlayThemeMusic();
+    /* Cool audio effects loading new menus or save-games */
+    void EnterSceneSound(GameState *gameState);
+    /* Dependent on the in-game mood and status, stated in GameMood enum class */
+    void PlaySoundtrack(GameMood *gameMood);
 
-    virtual void RenderAllTextures();
+    /* Video */
 
-    virtual void RenderAllSurfaces();
+    void InitVideo();
 
-    virtual void RenderAllTexturesAndSurfaces();
+    /* Insert any object to return a vector of its fields */
+    std::vector<std::string> PrepareAssets();
+    std::vector<SDL_Surface *> ReturnSurfaces(std::vector<std::string> *assetsVector);
+    std::vector<SDL_Texture *> ReturnTextures(std::string *surface, int *width, int *height);
 
-    virtual void RenderObject();
-
-    // AUDIO
-
-    void HandleMusic();
-
-    void HandleSound();
+    /* For stuff standing still, holding position */
+    void RenderStatic(SDL_Texture *texture, int *width, int *height);
+    /* For stuff breathing, moving, running, jumping etc.. */
+    void RenderDynamic(std::vector<SDL_Texture *> textures, int frameRate);
+    /* Background for the specific environment
+    - Enum class "Environment" as parameter
+    */
+    void RenderBackground(Environment *environment);
 
 private:
+};
+
+class Character : GameLayer
+{
+public:
+private:
+    // Characters are referred to by nick name
+    std::string nickName;
+    // The faction enum class
+    Faction faction;
+    // Character stats
+    int health;
+    int stamina;
+    int strength;
+    int speed;
+    int agility;
+    int intelligence;
+    int charisma;
+    int luck;
+};
+
+class Player : Character
+{
+public:
+    Player();
+    ~Player();
+
+private:
+};
+
+class Dialouge : Artwork
+{
+public:
+    Dialouge();
+    ~Dialouge()
+    {
+        delete publicSpeechIndex;
+        delete smallTalkIndex;
+        delete repliqueIndex;
+        delete thoughtIndex;
+        delete narratorIndex;
+        delete memoryIndex;
+    };
+
+    /* Similar to a comic-style implementation */
+    void InitDialogue();
+    // For when the mayor talks in public
+    void PublicSpeech(std::string comment, int conversationIndex, Character *actor);
+    void PublicSpeechContinue(std::string subComment, int conversationIndex, Character *actor);
+    // For citizens talking to each other
+    void SmallTalk(std::string comment, int conversationIndex, Character *actor);
+    void SmallTalkContinue(std::string subComment, int conversationIndex, Character *actor);
+    void Murmur(std::vector<Character *> actors = {}, Dialouge *dialogue = nullptr);
+    // Dialogue in private between two characters
+    void Replique(std::string comment, int conversationIndex, Character *actor);
+    void RepliqueContinue(std::string subComment, int conversationIndex, Character *actor);
+    void Thought(std::string thought, int conversationIndex, Character *actor);
+    void ThoughtContinue(std::string subThought, int conversationIndex, Character *actor);
+    void Narrator(std::string text, int conversationIndex, Character *actor);
+    void NarratorContinue(std::string subText, int conversationIndex, Character *actor);
+    void Memory(std::string image, int conversationIndex, Character *actor);
+    void MemoryContinue(std::string subImage, int conversationIndex, Character *actor);
+
+private:
+    // Dialogue variables
+    int *publicSpeechIndex;
+    int *smallTalkIndex;
+    int *repliqueIndex;
+    int *thoughtIndex;
+    int *narratorIndex;
+    int *memoryIndex;
 };
 
 class Handler : RootLayer
 {
 public:
     // HANDLERS
-
-    void HandleCollision();
-
-    void HandleAnimation();
-
-    void HandleState();
-
     void HandleInput();
-
+    void HandleCollision();
+    void HandleAnimation();
+    void HandleState();
     void HandleEvent();
 
 private:
@@ -457,17 +682,17 @@ class Scene : RootLayer
 {
 public:
     // SCENE RELATED
-    virtual void InitScene(enum class SceneType sceneType);
-    virtual void RenderScene();
-    virtual void LoadScene();
-    virtual void CleanupScene();
-    virtual void LoopScene();
+    void InitScene(enum class SceneType sceneType);
+    void RenderScene();
+    void LoadScene();
+    void CleanupScene();
+    void LoopScene();
     /* UpdateScene()
     - */
-    virtual void UpdateScene();
-    virtual void HandleScene();
-    virtual void HandleSceneEvents();
-    virtual void HandleSceneInput();
+    void UpdateScene();
+    void HandleScene();
+    void HandleSceneEvents();
+    void HandleSceneInput();
 
 private:
 };
@@ -476,19 +701,19 @@ class UI : Scene
 {
 public:
     // NON-GAME, UI RELATED
-    virtual void Prolougue();
+    void Prolougue();
 
-    virtual void MainMenu();
+    void MainMenu();
 
-    virtual void Settings();
+    void Settings();
 
-    virtual void Credits();
+    void Credits();
 
-    virtual void GameOver();
+    void GameOver();
 
-    virtual void Highscore();
+    void Highscore();
 
-    virtual void Pause();
+    void Pause();
 
 private:
 };

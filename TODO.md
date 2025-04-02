@@ -31,12 +31,12 @@
 [x] Add parameters of current functions of today
 [x] Edit parameters demanding integral or unscoped enums
 [x] Create and copy to new source code and includes
-[ ] SDL_AppIterate() - of today
-[ ] SDL_AppEvent() - of today
-[ ] Load SpriteSheets as surfaces in vector
-[ ] Load SpriteSheets as textures in vector
-[ ] Slice whole indexes of the [Texture Vector(s)](https://www.reddit.com/r/sdl/comments/1bo7k1l/tutorial_for_spritestrips/?rdt=46632). 
-[ ] Animate a strip from a sheet - (use SDL_GetTicks / 100 for 1/10 of a second?)
+[x] SDL_AppIterate() - of today
+[x] SDL_AppEvent() - of today
+[x] Load SpriteSheets as surfaces in vector
+[x] Load SpriteSheets as textures in vector
+[x] Slice whole indexes of the [Texture Vector(s)](https://www.reddit.com/r/sdl/comments/1bo7k1l/tutorial_for_spritestrips/?rdt=46632). 
+[x] Animate a strip from a sheet - (use SDL_GetTicks / 100 for 1/10 of a second?)
 [ ] Implement floor/ground level with aseprite or SDL_Renderer
 [ ] Implement obstacles with Aseprite or SDL_Renderer
 [ ] Implement callback events (read keyboard input)
