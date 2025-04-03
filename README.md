@@ -15,7 +15,7 @@ flowchart TD
     B --> E(game.hpp) -->I(wrapper.hpp)
     B --> G(profiler.hpp) -->I
     B --> H(data.hpp) --> I
-    B --> J(time.hpp) --> I
+    J(time.hpp) --> B
     I --> K(mainloop.hpp)
     K --> L(main.cpp)
 
