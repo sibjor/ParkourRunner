@@ -4,6 +4,7 @@
 #include <vector>
 #include <random>
 #include <memory>
+#include "profiler.hpp"
 
 enum class BoolEnum
 {
@@ -78,9 +79,11 @@ public:
     Process(std::string name)
     {
         ListenToOrder();
-        Profiler();
     };
     ~Process();
+
+    void ListenToOrder();
+
 
     // Getters
     std::vector<std::unique_ptr<Process *>> *GetProcessList(std::string name) const;

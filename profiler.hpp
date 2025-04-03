@@ -3,7 +3,7 @@
 #include <string>
 #include <memory>
 #include <iostream>
-#include "process.hpp"
+#include "time.hpp"
 
 enum class Memory
 {
@@ -28,4 +28,14 @@ enum class Disk
     MEGABYTE,
     GIGABYTE,
     TERABYTE,
+};
+
+class Profiler
+{
+public:
+    Profiler();
+    ~Profiler();
+
+    void ProfilerComplete();
+    void ProfilerTime();
 };
