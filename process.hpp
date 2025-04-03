@@ -1,12 +1,9 @@
+#pragma once
+
 // C++ Standard libraries
 #include <vector>
 #include <random>
 #include <memory>
-
-#include "time.hpp"
-#include "profiler.hpp"
-#include "data.hpp"
-#include "multimedia.hpp"
 
 enum class BoolEnum
 {

@@ -1,4 +1,9 @@
-#include "time.hpp"
+#pragma once
+
+#include <string>
+#include <memory>
+#include <iostream>
+#include "process.hpp"
 
 enum class Memory
 {

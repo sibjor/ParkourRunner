@@ -5,6 +5,7 @@
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
 #include "process.hpp"
+
 class Game
 {
 public:
@@ -27,4 +28,4 @@ private:
     int playerX, playerY;
     int playerWidth, playerHeight;
     int playerSpeed;
-}
+};
