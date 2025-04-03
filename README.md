@@ -15,7 +15,6 @@ flowchart TD
     C(SDL)
     D(SDL_image)
     E(SDL_mixer)
-    F(SDL_ttf)
     G(process.hpp)
     H(profiler.hpp)
     I(time.hpp)
@@ -26,7 +25,6 @@ flowchart TD
     A --> C --> K
     A --> D --> K
     A --> E --> K
-    A --> F --> K
 
     B --> G 
     B --> H 
