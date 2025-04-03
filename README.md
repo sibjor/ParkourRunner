@@ -8,10 +8,10 @@
 
 ## Project Dependencies
 
-1. "profiler.hpp", "data.hpp" & "time.hpp" implements structs
-2. "process.hpp" implements a class which implements the structs mentioned above
-3. "game.hpp" implements a class which derives from "process.hpp"
-4. "main.cpp" creates a "main loop" implementing objects defined in "game.hpp"
+1. ***profiler.hpp***, ***data.hpp*** & ***time.hpp*** implements structs
+2. ***process.hpp*** implements a class which implements the structs mentioned above
+3. ***game.hpp*** implements a class which derives from ***process.hpp***
+4. ***main.cpp*** creates a ***main loop*** implementing objects defined in ***game.hpp***
 
 ```mermaid
 flowchart TD
@@ -48,7 +48,7 @@ flowchart TD
 - [SDL_GetTicks](https://wiki.libsdl.org/SDL3/SDL_GetTicks)
 
 ## Good to know
-- "central.hpp" is meant to finally be a pre-compiled header
+- ***central.hpp*** is meant to finally be a pre-compiled header
 - All planned usage of externally produced materials follows permitted terms stated in the relative license copy.
 
 ## IMPLEMENTATION
@@ -57,17 +57,17 @@ flowchart TD
 
 - Stuff are meant to be visualized in tree models or charts
 
-- Program first initializes the "root object"
-- the "root object" is defined in "mainloop.cpp"
-- the "main loop" is also defined there
-- Parent object spawns their objects from "layer 1"
+- Program first initializes the ***root object***
+- the ***root object*** is defined in ***mainloop.cpp***
+- the ***main loop*** is also defined there
+- Parent object spawns their objects from ***layer 1***
 - All objects except Root are spawned in a vector
-- Child objects are spawned in a "layer" above the parent
-- Objects are part of a "tree" structure
+- Child objects are spawned in a ***layer*** above the parent
+- Objects are part of a ***tree*** structure
 
-- Paths to files are defined in "data"
-- "data" contains .csv files
-- path to "data" is defined in "filesystem.hpp"
+- Paths to files are defined in ***data***
+- ***data*** contains .csv files
+- path to ***data*** is defined in ***filesystem.hpp***
 
 
 ## Stuff I've learnt:
