@@ -12,11 +12,9 @@
 flowchart TD
     A(Standard library) --> B(data.hpp) --> G(main.cpp)
     A --> C(process.hpp)
-    A --> D(data.hpp) --> G
     A --> E(time.hpp) --> G
     A --> F(profiler.hpp) --> G
     C --> B
-    C --> D
     C --> E
     C --> F
     
