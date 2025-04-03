@@ -10,15 +10,33 @@
 
 ```mermaid
 flowchart TD
-    A(Standard library) --> B(data.hpp) --> H(main.cpp)
-    A --> C(process.hpp)
-    A --> E(time.hpp) --> G
-    A --> F(profiler.hpp) --> G
-    C --> B
-    C --> E
-    C --> F
-    D(SDL) --> G(game.hpp) --> H
-    
+    A(C Standard Lib)
+    B(C++ Standard Lib)
+    C(SDL)
+    D(SDL_image)
+    E(SDL_mixer)
+    F(SDL_ttf)
+    G(process.hpp)
+    H(profiler.hpp)
+    I(time.hpp)
+    J(data.hpp)
+    K(game.hpp)
+    L{main.cpp}
+
+    A --> C --> K
+    A --> D --> K
+    A --> E --> K
+    A --> F --> K
+
+    B --> G 
+    B --> H 
+    B --> I 
+    B --> J 
+
+    G --> K --> L 
+    G --> H --> L 
+    G --> I --> L 
+    G --> J --> L
     
 ```
 ## Important 
