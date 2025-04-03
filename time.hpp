@@ -4,8 +4,6 @@
 #include <ctime>
 #include <iomanip>
 
-#include "process.hpp"
-
 enum class Time
 {
     NANOSECOND,

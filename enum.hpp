@@ -37,55 +37,6 @@
 
 */
 
-/* HERE FOLLOWS PROFILING UNITS */
-
-enum class Memory
-{
-    BYTE,
-    KILOBYTE,
-    MEGABYTE,
-    GIGABYTE,
-    TERABYTE,
-};
-
-enum class CPU
-{
-    PERCENTAGE,
-    CYCLES,
-    CLOCK_SPEED,
-};
-
-enum class Disk
-{
-    BYTE,
-    KILOBYTE,
-    MEGABYTE,
-    GIGABYTE,
-    TERABYTE,
-};
-
-/* HERE FOLLOWS SCHEDULE */
-enum class Schedule
-{
-    START_AT,
-    END_AT,
-
-    START_IN,
-    END_IN,
-
-    START_ON,
-    END_ON,
-
-    START_BEFORE,
-    END_BEFORE,
-
-    START_AFTER,
-    END_AFTER,
-
-    START_IF,
-    END_IF,
-
-};
     
 /* HERE FOLLOWS THE MAINLOOP */
 enum class MainLoop
