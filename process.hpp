@@ -5,6 +5,7 @@
 #include <random>
 #include <memory>
 #include "profiler.hpp"
+#include "data.hpp"
 
 enum class BoolEnum
 {
