@@ -2,11 +2,9 @@
 
 ## About
 
-Author: [sibjor](https://www.github.com/sibjor), Sixten Algot Björling
-Location: Forsbergs School, Kingdom of Sweden, Stockholm
-Issued by: 
-    Teacher: Sebastian Jensen
-    Game jam leader: Theodor Kvarnström
+- Author: [sibjor](https://www.github.com/sibjor), Sixten Algot Björling
+- Location: Forsbergs School, Kingdom of Sweden, Stockholm
+- Issued by: Sebastian Jensen
 
 ## Document structure
 
