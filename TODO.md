@@ -6,20 +6,15 @@
 
 # First priority
 [ ] The player shall never be left stuck, MAKE SURE that one always can advance further! e.i. Implement a procedeural algorithm, possibly as last priority after the assignment is finished...
-## TODO List of March 28!
-[ ] Render something
-[ ] Color" enum class member hexadecimal values
-[x] Working SDL window, no bugs so far
-[ ] Finish profiling functions
-[x] Set dimensions of window to iPad 10.2"
-[x] Wrap up a SDL main-loop in functions
-[ ] Statistics metadata, CSV. (Written by the profiler)
-    [ ](Optional) Diagrams of statistic in OpenGL ES e.g. charts
-[ ] Proulogue, menu:s and in-game strings, CSV (Design class). 
-    [ ](Optional) Add SDL_tff submodule
-        [ ] Install dependencies
-        [ ] Aquire font
-        [ ] 
+
+## TODO List of April 3!
+[ ] Visualization of processes
+[ ] Visualization of statistics
+[ ] Filesystem write/read/parse
+[ ] Implement logging system
+[ ] Time and Date processes
+[ ] Profiler (time, memory, cpu, disk)
+[ ] Game "loading scene" (no-background free run)
 
 ## First TODO list
 [x] Verify SDL_GetTicks()
