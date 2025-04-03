@@ -11,15 +11,13 @@
 ```mermaid
 flowchart TD
     A(C/C++ std libraries) --> B(process.hpp)
-    C(SDL) --> E
-    B --> E(game.hpp) -->I(wrapper.hpp)
-    B --> G(profiler.hpp) -->I
-    B --> H(data.hpp) --> I
-    J(time.hpp) --> B
-    A --> J
-    I --> K(mainloop.hpp)
-    K --> L(main.cpp)
-
+    B --> C(time.hpp)
+    C --> D(data.hpp) --> G(wrapper.hpp)
+    C --> E(profiler.hpp) --> G
+    C --> F(game.hpp) --> G
+    G --> H(mainloop.hpp)
+    H --> I(main.cpp)
+    
 ```
 ## Important 
 

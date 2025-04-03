@@ -1,6 +1,10 @@
+#pragma once
+
 #include <chrono>
 #include <ctime>
 #include <iomanip>
+
+#include "process.hpp"
 
 enum class Time
 {
