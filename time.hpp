@@ -1,6 +1,8 @@
-#include "process.hpp"
+#include <chrono>
+#include <ctime>
+#include <iomanip>
 
-enum class RealTime
+enum class Time
 {
     NANOSECOND,
     MICROSECOND,
@@ -10,7 +12,7 @@ enum class RealTime
     HOUR, 
 };
 
-enum class RealDate{
+enum class Date{
 
     DAY,
     MONTH,

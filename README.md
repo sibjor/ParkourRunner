@@ -16,6 +16,7 @@ flowchart TD
     B --> G(profiler.hpp) -->I
     B --> H(data.hpp) --> I
     J(time.hpp) --> B
+    A --> J
     I --> K(mainloop.hpp)
     K --> L(main.cpp)
 
