@@ -15,6 +15,7 @@ flowchart TD
     A --> D(profiler.hpp) --> I
     A --> E(process.hpp) --> I
     F(SDL) --> G(multimedia.hpp)
+    B --> G
     G --> H(game.cpp) --> I
     
 ```
