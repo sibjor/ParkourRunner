@@ -7,10 +7,9 @@
 - Issued by: Sebastian Jensen
 
 ## Project Dependencies
-
-1. ***profiler.hpp***, ***data.hpp*** & ***time.hpp*** implements structs
-2. ***process.hpp*** defines a class which implements the structs mentioned above
-3. ***game.hpp*** defines a class which derives from ***process.hpp***
+1. ***profiler.hpp*** implements objects defined in ***time.hpp*** 
+2. ***process.hpp*** implements objects defined in ***profiler.hpp*** and ***data.hpp***
+3. Defenitions in ***game.hpp*** derives from ***process.hpp***
 4. ***main.cpp*** defines a ***main loop*** in which objects defined in ***game.hpp*** are implemented
 
 ```mermaid
