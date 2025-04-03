@@ -9,9 +9,9 @@
 ## Project Dependencies
 
 1. ***profiler.hpp***, ***data.hpp*** & ***time.hpp*** implements structs
-2. ***process.hpp*** implements a class which implements the structs mentioned above
-3. ***game.hpp*** implements a class which derives from ***process.hpp***
-4. ***main.cpp*** creates a ***main loop*** implementing objects defined in ***game.hpp***
+2. ***process.hpp*** defines a class which implements the structs mentioned above
+3. ***game.hpp*** defines a class which derives from ***process.hpp***
+4. ***main.cpp*** defines a ***main loop*** in which objects defined in ***game.hpp*** are implemented
 
 ```mermaid
 flowchart TD
