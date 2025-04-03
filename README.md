@@ -12,11 +12,13 @@
 flowchart TD
     A(C/C++ std libraries) --> B(process.hpp)
     C(SDL) --> E
-    B --> E(game.hpp) -->I(mainloop.hpp)
+    B --> E(game.hpp) -->I(wrapper.hpp)
     B --> G(profiler.hpp) -->I
     B --> H(data.hpp) --> I
     B --> J(time.hpp) --> I
-    I --> K(main-cpp)
+    I --> K(mainloop.hpp)
+    K --> L(main.cpp)
+
 ```
 ## Important 
 
