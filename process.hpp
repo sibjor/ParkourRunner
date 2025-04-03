@@ -82,12 +82,7 @@ public:
     };
     ~Process();
 
-    void InitializeProcess(std::string name);
-    void DeleteProcess(std::string name);
-    void ListenToOrder();
-    void Profiler();
-
-    // Getters and Setters
+    // Getters
     std::vector<std::unique_ptr<Process *>> *GetProcessList(std::string name) const;
     ProcessFunctionEnum GetFunction(std::string name) const;
     ProcessScenarioEnum GetScenario(std::string name) const;
@@ -95,6 +90,7 @@ public:
     ProcessStatusEnum GetStatus(std::string name) const;
     ProcessPositionEnum GetPosition(std::string name) const;
 
+    // Setters
     void SetFunction(ProcessFunctionEnum function, std::string name);
     void SetScenario(ProcessScenarioEnum scenario, std::string name);
     void SetRank(ProcessRankEnum rank, std::string name);

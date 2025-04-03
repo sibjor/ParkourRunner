@@ -16,7 +16,7 @@ flowchart TD
     D(SDL_image)
     E(SDL_mixer)
     G(process.hpp)
-    H(profiler.hpp)
+    H(profiler.hpp) 
     I(time.hpp)
     J(data.hpp)
     K(game.hpp)
@@ -27,14 +27,14 @@ flowchart TD
     A --> E --> K
 
     B --> G 
-    B --> H 
+    B --> H --> G
     B --> I 
     B --> J 
 
     G --> K --> L --> M{Validator 13, by @sibjor}
-    G --> H --> L 
     G --> I --> L 
     G --> J --> L
+    G --> L 
     
 ```
 ## Important 
