@@ -6,7 +6,12 @@
 - Location: Forsbergs School, Kingdom of Sweden, Stockholm
 - Issued by: Sebastian Jensen
 
-## Document structure
+## Project Dependencies
+
+1. "profiler.hpp", "data.hpp" & "time.hpp" implements structs
+2. "process.hpp" implements a class which implements the structs mentioned above
+3. "game.hpp" implements a class which derives from "process.hpp"
+4. "main.cpp" creates a "main loop" implementing objects defined in "game.hpp"
 
 ```mermaid
 flowchart TD
@@ -34,9 +39,6 @@ flowchart TD
     G --> K --> L --> M{Validator 13, by @sibjor}
 
     I --> G 
-
-    
-    
 ```
 ## Important 
 
