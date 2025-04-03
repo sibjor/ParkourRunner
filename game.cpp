@@ -1,47 +1,3 @@
-/* 
-
-    ***TOP PROJECT LAYER***
-
-    ***MAINLOOP IMPLEMENTATION: ***
-
-    - The main loop
-    - Handles events
-    - Updates game state
-    - Renders game
-    - Cleans up and quits
-    - Reads from a file
-    - Writes to file
-    - Parses a file
-    - profiles the program
-    - Handles errors
-    - etc...
-
-    ***DESCRIBED PRACTICES***
-    
-    ***ON THE HEAP***
-    - The Profiler
-    - The SDLProcess
-    - The Main Loop
-
-    ***THE 7 PRINCIPLES OF OOP***
-    - Encapsulation
-    - Abstraction
-    - Inheritance
-    - Polymorphism
-    - Composition
-    - Aggregation
-    - Association
-
-    ***SOLID PRINCIPLES***
-    - Single Responsibility Principle (SRP)
-    - Open/Closed Principle (OCP)
-    - Liskov Substitution Principle (LSP)
-    - Interface Segregation Principle (ISP)
-    - Dependency Inversion Principle (DIP)
-    
-*/
-
-
 /*
   Copyright (C) 1997-2025 Sam Lantinga <slouken@libsdl.org>
 
@@ -54,8 +10,6 @@
   freely.
 */
 #include "game.hpp"
-
-#define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
 
 static SDL_Window *window = NULL;
 static SDL_Renderer *renderer = NULL;
@@ -84,7 +38,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 /* This function runs once per frame, and is the heart of the program. */
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-    const char *message = "Loading...";
+    const char *message = "Hello World!";
     int w = 0, h = 0;
     float x, y;
     const float scale = 4.0f;
