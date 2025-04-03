@@ -37,8 +37,8 @@ flowchart TD
     B --> J --> G
 
     G --> K --> L --> M{Validator 13, by @sibjor}
-
-    I --> G 
+    
+    I --> H
 ```
 ## Important 
 
