@@ -7,6 +7,14 @@
 # First priority
 [ ] The player shall never be left stuck, MAKE SURE that one always can advance further! e.i. Implement a procedeural algorithm, possibly as last priority after the assignment is finished...
 
+## TODO List of April 4!
+[ ] process.cpp
+[ ] data.cpp
+[ ] profiler.cpp
+[ ] (optional) time.cpp
+[ ] construct.cpp
+[ ] mainloop.hpp
+[ ] main.cpp
 ## TODO List of April 3!
 [ ] Visualization of processes
 [ ] Visualization of statistics

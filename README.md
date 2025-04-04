@@ -7,10 +7,8 @@
 - Issued by: Sebastian Jensen
 
 ## Project Dependencies
-1. ***profiler.hpp*** implements objects defined in ***time.hpp*** 
-2. ***process.hpp*** implements objects defined in ***profiler.hpp*** and ***data.hpp***
-3. Defenitions in ***game.hpp*** derives from ***process.hpp***
-4. ***main.cpp*** defines a ***main loop*** in which objects defined in ***game.hpp*** are implemented
+1. ***mainloop.hpp*** implements objects defined in ***construct.hpp***
+2. ***construct.hpp*** wraps implementations and puts them together
 
 ```mermaid
 flowchart TD
@@ -19,26 +17,33 @@ flowchart TD
     C(SDL)
     D(SDL_image)
     E(SDL_mixer)
-    G(process.hpp)
-    H(profiler.hpp) 
-    I(time.hpp) 
-    J(data.hpp)
-    K(game.hpp)
+    F(profiler.hpp) 
+    G(time.hpp) 
+    H(data.hpp)
+    I(process.hpp)
+    J(construct.hpp)
+    K(mainloop.hpp)
     L(main.cpp)
+    M{Validator 13 by sibjor@github}
 
-    A --> C --> K
-    A --> D --> K
-    A --> E --> K
-
-    B --> G 
-    B --> H --> G
+    A --> C 
+    A --> D 
+    A --> E
+    B --> F 
+    B --> G
+    B --> H 
     B --> I
-    B --> J --> G
 
-    G --> K --> L --> M{Validator 13, by @sibjor}
-    
-    I --> H
+    C --> J
+    D --> J
+    E --> J
+    F --> J
+    G --> J
+    H --> J
     I --> J
+    J --> K
+    K --> L
+    L --> M
 ```
 ## Important 
 

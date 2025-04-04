@@ -1,22 +1,32 @@
+/*
+    https://cplusplus.com/reference/ctime/
+*/
+
 #pragma once
 
-#include <chrono>
 #include <ctime>
-#include <iomanip>
+#include <iostream>
 
-enum class Time
+enum class TimeEnum : int
 {
-    NANOSECOND,
-    MICROSECOND,
     MILLISECOND,
     SECOND,
     MINUTE,
-    HOUR, 
+    HOUR,
 };
-
-enum class Date{
-
+enum class DateEnum : int
+{
     DAY,
     MONTH,
     YEAR,
+};
+enum class DateTimeEnum : int
+{
+    DDMMYYYY,
+    MMDDYYYY,
+    YYYYMMDD,
+
+    DDMMYYYYHHMM,
+    MMDDYYYYHHMM,
+    YYYYMMDDHHMM,
 };
