@@ -1,12 +1,5 @@
 # Todo List for Parkour Runner
 
-## Notes & reminders
-- Teacher has stated the sequence of a GPU - recommending to use measures of width and height, column or row - alike and the same, respecting how a GPU calculates to handle 2D graphics.
-- Please try finishing the basics, possibly recieving time which could be spent trying the shading framework of SDL3
-
-# First priority
-[ ] The player shall never be left stuck, MAKE SURE that one always can advance further! e.i. Implement a procedeural algorithm, possibly as last priority after the assignment is finished...
-
 ## TODO List of April 4!
 [ ] process.cpp
 [ ] data.cpp
@@ -14,6 +7,7 @@
 [ ] (optional) time.cpp
 [ ] construct.cpp
 [ ] mainloop.hpp
+[x] time.cpp
 [ ] main.cpp
 ## TODO List of April 3!
 [ ] Visualization of processes

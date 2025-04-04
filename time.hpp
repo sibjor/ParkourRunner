@@ -5,28 +5,48 @@
 #pragma once
 
 #include <ctime>
+#include <chrono>
 #include <iostream>
 
-enum class TimeEnum : int
+enum class TimeUnit : int
 {
+    NANOSECOND,
+    MICROSECOND,
     MILLISECOND,
     SECOND,
     MINUTE,
     HOUR,
+
+    TICKS,
 };
-enum class DateEnum : int
+enum class DateUnit : int
 {
     DAY,
     MONTH,
     YEAR,
 };
-enum class DateTimeEnum : int
-{
-    DDMMYYYY,
-    MMDDYYYY,
-    YYYYMMDD,
 
-    DDMMYYYYHHMM,
-    MMDDYYYYHHMM,
-    YYYYMMDDHHMM,
+enum class TimeZone : int
+{
+    UTC,
+    LOCAL,
+    CUSTOM,
+};
+
+class Time
+{
+public:
+    Time();
+    ~Time();
+
+    std::tm GetCurrentTime();
+    std::tm GetCurrentTime(TimeZone zone);
+    std::tm GetCurrentDate();
+    std::tm GetCurrentDateTime();
+    std::tm GetCurrentDateTime(TimeZone zone);
+
+private:
+    std::tm *current_time;
+    std::tm *current_date;
+    std::tm *current_date_time;
 };

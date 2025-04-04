@@ -4,7 +4,7 @@
 #include <memory>
 #include <iostream>
 
-enum class MemoryUnitEnum : int
+enum class MemoryUnit : int
 {
     BYTE,
     KILOBYTE,
@@ -13,79 +13,42 @@ enum class MemoryUnitEnum : int
     TERABYTE,
 };
 
-enum class StatusEnum : int
-{
-    PENDING,
-    ACTIVE,
-    INACTIVE,
-    COMPLETED,
-    ERROR,
-    TERMINATED,
-};
-
-class RootProfiler
-{
-public:
-    RootProfiler(const std::string* host_name);
-    ~RootProfiler();
-
-    /* Return the host name */
-    const std::string* GetHostName() const;
-
-    /* Return the status of the profiler */
-    StatusEnum GetStatus() const;
-
-
-private:
-    const std::string* host_name;
-    StatusEnum status;
-
-    void SetStatus(StatusEnum status);
-};
-
-class CPUProfiler : RootProfiler
+class CPUProfiler
 {
 public:
     CPUProfiler();
     ~CPUProfiler();
-
-    /* Return ticks since construction */
-    unsigned long long GetTicks();
-    void PrintTicks();
 };
-class MemoryProfiler : RootProfiler
+class MemoryProfiler
 {
 public:
     MemoryProfiler();
     ~MemoryProfiler();
-
-    /* Return memory usage in specified unit */
-    unsigned long long GetMemoryUsage(MemoryUnitEnum unit);
-    void PrintMemoryUsage(MemoryUnitEnum unit);
 };
-class DiskProfiler : RootProfiler
+class DiskProfiler
 {
 public:
     DiskProfiler();
     ~DiskProfiler();
-
-    /* Return disk usage in specified unit */
-    unsigned long long GetDiskUsage(MemoryUnitEnum unit);
-    void PrintDiskUsage(MemoryUnitEnum unit);
 };
-
-/* This is the one to be implemented
-- when constructed, spawns objects of different profilers stored in "smart pointers" 
-- to use, just initialize an object of this class 
-- pass a const reference when declaring the host_name argument */
-class Profiler : CPUProfiler, MemoryProfiler, DiskProfiler
+class TimeProfiler
 {
 public:
-    Profiler(const std::string* host_name);
+    TimeProfiler();
+    ~TimeProfiler();
+};
+
+class Profiler
+{
+public:
+    Profiler(const std::string *host_name);
     ~Profiler();
+    void PrintProfilerInfo();
 private:
-    const std::string* host;
-    const CPUProfiler cpu_profiler;
-    const MemoryProfiler memory_profiler;
-    const DiskProfiler disk_profiler;
+
+private:
+    std::unique_ptr<CPUProfiler> cpu_profiler;
+    std::unique_ptr<MemoryProfiler> memory_profiler;
+    std::unique_ptr<DiskProfiler> disk_profiler;
+    std::unique_ptr<TimeProfiler> time_profiler;
 };

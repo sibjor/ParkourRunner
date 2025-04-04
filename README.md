@@ -8,7 +8,7 @@
 
 ## Project Dependencies
 1. ***mainloop.hpp*** implements objects defined in ***construct.hpp***
-2. ***construct.hpp*** wraps implementations and puts them together
+2. ***construct.hpp*** wraps up and combines defenitions of its derivate headers & libraries
 3. ***mainloop.hpp*** defines a [main loop](https://wiki.libsdl.org/SDL3/README/emscripten) with objects inherited from ***construct.hpp***
 4. ***main.cpp*** executes the "main loop"
 

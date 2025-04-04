@@ -3,47 +3,62 @@
 #include <vector>
 #include <random>
 #include <memory>
+#include <thread>
 
-enum class ProcessStatus : int
+enum class Status : int
 {
-    PENDING,
-    ACTIVE,
-    INACTIVE,
-    COMPLETED,
+    SCHEDULED,    // More than 10 minutes
+    PENDING,      // Less than 10 minutes
+    INITIALIZING, // Defined first
+    ACTIVE,       // Defined last
+    INACTIVE,     // Defined last in destructor, messages the parent Process
     TERMINATED,
     ERROR,
 };
+
+enum class Type : int
+{
+    PROFILER,
+    MAIN_PROGRAM,
+    CHILD_PROGRAM,
+
+};
+
+enum class Result : int
+{
+    SUCCEDED,
+    FAILED,
+};
+
+enum class FamilyRole : int
+{
+    ROOT,
+    CHILD,
+    PARENT,
+    SIBLING,
+};
+
 class Process
 {
+    using Legacy = std::unique_ptr<std::vector<std::unique_ptr<Process>>>;
+
 public:
     Process();
+    Process(char *name, u_int id);
+    Process(char *name_of_host, char *name, u_int id);
     ~Process();
 
-    ProcessStatus &InitProcess();
-    ProcessStatus &GetProcessStatus();
-    const std::string &GetProcessID();
-    std::vector<std::unique_ptr<Process>> &GetChildProcesses(std::vector<std::unique_ptr<Process>> child_processes);
-    /* Should
-    - return all derived child processes starting from argument */
-    std::vector<std::unique_ptr<Process>> &GetProcessLegacy(std::vector<std::unique_ptr<Process>> child_processes);
-    /* Should
-    - Call GetChildProcesses()
-    - Display all child from scope of the argument in function stated above
-    - Render a cool diagram or maybe tree model (when there is time)*/
-    void DisplayProcessLegacy();
-
-    ProcessStatus &KillProcess(Process *process);
-    ProcessStatus &KillProcess(std::vector<std::unique_ptr<Process>> child_processes);
-    ProcessStatus &KillProcess(std::vector<std::unique_ptr<Process>> child_processes, Process *process);
+    Legacy &ReturnLegacy();
+    FamilyRole &ReturnFamilyRole();
 
 private:
-    const char *process_id;
-    int process_layer;
+    char *name_of_host;
+    char *name_of_self;
+    u_int id;
 
-    ProcessStatus status;
-    std::vector<std::unique_ptr<Process>> child_processes;
-
-    ProcessStatus &GetProcessLayer();
-    ProcessStatus &SetProcessStatus(ProcessStatus status);
-    void SetProcessID();
+    Legacy Legacy;
+    FamilyRole FamilyRole;
+    Time *time;
+    
 };
+
