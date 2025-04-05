@@ -42,7 +42,7 @@ std::tm Time::GetCurrentTime(TimeZone zone)
     }
     else
     {
-        throw std::invalid_argument("Custom time zones are not implemented.");
+        std::cout << ("Custom time zones are not implemented.") << std::endl;
     }
 }
 

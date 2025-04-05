@@ -6,8 +6,20 @@
 #include <SDL3_mixer/SDL_mixer.h>
 
 #include "process.hpp"
-#include "profiler.hpp"
-#include "time.hpp"
-#include "data.hpp"
-#include "common.hpp"
+
+#define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
+
+enum class Type
+{
+
+    MAIN_PROGRAM,
+    CHILD_PROGRAM,
+    PROFILER,
+    FILESYSTEM,
+    WINDOW,
+    RENDERER,
+    AUDIO,
+    SHADER,
+
+};
 

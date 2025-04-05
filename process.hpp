@@ -4,8 +4,13 @@
 #include <random>
 #include <memory>
 #include <thread>
+#include <iostream>
+#include <random>
+#include "time.hpp"
+#include "profiler.hpp"
+#include "data.hpp"
 
-enum class Status : int
+enum class Status
 {
     SCHEDULED,    // More than 10 minutes
     PENDING,      // Less than 10 minutes
@@ -16,21 +21,7 @@ enum class Status : int
     ERROR,
 };
 
-enum class Type : int
-{
-    PROFILER,
-    MAIN_PROGRAM,
-    CHILD_PROGRAM,
-
-};
-
-enum class Result : int
-{
-    SUCCEDED,
-    FAILED,
-};
-
-enum class FamilyRole : int
+enum class LegacyRole
 {
     ROOT,
     CHILD,
@@ -38,27 +29,22 @@ enum class FamilyRole : int
     SIBLING,
 };
 
-class Process
+class Process : public Time, public Profiler, public FileManager
 {
-    using Legacy = std::unique_ptr<std::vector<std::unique_ptr<Process>>>;
 
 public:
-    Process();
-    Process(char *name, u_int id);
-    Process(char *name_of_host, char *name, u_int id);
-    ~Process();
-
-    Legacy &ReturnLegacy();
-    FamilyRole &ReturnFamilyRole();
+    Process(const char *name_of_host, const char *name_of_self, const u_int *id);
+    std::unique_ptr<std::vector<std::unique_ptr<Process>>> &ReturnIndex();
+    Status ReturnStatus();
 
 private:
-    char *name_of_host;
-    char *name_of_self;
-    u_int id;
+    bool has_parent;
+    const char *host;
+    const char *name;
+    const u_int *id;
+    std::unique_ptr<std::vector<std::unique_ptr<Process>>> index;
+    LegacyRole role;
+    Status status;
 
-    Legacy Legacy;
-    FamilyRole FamilyRole;
-    Time *time;
-    
+    const u_int *GenerateID();
 };
-

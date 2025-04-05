@@ -8,7 +8,7 @@
 #include <chrono>
 #include <iostream>
 
-enum class TimeUnit : int
+enum class TimeUnit
 {
     NANOSECOND,
     MICROSECOND,
@@ -19,26 +19,25 @@ enum class TimeUnit : int
 
     TICKS,
 };
-enum class DateUnit : int
+enum class DateUnit
 {
     DAY,
     MONTH,
     YEAR,
 };
 
-enum class TimeZone : int
+enum class TimeZone
 {
     UTC,
     LOCAL,
     CUSTOM,
 };
 
-class Time
+class Time 
 {
 public:
     Time();
     ~Time();
-
     std::tm GetCurrentTime();
     std::tm GetCurrentTime(TimeZone zone);
     std::tm GetCurrentDate();

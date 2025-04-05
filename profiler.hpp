@@ -3,8 +3,9 @@
 #include <string>
 #include <memory>
 #include <iostream>
+#include "time.hpp"
 
-enum class MemoryUnit : int
+enum class MemoryUnit
 {
     BYTE,
     KILOBYTE,
@@ -16,36 +17,38 @@ enum class MemoryUnit : int
 class CPUProfiler
 {
 public:
-    CPUProfiler();
-    ~CPUProfiler();
+
+    
 };
 class MemoryProfiler
 {
 public:
-    MemoryProfiler();
-    ~MemoryProfiler();
+
+    
 };
 class DiskProfiler
 {
 public:
-    DiskProfiler();
-    ~DiskProfiler();
+
+    
 };
-class TimeProfiler
+class TimeProfiler : public Time
 {
 public:
     TimeProfiler();
     ~TimeProfiler();
+    
+private:
+    std::unique_ptr<Time> time;
+    
 };
 
 class Profiler
 {
 public:
-    Profiler(const std::string *host_name);
+    Profiler();
     ~Profiler();
-    void PrintProfilerInfo();
-private:
-
+    
 private:
     std::unique_ptr<CPUProfiler> cpu_profiler;
     std::unique_ptr<MemoryProfiler> memory_profiler;

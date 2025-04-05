@@ -1,50 +1,38 @@
 #include "process.hpp"
 
-Process::Process()
+using process_index = std::unique_ptr<std::vector<std::unique_ptr<Process>>>;
+
+Process::Process(const char* name_of_host, const char* name_of_self, const u_int* id)
 {
-    process_layer = 0;
-    process_id = nullptr;
-    status = ProcessStatus::PENDING;
+    if(!name_of_host && !name_of_self)
+    {
+        std::cerr << "Error: Invalid parameters passed to Process constructor." << std::endl;
+        this->~Process();
+        return;
+    }
 }
+/* 
+    Destructor implementation
+    Clean up resources if needed
+    The unique_ptr will automatically clean up its resource
+*/
 Process::~Process()
 {
-    // Destructor implementation
+    
 }
-ProcessStatus &Process::InitProcess()
+
+process_index &Process::ReturnIndex()
 {
-    // Initialize the process
-    status = ProcessStatus::ACTIVE;
+    return index;
+}
+
+Status Process::ReturnStatus()
+{
     return status;
 }
-ProcessStatus &Process::GetProcessStatus()
+
+const u_int *Process::GenerateID()
 {
-    return status;
+    return id;
 }
-const std::string &Process::GetProcessID()
-{
-    return process_id;
-}
-std::vector<std::unique_ptr<Process>> &Process::GetChildProcesses(std::vector<std::unique_ptr<Process>> child_processes)
-{
-    // Return the child processes
-    return child_processes;
-}
-std::vector<std::unique_ptr<Process>> &Process::GetProcessLegacy(std::vector<std::unique_ptr<Process>> child_processes)
-{
-    // Return the legacy processes
-    return child_processes;
-}
-void Process::DisplayProcessLegacy()
-{
-    // Display the legacy processes
-}
-void Process::SetProcessID()
-{
-    // Set the process ID
-}
-ProcessStatus &Process::KillProcess(Process *process)
-{
-    // Kill the process
-    process->status = ProcessStatus::TERMINATED;
-    return status;
-}
+

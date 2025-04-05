@@ -39,9 +39,11 @@ flowchart TD
     C --> J
     D --> J
     E --> J
-    F --> J
-    G --> J
-    H --> J
+
+    F --> I
+    G --> I
+    H --> I
+
     I --> J
     J --> K
     K --> L
