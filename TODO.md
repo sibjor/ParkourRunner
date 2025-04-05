@@ -1,10 +1,9 @@
 # Todo List for Parkour Runner
 
 ## TODO List of April 4!
-[ ] process.cpp
-[ ] data.cpp
+[x] process.cpp
+[x] data.cpp
 [ ] profiler.cpp
-[ ] (optional) time.cpp
 [ ] construct.cpp
 [ ] mainloop.hpp
 [x] time.cpp
