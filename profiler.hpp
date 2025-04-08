@@ -36,7 +36,7 @@ public:
     void GetCPUArchitecture();
     void GetCPUModel();
     void GetCPUCores();
-    
+    void PrintCPUInfo();
 };
 class MemoryProfiler
 {
@@ -50,7 +50,7 @@ public:
     void GetMemorySize(MemoryUnit unit);
     void GetMemoryFreeSpace(MemoryUnit unit);
     void GetMemoryUsedSpace(MemoryUnit unit);
-
+    void PrintMemoryInfo();
     
 };
 class DiskProfiler
@@ -65,6 +65,7 @@ public:
     void GetDiskSize(MemoryUnit unit);
     void GetDiskFreeSpace(MemoryUnit unit);
     void GetDiskUsedSpace(MemoryUnit unit);
+    void PrintDiskInfo();
 
     
 };
@@ -80,6 +81,8 @@ public:
     void StartTimer();
     void StopTimer();
     void GetElapsedTime(TimeUnit unit);
+    void RunTimer();
+    void PrintTimerInfo();
     
 private:
     std::unique_ptr<Time> time;
