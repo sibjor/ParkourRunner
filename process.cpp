@@ -6,10 +6,28 @@ Process::Process(const char* name_of_host, const char* name_of_self, const u_int
 {
     if(!name_of_host && !name_of_self)
     {
-        std::cerr << "Error: Invalid parameters passed to Process constructor." << std::endl;
+        std::cerr << "Error: Invalid parameters passed to Process constructor. Self destructs" << std::endl;
         this->~Process();
         return;
     }
+    else if (!id)
+    {
+        this->id = GenerateID();
+        return;
+    }
+
+    this->host = name_of_host;
+    this->name = name_of_self;
+
+    if(!has_parent)
+    {
+        this->role = LegacyRole::ROOT;
+    }
+    else
+    {
+        this->role = LegacyRole::CHILD;
+    }
+
 }
 /* 
     Destructor implementation

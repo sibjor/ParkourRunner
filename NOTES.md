@@ -1,5 +1,10 @@
 # NOTES
 
+## Techniques
+- Cyclomatic complexity - which layers of scope/nest is running. Can we reduce it?
+- Big O notation - O = n2
+- SIMD - Single Instruction, Multiple Data
+
 ## Citations of Chandler Carruth
 - Efficency prioritized over performance - as efficency structures the traffic of signals, already flowing (alike performace) - in the speed of light. 
 - Algorithms have been argued by many professionals, stating promising results - if implemented by one who

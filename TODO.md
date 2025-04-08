@@ -20,8 +20,6 @@
 ## First TODO list
 [x] Verify SDL_GetTicks()
 [x] Refactor loose element into dedicated classes
-[ ] Trim C Timer to 4 + decimal? Adjacent as SDL_GetTicks
-[ ] (Important) Implement SDL_GetTicks() in every sequence 
 [x] Implement similar the the profiling method stated above, but in vanilla C23
 [x] Remove some, rename some functions
 [x] Add parameters of current functions of today
@@ -36,7 +34,7 @@
 [ ] Implement floor/ground level with aseprite or SDL_Renderer
 [ ] Implement obstacles with Aseprite or SDL_Renderer
 [ ] Implement callback events (read keyboard input)
-[ ] (Optional) Implement controller input (handheld)
 [ ] Move obstacles in relation to player movement (sidescrolling)
 [ ] Procedural generation of obstacles
 [ ] (Optional) Implement Background Artwork
+[ ] (Optional) Implement controller input (handheld)

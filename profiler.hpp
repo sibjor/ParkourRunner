@@ -32,7 +32,7 @@ public:
 
     
 };
-class TimeProfiler : public Time
+class TimeProfiler
 {
 public:
     TimeProfiler();
