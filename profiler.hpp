@@ -83,6 +83,12 @@ public:
     
 private:
     std::unique_ptr<Time> time;
+    int currentTime;
+    int currentDate;
+    int currentDateTime;
+    int startTime;
+    int endTime;
+    int elapsedTime;
     
 };
 
