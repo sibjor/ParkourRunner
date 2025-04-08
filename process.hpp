@@ -6,6 +6,7 @@
 #include <thread>
 #include <iostream>
 #include <random>
+#include <thread>
 #include "time.hpp"
 #include "profiler.hpp"
 #include "data.hpp"

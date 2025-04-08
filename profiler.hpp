@@ -3,6 +3,10 @@
 #include <string>
 #include <memory>
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <thread>
+#include <sys/statvfs.h>
 #include "time.hpp"
 
 enum class MemoryUnit
@@ -45,11 +49,7 @@ public:
     ~MemoryProfiler();
     void GetMemoryInfo();
     void GetMemoryUsage();
-    void GetMemorySpeed();
-    void GetMemoryType();
     void GetMemorySize(MemoryUnit unit);
-    void GetMemoryFreeSpace(MemoryUnit unit);
-    void GetMemoryUsedSpace(MemoryUnit unit);
     void PrintMemoryInfo();
     
 };
