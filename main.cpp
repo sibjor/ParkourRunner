@@ -31,13 +31,13 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     profiler->cpu_profiler->PrintCPUInfo();
     profiler->memory_profiler->PrintMemoryInfo();
     profiler->disk_profiler->PrintDiskInfo();
+    profiler->time_profiler->PrintTimerInfo();
 
     /* Create the window */
     if (!SDL_CreateWindowAndRenderer(appName, 800, 600, SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
         SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
-    profiler->time_profiler->PrintTimerInfo();
     return SDL_APP_CONTINUE;
 }
 
@@ -78,5 +78,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 /* This function runs once at shutdown. */
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
+    // Will self destruct as unique_ptr (automatically cleans up)
+    profiler->time_profiler->PrintTimerInfo();
+    profiler->cpu_profiler->PrintCPUInfo();
+    profiler->memory_profiler->PrintMemoryInfo();
+    profiler->disk_profiler->PrintDiskInfo();
 }
 
