@@ -23,7 +23,7 @@ flowchart TD
 
     A --> C
     A --> D
-    a --> E
+    A --> E
 
     C --> I
     D --> I
@@ -36,6 +36,8 @@ flowchart TD
     G --> I
     H --> I
     F --> I
+
+    I --> J
 ```
 ## Important 
 
