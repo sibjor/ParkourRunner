@@ -12,4 +12,6 @@ std::vector<SDL_Surface*> Animation::LoadSurfaces(std::vector<std::string> asset
         }
         surfaces.push_back(surface);
     }
+    return surfaces;
 }
+
