@@ -30,13 +30,14 @@ std::vector<std::string> assets = {
 class Animation
 {
 public:
-    void LoadAssets(std::vector<std::string> assets);
-    void SliceSpriteSheet(int frameWidth, int frameHeight);
+    void LoadSurfaces(std::vector<std::string> assets);
+    void SliceSpriteSheet(SDL_Rect size);
     void SetFrameDelay(int delay);
     void AnimateStrip();
 
 private:
-    SDL_Texture *texture;
+    std::vector<SDL_Surface *> surfaces;
+    std::vector<SDL_Texture *> textures;
     SDL_Rect srcRect, destRect;
 
     int frameWidth, frameHeight;
