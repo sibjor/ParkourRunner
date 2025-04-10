@@ -33,7 +33,8 @@ flowchart TD
     B --> H
     B --> F
 
-    G --> I
+    G --> F
+    
     H --> I
     F --> I
 
