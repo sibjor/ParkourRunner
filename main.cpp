@@ -16,6 +16,7 @@
 #include <SDL3_image/SDL_image.h>
 #include <SDL3_mixer/SDL_mixer.h>
 #include "profiler.hpp"
+#include "data.hpp"
 
 static SDL_Window *window = NULL;
 static SDL_Renderer *renderer = NULL;
