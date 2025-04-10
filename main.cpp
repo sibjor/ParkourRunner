@@ -15,8 +15,6 @@
 #include "data.hpp"
 #include "game.hpp"
 
-static SDL_Window *window = NULL;
-static SDL_Renderer *renderer = NULL;
 char* appName = "Validator 13";
 Profiler* profiler;
 
