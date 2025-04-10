@@ -7,10 +7,6 @@
 - Issued by: Sebastian Jensen
 
 ## Project Dependencies
-1. ***mainloop.hpp*** implements objects defined in ***construct.hpp***
-2. ***construct.hpp*** wraps up and combines defenitions of its derivate headers & libraries
-3. ***mainloop.hpp*** defines a [main loop](https://wiki.libsdl.org/SDL3/README/emscripten) with objects inherited from ***construct.hpp***
-4. ***main.cpp*** executes the "main loop"
 
 ```mermaid
 flowchart TD
@@ -22,32 +18,24 @@ flowchart TD
     F(profiler.hpp) 
     G(time.hpp) 
     H(data.hpp)
-    I(process.hpp)
-    J(construct.hpp)
-    K(mainloop.hpp)
-    L(main.cpp)
-    M{Validator 13 by sibjor@github}
+    I(main.cpp)
+    J{Validator 13 by sibjor@github}
 
-    A --> C 
-    A --> D 
-    A --> E
-    B --> F 
+    A --> C
+    A --> D
+    a --> E
+
+    C --> I
+    D --> I
+    E --> I
+
     B --> G
-    B --> H 
-    B --> I
+    B --> H
+    B --> F
 
-    C --> J
-    D --> J
-    E --> J
-
-    F --> I
     G --> I
     H --> I
-
-    I --> J
-    J --> K
-    K --> L
-    L --> M
+    F --> I
 ```
 ## Important 
 
