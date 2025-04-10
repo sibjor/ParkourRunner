@@ -20,25 +20,28 @@ flowchart TD
     H(data.hpp)
     I(main.cpp)
     J{Validator 13 by sibjor@github}
+    K(game.hpp)
 
     A --> C
     A --> D
     A --> E
 
-    C --> I
-    D --> I
-    E --> I
+    C --> K
+    D --> K
+    E --> K
 
     B --> G
     B --> H
     B --> F
 
     G --> F
-    
+
     H --> I
     F --> I
+    K --> I
 
     I --> J
+
 ```
 ## Important 
 
