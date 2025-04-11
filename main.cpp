@@ -1,38 +1,27 @@
-/*
-  Copyright (C) 1997-2025 Sam Lantinga <slouken@libsdl.org>
+#define SDL_MAIN_USE_CALLBACKS 1  /* Use the callbacks instead of main() */
 
-  This software is provided 'as-is', without any express or implied
-  warranty.  In no event will the authors be held liable for any damages
-  arising from the use of this software.
+#include "render.hpp"  // Include the AnimatedSprite class
 
-  Permission is granted to anyone to use this software for any purpose,
-  including commercial applications, and to alter it and redistribute it
-  freely.
-*/
-#define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
+SDL_Window *window = nullptr;
+SDL_Renderer *renderer = nullptr;
 
-#include "profiler.hpp"
-#include "data.hpp"
-#include "game.hpp"
 
-char* appName = "Validator 13";
-Profiler* profiler;
+const char* appName = "Validator 13";
+AnimatedSprite* animatedSprite;  // Global instance of AnimatedSprite
 
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
-    profiler = new Profiler();
-    profiler->time_profiler->StartTimer();
-    profiler->cpu_profiler->PrintCPUInfo();
-    profiler->memory_profiler->PrintMemoryInfo();
-    profiler->disk_profiler->PrintDiskInfo();
-    profiler->time_profiler->PrintTimerInfo();
-
-    /* Create the window */
+    /* Create the window and renderer */
     if (!SDL_CreateWindowAndRenderer(appName, 800, 600, SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
         SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
+
+    /* Initialize the animated sprite 
+    - will call the LoadTextures() function*/
+    animatedSprite = new AnimatedSprite();
+
     return SDL_APP_CONTINUE;
 }
 
@@ -49,22 +38,16 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 /* This function runs once per frame, and is the heart of the program. */
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-    const char *message = "Validator 13!";
-    int w = 0, h = 0;
-    float x, y;
-    const float scale = 4.0f;
+    SDL_FRect destRect = {100.0f, 100.0f, 64.0f, 64.0f};  // Position and size of the animation
 
-    /* Center the message and scale it up */
-    SDL_GetRenderOutputSize(renderer, &w, &h);
-    SDL_SetRenderScale(renderer, scale, scale);
-    x = ((w / scale) - SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE * SDL_strlen(message)) / 2;
-    y = ((h / scale) - SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE) / 2;
-
-    /* Draw the message */
+    /* Clear the screen */
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderDebugText(renderer, x, y, message);
+
+    /* Play the Idle animation */
+    animatedSprite->PlayAnimation(AnimationState::Idle, &destRect);
+
+    /* Present the rendered frame */
     SDL_RenderPresent(renderer);
 
     return SDL_APP_CONTINUE;
@@ -73,10 +56,5 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 /* This function runs once at shutdown. */
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
-    // Will self destruct as unique_ptr (automatically cleans up)
-    profiler->time_profiler->PrintTimerInfo();
-    profiler->cpu_profiler->PrintCPUInfo();
-    profiler->memory_profiler->PrintMemoryInfo();
-    profiler->disk_profiler->PrintDiskInfo();
+    delete animatedSprite;  // Clean up the animated sprite
 }
-
