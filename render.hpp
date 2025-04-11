@@ -30,23 +30,24 @@ enum class AnimationState {
 };
 
 class AnimatedSprite {
-    public:
-        AnimatedSprite();
-        ~AnimatedSprite();
-    
-        // Load textures for all animation states
-        void LoadTextures();
-    
-        // Slice a spritesheet into frames
-        void SliceSpriteSheet(SDL_Texture* texture, AnimationState state);
-    
-        // Play the animation for the given state
-        void PlayAnimation(AnimationState state, SDL_FRect* destRect);
-    
-    private:
-        // Map of animation states to their corresponding textures
-        std::unordered_map<AnimationState, std::vector<SDL_Texture*>> textures;
-    
-        // Map of animation states to their corresponding frames
-        std::unordered_map<AnimationState, std::vector<SDL_FRect>> frames;
-    };
+public:
+    AnimatedSprite();
+    ~AnimatedSprite();
+
+    // Load textures for all animation states
+    void LoadTextures();
+
+    // Slice a spritesheet into frames
+    void SliceSpriteSheet(SDL_Texture* texture, AnimationState state);
+
+    // Play the animation for the given state
+    void PlayAnimation(AnimationState state, SDL_FRect* destRect);
+
+    // Set the frame delay for animations
+    void SetFrameDelay(int delay);
+
+private:
+    std::unordered_map<AnimationState, std::vector<SDL_Texture*>> textures;
+    std::unordered_map<AnimationState, std::vector<SDL_FRect>> frames;
+    int frameDelay = 100; // Default delay in milliseconds
+};

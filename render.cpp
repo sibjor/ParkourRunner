@@ -21,19 +21,19 @@ void AnimatedSprite::LoadTextures()
 {
     // Map of animation states to file paths
     std::unordered_map<AnimationState, std::string> assetPaths = {
-        {AnimationState::Idle, "assets/Basic movement pack/SpriteSheet/Idle.png"},
-        {AnimationState::InAir, "assets/Basic movement pack/SpriteSheet/in air.png"},
-        {AnimationState::Jumping, "assets/Basic movement pack/SpriteSheet/jumping.png"},
-        {AnimationState::Landing, "assets/Basic movement pack/SpriteSheet/landing.png"},
-        {AnimationState::Roll, "assets/Basic movement pack/SpriteSheet/Roll.png"},
-        {AnimationState::Run, "assets/Basic movement pack/SpriteSheet/run.png"},
-        {AnimationState::Sprint, "assets/Basic movement pack/SpriteSheet/sprint.png"},
-        {AnimationState::BasicVault, "assets/Basic vault pack/SpriteSheet/Basic vault.png"},
-        {AnimationState::Climbing, "assets/Basic vault pack/SpriteSheet/climbing.png"},
-        {AnimationState::Hanging, "assets/Basic vault pack/SpriteSheet/hanging.png"},
-        {AnimationState::LongVault, "assets/Basic vault pack/SpriteSheet/long vault.png"},
-        {AnimationState::OnTopClimbing, "assets/Basic vault pack/SpriteSheet/On top climbing.png"},
-        {AnimationState::OnTopVault, "assets/Basic vault pack/SpriteSheet/on top vault.png"}};
+        {AnimationState::Idle, "../../assets/Basic movement pack/SpriteSheet/Idle.png"},
+        {AnimationState::InAir, "../../assets/Basic movement pack/SpriteSheet/in air.png"},
+        {AnimationState::Jumping, "../../assets/Basic movement pack/SpriteSheet/jumping.png"},
+        {AnimationState::Landing, "../../assets/Basic movement pack/SpriteSheet/landing.png"},
+        {AnimationState::Roll, "../../assets/Basic movement pack/SpriteSheet/Roll.png"},
+        {AnimationState::Run, "../../assets/Basic movement pack/SpriteSheet/run.png"},
+        {AnimationState::Sprint, "../../assets/Basic movement pack/SpriteSheet/sprint.png"},
+        {AnimationState::BasicVault, "../../assets/Basic vault pack/SpriteSheet/Basic vault.png"},
+        {AnimationState::Climbing, "../../assets/Basic vault pack/SpriteSheet/climbing.png"},
+        {AnimationState::Hanging, "../../assets/Basic vault pack/SpriteSheet/hanging.png"},
+        {AnimationState::LongVault, "../../assets/Basic vault pack/SpriteSheet/long vault.png"},
+        {AnimationState::OnTopClimbing, "../../assets/Basic vault pack/SpriteSheet/On top climbing.png"},
+        {AnimationState::OnTopVault, "../../assets/Basic vault pack/SpriteSheet/on top vault.png"}};
 
     // Load textures for each animation state
     for (const auto &[state, path] : assetPaths)
@@ -53,6 +53,9 @@ void AnimatedSprite::LoadTextures()
             std::cerr << "Failed to create texture from surface: " << SDL_GetError() << std::endl;
             continue;
         }
+
+        // Set texture scaling mode to nearest neighbor for sharp rendering
+        SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST);
 
         // Slice the spritesheet into frames
         SliceSpriteSheet(texture, state);
@@ -100,7 +103,7 @@ void AnimatedSprite::PlayAnimation(AnimationState state, SDL_FRect *destRect)
         return;
 
     Uint32 currentTime = SDL_GetTicks();
-    if (currentTime - lastFrameTime >= 100) // 100ms per frame
+    if (currentTime - lastFrameTime >= frameDelay) // Use frameDelay
     {
         lastFrameTime = currentTime;
         currentFrame = (currentFrame + 1) % frameRects.size();
@@ -108,4 +111,9 @@ void AnimatedSprite::PlayAnimation(AnimationState state, SDL_FRect *destRect)
 
     // Render the current frame to the destination rectangle using SDL_RenderTexture
     SDL_RenderTexture(renderer, textures[state][0], &frameRects[currentFrame], destRect);
+}
+
+void AnimatedSprite::SetFrameDelay(int delay)
+{
+    frameDelay = delay;
 }
