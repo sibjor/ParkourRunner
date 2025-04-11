@@ -21,19 +21,19 @@ void AnimatedSprite::LoadTextures()
 {
     // Map of animation states to file paths
     std::unordered_map<AnimationState, std::string> assetPaths = {
-        {AnimationState::Idle, "../../assets/Basic movement pack/SpriteSheet/Idle.png"},
-        {AnimationState::InAir, "../../assets/Basic movement pack/SpriteSheet/in air.png"},
-        {AnimationState::Jumping, "../../assets/Basic movement pack/SpriteSheet/jumping.png"},
-        {AnimationState::Landing, "../../assets/Basic movement pack/SpriteSheet/landing.png"},
-        {AnimationState::Roll, "../../assets/Basic movement pack/SpriteSheet/Roll.png"},
-        {AnimationState::Run, "../../assets/Basic movement pack/SpriteSheet/run.png"},
-        {AnimationState::Sprint, "../../assets/Basic movement pack/SpriteSheet/sprint.png"},
-        {AnimationState::BasicVault, "../../assets/Basic vault pack/SpriteSheet/Basic vault.png"},
-        {AnimationState::Climbing, "../../assets/Basic vault pack/SpriteSheet/climbing.png"},
-        {AnimationState::Hanging, "../../assets/Basic vault pack/SpriteSheet/hanging.png"},
-        {AnimationState::LongVault, "../../assets/Basic vault pack/SpriteSheet/long vault.png"},
-        {AnimationState::OnTopClimbing, "../../assets/Basic vault pack/SpriteSheet/On top climbing.png"},
-        {AnimationState::OnTopVault, "../../assets/Basic vault pack/SpriteSheet/on top vault.png"}};
+        {AnimationState::Idle, "assets/Basic movement pack/SpriteSheet/Idle.png"},
+        {AnimationState::InAir, "assets/Basic movement pack/SpriteSheet/in air.png"},
+        {AnimationState::Jumping, "assets/Basic movement pack/SpriteSheet/jumping.png"},
+        {AnimationState::Landing, "assets/Basic movement pack/SpriteSheet/landing.png"},
+        {AnimationState::Roll, "assets/Basic movement pack/SpriteSheet/Roll.png"},
+        {AnimationState::Run, "assets/Basic movement pack/SpriteSheet/run.png"},
+        {AnimationState::Sprint, "assets/Basic movement pack/SpriteSheet/sprint.png"},
+        {AnimationState::BasicVault, "assets/Basic vault pack/SpriteSheet/Basic vault.png"},
+        {AnimationState::Climbing, "assets/Basic vault pack/SpriteSheet/climbing.png"},
+        {AnimationState::Hanging, "assets/Basic vault pack/SpriteSheet/hanging.png"},
+        {AnimationState::LongVault, "assets/Basic vault pack/SpriteSheet/long vault.png"},
+        {AnimationState::OnTopClimbing, "assets/Basic vault pack/SpriteSheet/On top climbing.png"},
+        {AnimationState::OnTopVault, "assets/Basic vault pack/SpriteSheet/on top vault.png"}};
 
     // Load textures for each animation state
     for (const auto &[state, path] : assetPaths)
