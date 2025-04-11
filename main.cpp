@@ -41,12 +41,19 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
         else if (key == SDLK_SPACE)
         {
             // Play Jumping animation when spacebar is pressed
+            
             animatedSprite->SetFrameDelay(50); // Faster animation
             currentAnimationState = AnimationState::Jumping;
         }
         else if (key == SDLK_RIGHT || key == SDLK_D)
         {
             // Play Running animation when right arrow or 'D' key is pressed
+            animatedSprite->SetDirection(AnimationDirection::Right); // Set direction to right
+            animatedSprite->SetFrameDelay(100); // Normal speed
+            currentAnimationState = AnimationState::Run;
+        }
+        else if (key == SDLK_LEFT || key == SDLK_A){
+            animatedSprite->SetDirection(AnimationDirection::Left); // Set direction to left
             animatedSprite->SetFrameDelay(100); // Normal speed
             currentAnimationState = AnimationState::Run;
         }

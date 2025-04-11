@@ -29,6 +29,17 @@ enum class AnimationState {
     OnTopVault
 };
 
+enum class AnimationDirection{
+    Left,
+    Right,
+    Up,
+    Down,
+    UpLeft,
+    UpRight,
+    DownLeft,
+    DownRight
+};
+
 class AnimatedSprite {
 public:
     AnimatedSprite();
@@ -46,8 +57,11 @@ public:
     // Set the frame delay for animations
     void SetFrameDelay(int delay);
 
+    void SetDirection(AnimationDirection dir);
+
 private:
     std::unordered_map<AnimationState, std::vector<SDL_Texture*>> textures;
     std::unordered_map<AnimationState, std::vector<SDL_FRect>> frames;
     int frameDelay = 100; // Default delay in milliseconds
+    AnimationDirection direction = AnimationDirection::Right; // Default direction
 };
