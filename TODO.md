@@ -3,9 +3,7 @@
 ## TODO List of April 4!
 [x] process.cpp
 [x] data.cpp
-[ ] profiler.cpp
-[ ] construct.cpp
-[ ] mainloop.hpp
+[x] profiler.cpp
 [x] time.cpp
 [ ] main.cpp
 ## TODO List of April 3!
@@ -33,7 +31,7 @@
 [x] Animate a strip from a sheet - (use SDL_GetTicks / 100 for 1/10 of a second?)
 [ ] Implement floor/ground level with aseprite or SDL_Renderer
 [ ] Implement obstacles with Aseprite or SDL_Renderer
-[ ] Implement callback events (read keyboard input)
+[x] (Halfway) Implement callback events (read keyboard input)
 [ ] Move obstacles in relation to player movement (sidescrolling)
 [ ] Procedural generation of obstacles
 [ ] (Optional) Implement Background Artwork
