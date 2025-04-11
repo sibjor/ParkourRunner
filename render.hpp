@@ -52,13 +52,12 @@ public:
     void SliceSpriteSheet(SDL_Texture* texture, AnimationState state);
 
     // Play the animation for the given state
-    void PlayAnimation(AnimationState state, SDL_FRect* destRect);
-
-    // Set the frame delay for animations
-    void SetFrameDelay(int delay);
+    void PlayAnimation(AnimationState state, SDL_FRect* destRect, bool loop, bool isFlipped, int frameDelay);
 
     void SetDirection(AnimationDirection dir);
 
+    AnimationDirection GetDirection() const;
+        
 private:
     std::unordered_map<AnimationState, std::vector<SDL_Texture*>> textures;
     std::unordered_map<AnimationState, std::vector<SDL_FRect>> frames;

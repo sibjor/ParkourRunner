@@ -3,9 +3,6 @@
 AnimatedSprite::AnimatedSprite()
 {
     LoadTextures();
-    AnimatedSprite::SetFrameDelay(100); // Set default frame delay
-    AnimatedSprite::SetDirection(AnimationDirection::Right); // Set default direction
-
 }
 
 AnimatedSprite::~AnimatedSprite()
@@ -96,43 +93,59 @@ void AnimatedSprite::SliceSpriteSheet(SDL_Texture *texture, AnimationState state
     textures[state].push_back(texture);
 }
 
-void AnimatedSprite::PlayAnimation(AnimationState state, SDL_FRect *destRect)
+void AnimatedSprite::PlayAnimation(AnimationState state, SDL_FRect* destRect, bool loop, bool isFlipped, int frameDelay)
 {
     static Uint32 lastFrameTime = 0;
     static int currentFrame = 0;
+    bool hasFinished = false;
 
-    auto &frameRects = frames[state];
+    auto& frameRects = frames[state];
     if (frameRects.empty())
         return;
 
     Uint32 currentTime = SDL_GetTicks();
-    if (currentTime - lastFrameTime >= frameDelay) // Use frameDelay
+    if (currentTime - lastFrameTime >= frameDelay) // Use the provided frameDelay
     {
         lastFrameTime = currentTime;
-        currentFrame = (currentFrame + 1) % frameRects.size();
+
+        if (loop) {
+            // Loop the animation
+            currentFrame = (currentFrame + 1) % frameRects.size();
+        } else {
+            // Stop at the last frame if not looping
+            if (currentFrame < frameRects.size() - 1) {
+                currentFrame++;
+            } else {
+                // Mark the animation as finished when it reaches the last frame
+                hasFinished = true;
+            }
+        }
     }
 
-    // Determine the flip mode based on the direction
-    SDL_FlipMode flip = (direction == AnimationDirection::Left) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
+    // Determine the flip mode based on the direction and isFlipped parameter
+    SDL_FlipMode flip = SDL_FLIP_NONE;
+    if (direction == AnimationDirection::Left || isFlipped) {
+        flip = SDL_FLIP_HORIZONTAL;
+    }
 
     // Render the current frame to the destination rectangle using SDL_RenderCopyExF
     SDL_RenderTextureRotated(renderer, textures[state][0], &frameRects[currentFrame], destRect, 0.0, nullptr, flip);
 }
 
-
-void AnimatedSprite::SetFrameDelay(int delay)
+void AnimatedSprite::SetDirection(AnimationDirection newDirection)
 {
-    frameDelay = delay;
+    // Only update the direction if it is different from the current direction
+    if (direction != newDirection) {
+        direction = newDirection;
+
+        // Optional: Reset animation frame when direction changes
+        // This ensures the animation starts fresh when switching directions
+        static int currentFrame = 0;
+        currentFrame = 0;
+    }
 }
 
-void AnimatedSprite::SetDirection(AnimationDirection dir)
+AnimationDirection AnimatedSprite::GetDirection() const
 {
-    direction = dir;
-    // Adjust the frame slicing or rendering logic based on the direction if needed
-    // For example, you might want to flip the texture horizontally for left direction
-    if (direction == AnimationDirection::Left)
-    {
-        // Flip the texture or adjust rendering parameters here
-        direction = dir;
-    }
+    return direction;
 }
