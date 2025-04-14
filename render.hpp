@@ -42,7 +42,11 @@ enum class AnimationDirection{
 
 enum class EnvironmentObject{
     Ground,
-    Obstacle_1,
+    Obstacle_Vault,
+    Obstacle_Climb,
+    Obstacle_Long_Vault,
+    Obstacle_On_Top_Vault,
+    Obstacle_On_Top_Climb,
 };
 
 class AnimatedSprite {
@@ -70,10 +74,10 @@ private:
     AnimationDirection direction = AnimationDirection::Right; // Default direction
 };
 
-class EnvironmentArtwork{
+class EnvironmentNavigated{
 public:
-    EnvironmentArtwork();
-    ~EnvironmentArtwork();
+    EnvironmentNavigated();
+    ~EnvironmentNavigated();
 
     // Load textures for environment artwork
     void LoadTextures();
