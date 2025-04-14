@@ -97,34 +97,58 @@ void AnimatedSprite::PlayAnimation(AnimationState state, SDL_FRect* destRect, bo
 {
     static Uint32 lastFrameTime = 0;
     static int currentFrame = 0;
-    bool hasFinished = false;
 
     auto& frameRects = frames[state];
     if (frameRects.empty())
         return;
 
+    // Customize behavior based on the animation state
+    switch (state)
+    {
+    case AnimationState::Jumping:
+        loop = false; // Jumping should not loop
+        frameDelay = 150; // Custom frame delay for Jumping
+        break;
+
+    case AnimationState::Run:
+        loop = true; // Running should loop
+        frameDelay = 70; // Faster frame delay for Running
+        break;
+
+    case AnimationState::Idle:
+        loop = true; // Idle should loop
+        frameDelay = 100; // Default frame delay for Idle
+        break;
+
+    // Add cases for other AnimationStates as needed
+    default:
+        break;
+    }
+
     Uint32 currentTime = SDL_GetTicks();
-    if (currentTime - lastFrameTime >= frameDelay) // Use the provided frameDelay
+    if (currentTime - lastFrameTime >= frameDelay)
     {
         lastFrameTime = currentTime;
 
-        if (loop) {
+        if (loop)
+        {
             // Loop the animation
             currentFrame = (currentFrame + 1) % frameRects.size();
-        } else {
+        }
+        else
+        {
             // Stop at the last frame if not looping
-            if (currentFrame < frameRects.size() - 1) {
+            if (currentFrame < frameRects.size() - 1)
+            {
                 currentFrame++;
-            } else {
-                // Mark the animation as finished when it reaches the last frame
-                hasFinished = true;
             }
         }
     }
 
     // Determine the flip mode based on the direction and isFlipped parameter
     SDL_FlipMode flip = SDL_FLIP_NONE;
-    if (direction == AnimationDirection::Left || isFlipped) {
+    if (direction == AnimationDirection::Left || isFlipped)
+    {
         flip = SDL_FLIP_HORIZONTAL;
     }
 

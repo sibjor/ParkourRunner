@@ -6,8 +6,8 @@ SDL_Window *window = nullptr;
 SDL_Renderer *renderer = nullptr;
 
 const char *appName = "Validator 13";
-AnimatedSprite *animatedSprite;                              // Global instance of AnimatedSprite
-AnimationState currentAnimationState = AnimationState::Idle; // Default animation state
+AnimatedSprite *animatedSprite;                                  // Global instance of AnimatedSprite
+AnimationState currentAnimationState = AnimationState::Idle;     // Default animation state
 AnimationDirection currentDirection = AnimationDirection::Right; // Default direction
 // Animation frame delay in milliseconds
 static int frameDelay = 70;
@@ -41,30 +41,26 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
         }
         else if (key == SDLK_SPACE)
         {
-            // Play Jumping animation when spacebar is pressed
-            if (currentDirection == AnimationDirection::Right)
-                animatedSprite->PlayAnimation(AnimationState::Jumping, nullptr, false, false, frameDelay);
-            else if (currentDirection == AnimationDirection::Left)
-                animatedSprite->PlayAnimation(AnimationState::Jumping, nullptr, false, true, frameDelay);
+            currentAnimationState = AnimationState::Jumping;
+            animatedSprite->PlayAnimation(currentAnimationState, nullptr, false, currentDirection == AnimationDirection::Left, frameDelay);
         }
         else if (key == SDLK_RIGHT || key == SDLK_D)
         {
-            currentDirection = AnimationDirection::Right; // Update currentDirection
-            animatedSprite->SetDirection(currentDirection); // Update AnimatedSprite's direction
+            currentDirection = AnimationDirection::Right;
+            animatedSprite->SetDirection(currentDirection);
             currentAnimationState = AnimationState::Run;
             animatedSprite->PlayAnimation(currentAnimationState, nullptr, true, false, frameDelay);
         }
         else if (key == SDLK_LEFT || key == SDLK_A)
         {
-            currentDirection = AnimationDirection::Left; // Update currentDirection
-            animatedSprite->SetDirection(currentDirection); // Update AnimatedSprite's direction
+            currentDirection = AnimationDirection::Left;
+            animatedSprite->SetDirection(currentDirection);
             currentAnimationState = AnimationState::Run;
             animatedSprite->PlayAnimation(currentAnimationState, nullptr, true, true, frameDelay);
         }
         else
         {
-            // Handle other key presses (optional)
-            currentAnimationState = AnimationState::Idle; // Reset to Idle state
+            currentAnimationState = AnimationState::Idle;
             animatedSprite->PlayAnimation(currentAnimationState, nullptr, true, false, frameDelay);
         }
     }
@@ -78,7 +74,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_FRect destRect = {300.0f, 300.0f, 128.0f, 128.0f}; // Position and size of the animation
 
     /* Clear the screen */
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
 
     /* Play the current animation */

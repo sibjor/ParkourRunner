@@ -1,19 +1,9 @@
 # Todo List for Parkour Runner
 
-## TODO List of April 4!
-[x] process.cpp
-[x] data.cpp
-[x] profiler.cpp
-[x] time.cpp
-[ ] main.cpp
-## TODO List of April 3!
-[ ] Visualization of processes
-[ ] Visualization of statistics
-[ ] Filesystem write/read/parse
-[ ] Implement logging system
-[ ] Time and Date processes
-[ ] Profiler (time, memory, cpu, disk)
-[ ] Game "loading scene" (no-background free run)
+## TODO List of April 14
+[ ] Implement collision and distance detection
+[ ] Refactor PlayAnimation the correctly loop (or not) animation
+
 
 ## First TODO list
 [x] Verify SDL_GetTicks()
