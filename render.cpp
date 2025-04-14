@@ -16,8 +16,12 @@ void EnvironmentNavigated::LoadTextures()
 {
     // Map of environment objects to file paths
     std::unordered_map<std::string, std::string> assetPaths = {
-        {"Ground", "assets/Ground_1.png"},
-        {"Obstacle_1", "assets/Obstacle_1.png"}};
+        {"Ground", "assets/Ground.png"},
+        {"Obstacle_Vault", "assets/obstacle1.png"},
+        {"Obstacle_Climb", "assets/obstacle2.png"},
+        {"Obstacle_Long_Vault", "assets/obstacle3.png"},
+        {"Obstacle_Top_Vault", "assets/obstacle4.png"},
+        {"Obstacle_Top_Climb", "assets/obstacle5.png"}};
 
     // Load textures for each environment object
     for (const auto &[name, path] : assetPaths)
@@ -56,8 +60,8 @@ void EnvironmentNavigated::DisplayTextures(SDL_Renderer *renderer, SDL_FRect *de
         destRect->w = 800.0f;
         destRect->h = 600.0f;
         break;
-    case EnvironmentObject::Obstacle_1:
-        objectName = "Obstacle_1";
+    case EnvironmentObject::Obstacle_Vault:
+        objectName = "Obstacle_Vault";
         destRect->x = 400.0f;
         destRect->y = 400.0f;
         destRect->w = 64.0f;

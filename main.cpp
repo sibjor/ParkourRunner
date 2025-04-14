@@ -84,7 +84,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderClear(renderer);
 
     environmentNavigated->DisplayTextures(renderer, &destRect, EnvironmentObject::Ground);     // Display environment artwork
-    environmentNavigated->DisplayTextures(renderer, &destRect, EnvironmentObject::Obstacle_1); // Display environment artwork
+    environmentNavigated->DisplayTextures(renderer, &destRect, EnvironmentObject::Obstacle_Vault); // Display environment artwork
     /* Play the current animation */
     animatedSprite->PlayAnimation(currentAnimationState, &destRect, true, false, frameDelay);
 
