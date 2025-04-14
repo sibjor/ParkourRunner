@@ -1,5 +1,80 @@
 #include "render.hpp"
 
+EnvironmentArtwork::EnvironmentArtwork()
+{
+    EnvironmentArtwork::LoadTextures();
+}
+EnvironmentArtwork::~EnvironmentArtwork()
+{
+    // Free all textures
+    for (auto &[name, texture] : textures)
+    {
+        SDL_DestroyTexture(texture);
+    }
+}
+void EnvironmentArtwork::LoadTextures()
+{
+    // Map of environment objects to file paths
+    std::unordered_map<std::string, std::string> assetPaths = {
+        {"Ground", "assets/Ground_1.png"},
+        {"Obstacle_1", "assets/Obstacle_1.png"}};
+
+    // Load textures for each environment object
+    for (const auto &[name, path] : assetPaths)
+    {
+        SDL_Surface *surface = IMG_Load(path.c_str());
+        if (!surface)
+        {
+            std::cerr << "Failed to load surface: " << path << " - " << SDL_GetError() << std::endl;
+            continue;
+        }
+
+        SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
+        SDL_DestroySurface(surface);
+
+        if (!texture)
+        {
+            std::cerr << "Failed to create texture from surface: " << SDL_GetError() << std::endl;
+            continue;
+        }
+
+        // Store the texture in the map
+        textures[name] = texture;
+    }
+}
+
+void EnvironmentArtwork::DisplayTextures(SDL_Renderer *renderer, SDL_FRect *destRect, EnvironmentObject objectType)
+{
+    // Map the object type to the corresponding texture
+    std::string objectName;
+    switch (objectType)
+    {
+    case EnvironmentObject::Ground:
+        objectName = "Ground";
+        destRect->x = 0.0f;
+        destRect->y = 0.0f;
+        destRect->w = 800.0f;
+        destRect->h = 600.0f;
+        break;
+    case EnvironmentObject::Obstacle_1:
+        objectName = "Obstacle_1";
+        destRect->x = 400.0f;
+        destRect->y = 400.0f;
+        destRect->w = 64.0f;
+        destRect->h = 64.0f;
+        break;
+    default:
+        std::cerr << "Unknown environment object type" << std::endl;
+        return;
+    }
+
+    // Render the texture
+    auto it = textures.find(objectName);
+    if (it != textures.end())
+    {
+        SDL_RenderTexture(renderer, it->second, nullptr, destRect);
+    }
+}
 AnimatedSprite::AnimatedSprite()
 {
     LoadTextures();
@@ -53,9 +128,6 @@ void AnimatedSprite::LoadTextures()
             std::cerr << "Failed to create texture from surface: " << SDL_GetError() << std::endl;
             continue;
         }
-
-        // Set texture scaling mode to nearest neighbor for sharp rendering
-        SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST);
 
         // Slice the spritesheet into frames
         SliceSpriteSheet(texture, state);

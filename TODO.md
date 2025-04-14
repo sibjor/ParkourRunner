@@ -3,6 +3,7 @@
 ## TODO List of April 14
 [ ] Implement collision and distance detection
 [ ] Refactor PlayAnimation the correctly loop (or not) animation
+[ ] Quit button
 
 
 ## First TODO list

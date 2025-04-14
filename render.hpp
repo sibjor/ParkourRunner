@@ -40,6 +40,11 @@ enum class AnimationDirection{
     DownRight
 };
 
+enum class EnvironmentObject{
+    Ground,
+    Obstacle_1,
+};
+
 class AnimatedSprite {
 public:
     AnimatedSprite();
@@ -63,4 +68,18 @@ private:
     std::unordered_map<AnimationState, std::vector<SDL_FRect>> frames;
     int frameDelay = 100; // Default delay in milliseconds
     AnimationDirection direction = AnimationDirection::Right; // Default direction
+};
+
+class EnvironmentArtwork{
+public:
+    EnvironmentArtwork();
+    ~EnvironmentArtwork();
+
+    // Load textures for environment artwork
+    void LoadTextures();
+    void DisplayTextures(SDL_Renderer* renderer, SDL_FRect* destRect, EnvironmentObject objectType);
+
+private:
+    std::unordered_map<std::string, SDL_Texture*> textures;
+    std::unordered_map<std::string, SDL_FRect> frames;
 };
