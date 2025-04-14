@@ -32,15 +32,18 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 
 SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 {
-    SDL_Keycode key = event->key.key;
+    if (event->type == SDL_EVENT_QUIT)
+    {
+        return SDL_APP_SUCCESS; // Stäng programmet när kryssrutan klickas
+    }
+
     if (event->type == SDL_EVENT_KEY_DOWN)
     {
-        if (event->type == SDL_EVENT_QUIT){
-            return SDL_APP_SUCCESS;
-        }
+        SDL_Keycode key = event->key.key;
+
         if (key == SDLK_ESCAPE)
         {
-            return SDL_APP_SUCCESS; /* End the program, reporting success to the OS. */
+            return SDL_APP_SUCCESS; // Stäng programmet när Escape trycks
         }
         else if (key == SDLK_SPACE)
         {

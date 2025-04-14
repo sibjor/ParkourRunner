@@ -2,8 +2,9 @@
 
 ## TODO List of April 14
 [ ] Implement collision and distance detection
-[ ] Refactor PlayAnimation the correctly loop (or not) animation
-[ ] Quit button
+[ ] Game objects/obstacles matching animations
+[x] Refactor PlayAnimation the correctly loop (or not) animation
+[x] Quit button
 
 
 ## First TODO list
