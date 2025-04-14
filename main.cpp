@@ -9,7 +9,7 @@ const char *appName = "Validator 13";
 AnimatedSprite *animatedSprite;                                  // Global instance of AnimatedSprite
 AnimationState currentAnimationState = AnimationState::Idle;     // Default animation state
 AnimationDirection currentDirection = AnimationDirection::Right; // Default direction
-EnvironmentArtwork *environmentArtwork;                          // Global instance of EnvironmentArtwork
+EnvironmentNavigated *environmentNavigated;                          // Global instance of EnvironmentNavigated
 // Animation frame delay in milliseconds
 static int frameDelay = 70;
 
@@ -24,7 +24,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
         return SDL_APP_FAILURE;
     }
     // Init objects
-    environmentArtwork = new EnvironmentArtwork(); // Skapa en instans av EnvironmentArtwork
+    environmentNavigated = new EnvironmentNavigated(); // Skapa en instans av EnvironmentNavigated
     animatedSprite = new AnimatedSprite();
 
     return SDL_APP_CONTINUE;
@@ -83,8 +83,8 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
 
-    environmentArtwork->DisplayTextures(renderer, &destRect, EnvironmentObject::Ground);     // Display environment artwork
-    environmentArtwork->DisplayTextures(renderer, &destRect, EnvironmentObject::Obstacle_1); // Display environment artwork
+    environmentNavigated->DisplayTextures(renderer, &destRect, EnvironmentObject::Ground);     // Display environment artwork
+    environmentNavigated->DisplayTextures(renderer, &destRect, EnvironmentObject::Obstacle_1); // Display environment artwork
     /* Play the current animation */
     animatedSprite->PlayAnimation(currentAnimationState, &destRect, true, false, frameDelay);
 

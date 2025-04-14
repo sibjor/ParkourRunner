@@ -1,10 +1,10 @@
 #include "render.hpp"
 
-EnvironmentArtwork::EnvironmentArtwork()
+EnvironmentNavigated::EnvironmentNavigated()
 {
-    EnvironmentArtwork::LoadTextures();
+    EnvironmentNavigated::LoadTextures();
 }
-EnvironmentArtwork::~EnvironmentArtwork()
+EnvironmentNavigated::~EnvironmentNavigated()
 {
     // Free all textures
     for (auto &[name, texture] : textures)
@@ -12,7 +12,7 @@ EnvironmentArtwork::~EnvironmentArtwork()
         SDL_DestroyTexture(texture);
     }
 }
-void EnvironmentArtwork::LoadTextures()
+void EnvironmentNavigated::LoadTextures()
 {
     // Map of environment objects to file paths
     std::unordered_map<std::string, std::string> assetPaths = {
@@ -43,7 +43,7 @@ void EnvironmentArtwork::LoadTextures()
     }
 }
 
-void EnvironmentArtwork::DisplayTextures(SDL_Renderer *renderer, SDL_FRect *destRect, EnvironmentObject objectType)
+void EnvironmentNavigated::DisplayTextures(SDL_Renderer *renderer, SDL_FRect *destRect, EnvironmentObject objectType)
 {
     // Map the object type to the corresponding texture
     std::string objectName;
