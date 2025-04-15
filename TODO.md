@@ -4,6 +4,7 @@
 [ ] Move character up and down
 [ ] Move character left and right
 [ ] Implement collision and distance detection
+[ ] Refactor animation logic
 [x] New FRect objects for each rendered item
 [x] Game objects/obstacles matching animations
 [x] Refactor PlayAnimation the correctly loop (or not) animation
