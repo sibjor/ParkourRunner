@@ -12,6 +12,8 @@
 #define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
 #include "central.hpp"
 
+
+
 void RenderWhiteBackground()
 {
     /* Sätt bakgrundsfärgen till vit */

@@ -41,12 +41,12 @@ enum class AssetID {
     polymorphism as much as possible
 */
 
-extern SDL_Renderer *renderer;
-extern SDL_Window *window;
 extern const char *window_title;
 extern const int window_width;
 extern const int window_height;
 extern const int window_flags;
+extern SDL_Renderer *renderer;
+extern SDL_Window *window;
 
 class Assets
 {
@@ -71,4 +71,4 @@ class Player
     void InitPlayer();
     private:
 
-}
+};
