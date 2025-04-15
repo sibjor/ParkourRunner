@@ -3,6 +3,7 @@
 ## NOT DONE list
 [x] Render and Size Ground
 [ ] Make ground continue eternally
+[ ] Procedeurally generate ground and obstacles
 [ ] Render and Size Player
 [ ] Render and Size All Obstacles
 [ ] Maneuver Player
