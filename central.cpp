@@ -7,7 +7,7 @@ const int window_flags = SDL_EVENT_WINDOW_SHOWN;
 extern SDL_Renderer *renderer = nullptr;
 extern SDL_Window *window = nullptr;
 
-Assets::Assets()
+Object::Object()
 {
     paths = {
         {AssetID::Idle, "assets/Basic movement pack/SpriteSheet/Idle.png"},
@@ -49,7 +49,7 @@ Assets::Assets()
         textures[pair.first].push_back(texture);
     }
 }
-Assets::~Assets()
+Object::~Object()
 {
     for (auto &surfaceVec : surfaces)
     {
@@ -68,13 +68,14 @@ Assets::~Assets()
     }
 }
 
-void Assets::DrawGround()
+void Object::DrawGround()
 {;
     SDL_FRect dstrect = {0, 0, static_cast<float>(window_width), static_cast<float>(window_height)};
     SDL_RenderTexture(renderer, textures[AssetID::Ground][0], NULL, &dstrect);
 }
 
-void Assets::DrawPlayer()
+void Object::Player()
 {
     // Draw player logic here
+
 }

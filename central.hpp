@@ -48,14 +48,15 @@ extern const int window_flags;
 extern SDL_Renderer *renderer;
 extern SDL_Window *window;
 
-class Assets
+class Object
 {
 public:
-    Assets();
-    ~Assets();
-    void DrawPlayer();
+    Object();
+    ~Object();
+    void Player();
     void DrawGround();
-    void DrawObstacle(AssetID id);
+    void DrawObstacle(AssetID id, SDL_FRect *rect);
+    void DrawObstacle(AssetID id, SDL_FRect *rect);
     void GenerateMap();
 
     std::map<AssetID, std::vector<SDL_Surface*>> surfaces;

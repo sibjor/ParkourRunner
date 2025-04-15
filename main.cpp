@@ -18,7 +18,7 @@ void RenderWhiteBackground()
 
 }
 
-Assets* assets;
+Object* assets;
 /* Here follows the main loop! */
 
 /* This function runs once at startup. */
@@ -29,7 +29,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
         SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
-    assets = new Assets();
+    assets = new Object();
     return SDL_APP_CONTINUE;
 }
 
