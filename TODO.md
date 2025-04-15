@@ -1,7 +1,8 @@
 # Todo List for Parkour Runner
 
 ## NOT DONE list
-[ ] Render and Size Ground
+[x] Render and Size Ground
+[ ] Make ground continue eternally
 [ ] Render and Size Player
 [ ] Render and Size All Obstacles
 [ ] Maneuver Player
