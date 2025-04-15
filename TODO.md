@@ -1,6 +1,8 @@
 # Todo List for Parkour Runner
 
-## TODO List of April 14
+## TODO List of April 15
+[ ] Move character up and down
+[ ] Move character left and right
 [ ] Implement collision and distance detection
 [ ] Implement SDL_GetTextureSize() to all assets
 [x] Game objects/obstacles matching animations
