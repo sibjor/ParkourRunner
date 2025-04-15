@@ -7,17 +7,8 @@ const int window_flags = SDL_EVENT_WINDOW_SHOWN;
 extern SDL_Renderer *renderer = nullptr;
 extern SDL_Window *window = nullptr;
 
-/*
-    InitAssets()
-    - This function initializes the assets for the game
-    - Paths, surfaces, textures, and rectangles are created in order described here
-    - pair.first represents the AssetID enum class
-    - pair.second represents the file path to the asset
-
-    */
-void Assets::InitAssets()
+Assets::Assets()
 {
-    // Definiera sökvägar för varje resurs
     paths = {
         {AssetID::Idle, "assets/Basic movement pack/SpriteSheet/Idle.png"},
         {AssetID::Run, "assets/Basic movement pack/SpriteSheet/run.png"},
@@ -39,7 +30,6 @@ void Assets::InitAssets()
         {AssetID::ObstacleHang, "assets/obstacle_hang.png"},
         {AssetID::ObstacleTopClimb, "assets/obstacle_top_climb.png"}};
 
-    // Ladda ytor från sökvägar
     for (const auto &pair : paths)
     {
         SDL_Surface *surface = IMG_Load(pair.second.c_str());
@@ -48,37 +38,43 @@ void Assets::InitAssets()
             SDL_Log("Failed to load image: %s", SDL_GetError());
             continue;
         }
-        surfaces[pair.first] = std::make_unique<SDL_Surface>(*surface);
-    }
+        surfaces[pair.first].push_back(surface);
 
-    // Skapa texturer från ytor
-    for (const auto &pair : surfaces)
-    {
-        SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, pair.second.get());
+        SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
         if (!texture)
         {
             SDL_Log("Failed to create texture: %s", SDL_GetError());
             continue;
         }
-        textures[pair.first] = std::make_unique<SDL_Texture>(*texture);
+        textures[pair.first].push_back(texture);
     }
-
-    // Skapa rektanglar för varje textur
-    for (const auto &pair : textures)
+}
+Assets::~Assets()
+{
+    for (auto &surfaceVec : surfaces)
     {
-        float width, height;
-        if (SDL_GetTextureSize(pair.second.get(), &width, &height) != 0)
+        for (auto *surface : surfaceVec.second)
         {
-            SDL_Log("Failed to get texture size: %s", SDL_GetError());
-            continue;
+            SDL_DestroySurface(surface);
         }
-
-        auto rect = std::make_unique<SDL_FRect>();
-        rect->x = 0;
-        rect->y = 0;
-        rect->w = width;
-        rect->h = height;
-
-        rects[pair.first] = std::move(rect);
     }
+
+    for (auto &textureVec : textures)
+    {
+        for (auto *texture : textureVec.second)
+        {
+            SDL_DestroyTexture(texture);
+        }
+    }
+}
+
+void Assets::DrawGround()
+{;
+    SDL_FRect dstrect = {0, 0, static_cast<float>(window_width), static_cast<float>(window_height)};
+    SDL_RenderTexture(renderer, textures[AssetID::Ground][0], NULL, &dstrect);
+}
+
+void Assets::DrawPlayer()
+{
+    // Draw player logic here
 }

@@ -6,7 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include <thread>
-#include <sys/statvfs.h>
+#include "/usr/include/x86_64-linux-gnu/sys/statvfs.h"
 #include "time.hpp"
 
 enum class MemoryUnit

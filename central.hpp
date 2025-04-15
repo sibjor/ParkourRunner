@@ -51,24 +51,16 @@ extern SDL_Window *window;
 class Assets
 {
 public:
-    Assets() = default;
-    ~Assets() = default;
-    void InitAssets();
+    Assets();
+    ~Assets();
+    void DrawPlayer();
+    void DrawGround();
+    void DrawObstacle(AssetID id);
+    void GenerateMap();
 
-    std::map<AssetID, std::unique_ptr<SDL_Surface>> surfaces;
-    std::map<AssetID, std::unique_ptr<SDL_Texture>> textures;
-    std::map<AssetID, std::unique_ptr<SDL_FRect>> rects;
+    std::map<AssetID, std::vector<SDL_Surface*>> surfaces;
+    std::map<AssetID, std::vector<SDL_Texture*>> textures;
 
 private:
     std::map<AssetID, std::string> paths;
-};
-
-class Player
-{
-    public:
-    Player() = default;
-    ~Player() = default;
-    void InitPlayer();
-    private:
-
 };
