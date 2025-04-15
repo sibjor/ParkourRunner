@@ -1,11 +1,34 @@
 #pragma once
 
+#include <map>
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
 #include <SDL3_mixer/SDL_mixer.h>
 #include "profiler.hpp"
 #include "data.hpp"
+
+enum class AssetID {
+    Idle,
+    Run,
+    Jumping,
+    InAir,
+    Landing,
+    Sprint,
+    Roll,
+    BasicVault,
+    OnTopVault,
+    LongVault,
+    Climbing,
+    OnTopClimbing,
+    Hanging,
+    Ground,
+    ObstacleVault,
+    ObstacleLongVault,
+    ObstacleClimb,
+    ObstacleHang,
+    ObstacleTopClimb
+};
 
 /*
 
@@ -28,12 +51,24 @@ extern const int window_flags;
 class Assets
 {
 public:
-    void LoadAssets();
+    Assets() = default;
+    ~Assets() = default;
+    void InitAssets();
+
+    std::map<AssetID, std::unique_ptr<SDL_Surface>> surfaces;
+    std::map<AssetID, std::unique_ptr<SDL_Texture>> textures;
+    std::map<AssetID, std::unique_ptr<SDL_FRect>> rects;
 
 private:
-    
-    std::vector<std::unique_ptr<std::string>> paths;
-    std::vector<std::unique_ptr<SDL_Surface*>> surfaces;
-    std::vector<std::unique_ptr<SDL_Texture*>> textures;
-    std::vector<std::unique_ptr<SDL_FRect*>> rects;
+    std::map<AssetID, std::string> paths;
 };
+
+class Player
+{
+    public:
+    Player() = default;
+    ~Player() = default;
+    void InitPlayer();
+    private:
+
+}
