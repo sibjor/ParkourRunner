@@ -15,7 +15,7 @@ add_subdirectory(external/SDL_image EXCLUDE_FROM_ALL)
 add_subdirectory(external/SDL_mixer EXCLUDE_FROM_ALL)
 
 # Create your game executable target as usual
-add_executable(${PROJECT_NAME} main.cpp render.cpp time.cpp profiler.cpp data.cpp)
+add_executable(${PROJECT_NAME} main.cpp central.cpp time.cpp profiler.cpp data.cpp)
 
 # Link to the actual SDL3 library.
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3 SDL3_image::SDL3_image SDL3_mixer::SDL3_mixer)

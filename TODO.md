@@ -6,6 +6,7 @@
 [ ] Render and Size All Obstacles
 [ ] Maneuver Player
 [ ] Profile Program
+[ ] Update mermaid diagram
 
 
 ## DONE list
