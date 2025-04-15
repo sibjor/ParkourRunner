@@ -4,7 +4,7 @@
 [ ] Move character up and down
 [ ] Move character left and right
 [ ] Implement collision and distance detection
-[ ] Implement SDL_GetTextureSize() to all assets
+[x] New FRect objects for each rendered item
 [x] Game objects/obstacles matching animations
 [x] Refactor PlayAnimation the correctly loop (or not) animation
 [x] Quit button

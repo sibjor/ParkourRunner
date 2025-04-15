@@ -76,20 +76,7 @@ void EnvironmentNavigated::DisplayTextures(SDL_Renderer *renderer, SDL_FRect *de
     auto it = textures.find(objectName);
     if (it != textures.end())
     {
-        // Get the original texture size
-        float textureWidth, textureHeight;
-        SDL_GetTextureSize(it->second, &textureWidth, &textureHeight);
-
-        // Set the destination rectangle size to match the texture size
-        destRect->w = textureWidth;
-        destRect->h = textureHeight;
-
-        // Render the texture
         SDL_RenderTexture(renderer, it->second, nullptr, destRect);
-    }
-    else
-    {
-        std::cerr << "Texture not found for object: " << objectName << std::endl;
     }
 }
 AnimatedSprite::AnimatedSprite()
