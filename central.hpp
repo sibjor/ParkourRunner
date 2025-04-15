@@ -10,7 +10,7 @@
 /*
 
     Please use this file to implemenet as much
-    logic as possible for rendering artwork
+    logic as possible for rendering Assets
     moving or not, background or foreground
     DrawPlayer sprite or whatever
 
@@ -25,16 +25,14 @@ extern const int window_width;
 extern const int window_height;
 extern const int window_flags;
 
-class DrawArtwork
+class Assets
 {
 public:
-    DrawArtwork();
-    ~DrawArtwork();
     void LoadAssets();
 
 private:
     
-    std::vector<std::unique_ptr<std::string*>> paths;
+    std::vector<std::unique_ptr<std::string>> paths;
     std::vector<std::unique_ptr<SDL_Surface*>> surfaces;
     std::vector<std::unique_ptr<SDL_Texture*>> textures;
     std::vector<std::unique_ptr<SDL_FRect*>> rects;
