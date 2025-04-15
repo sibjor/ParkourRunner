@@ -48,6 +48,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 {
     SDL_RenderClear(renderer);
 
+    RenderWhiteBackground();
     assets->DrawGround();
 
     SDL_RenderPresent(renderer);
