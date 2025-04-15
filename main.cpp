@@ -21,6 +21,9 @@ void RenderWhiteBackground()
     /* Presentera renderaren */
     SDL_RenderPresent(renderer);
 }
+
+/* Here follows the main loop! */
+
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
