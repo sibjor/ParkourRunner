@@ -61,7 +61,7 @@ public:
     void SliceSpriteSheet(SDL_Texture* texture, AnimationState state);
 
     // Play the animation for the given state
-    void PlayAnimation(AnimationState state, SDL_FRect* destRect, bool loop, bool isFlipped, int frameDelay);
+    void PlayAnimation(AnimationState state, bool reversed);
 
     void SetDirection(AnimationDirection dir);
 
@@ -81,7 +81,7 @@ public:
 
     // Load textures for environment artwork
     void LoadTextures();
-    void DisplayTextures(SDL_Renderer* renderer, SDL_FRect* destRect, EnvironmentObject objectType);
+    void DisplayTextures(SDL_Renderer* renderer, EnvironmentObject objectType);
 
 private:
     std::unordered_map<std::string, SDL_Texture*> textures;

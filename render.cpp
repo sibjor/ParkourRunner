@@ -47,36 +47,33 @@ void EnvironmentNavigated::LoadTextures()
     }
 }
 
-void EnvironmentNavigated::DisplayTextures(SDL_Renderer *renderer, SDL_FRect *destRect, EnvironmentObject objectType)
+void EnvironmentNavigated::DisplayTextures(SDL_Renderer *renderer, EnvironmentObject objectType)
 {
     // Map the object type to the corresponding texture
     std::string objectName;
     switch (objectType)
     {
     case EnvironmentObject::Ground:
+        SDL_FRect *groundRect = new SDL_FRect();
         objectName = "Ground";
-        destRect->x = 0.0f;
-        destRect->y = 0.0f;
-        destRect->w = 800.0f;
-        destRect->h = 600.0f;
+        groundRect->x = 0.0f;
+        groundRect->y = 0.0f;
+        groundRect->w = 800.0f;
+        groundRect->h = 600.0f;
+        SDL_RenderTexture(renderer, textures[objectName], nullptr, groundRect);
         break;
     case EnvironmentObject::Obstacle_Vault:
+        SDL_FRect *obstacleVaultRect = new SDL_FRect();
         objectName = "Obstacle_Vault";
-        destRect->x = 400.0f;
-        destRect->y = 400.0f;
-        destRect->w = 64.0f;
-        destRect->h = 64.0f;
+        obstacleVaultRect->x = 400.0f;
+        obstacleVaultRect->y = 400.0f;
+        obstacleVaultRect->w = 64.0f;
+        obstacleVaultRect->h = 64.0f;
+        SDL_RenderTexture(renderer, textures[objectName], nullptr, obstacleVaultRect);
         break;
     default:
         std::cerr << "Unknown environment object type" << std::endl;
         return;
-    }
-
-    // Render the texture
-    auto it = textures.find(objectName);
-    if (it != textures.end())
-    {
-        SDL_RenderTexture(renderer, it->second, nullptr, destRect);
     }
 }
 AnimatedSprite::AnimatedSprite()
@@ -169,67 +166,47 @@ void AnimatedSprite::SliceSpriteSheet(SDL_Texture *texture, AnimationState state
     textures[state].push_back(texture);
 }
 
-void AnimatedSprite::PlayAnimation(AnimationState state, SDL_FRect* destRect, bool loop, bool isFlipped, int frameDelay)
+void AnimatedSprite::PlayAnimation(AnimationState state, bool reversed)
 {
-    static Uint32 lastFrameTime = 0;
-    static int currentFrame = 0;
-
-    auto& frameRects = frames[state];
-    if (frameRects.empty())
+    // Check if the state exists in the textures map
+    if (textures.find(state) == textures.end())
+    {
+        std::cerr << "Animation state not found: " << static_cast<int>(state) << std::endl;
         return;
-
-    // Customize behavior based on the animation state
-    switch (state)
-    {
-    case AnimationState::Jumping:
-        loop = false; // Jumping should not loop
-        frameDelay = 150; // Custom frame delay for Jumping
-        break;
-
-    case AnimationState::Run:
-        loop = true; // Running should loop
-        frameDelay = 70; // Faster frame delay for Running
-        break;
-
-    case AnimationState::Idle:
-        loop = true; // Idle should loop
-        frameDelay = 100; // Default frame delay for Idle
-        break;
-
-    // Add cases for other AnimationStates as needed
-    default:
-        break;
     }
 
-    Uint32 currentTime = SDL_GetTicks();
-    if (currentTime - lastFrameTime >= frameDelay)
-    {
-        lastFrameTime = currentTime;
+    // Get the frames for the current animation state
+    const auto &framesList = frames[state];
 
-        if (loop)
+    // Determine the order of frame iteration
+    if (reversed)
+    {
+        for (int i = framesList.size() - 1; i >= 0; --i)
         {
-            // Loop the animation
-            currentFrame = (currentFrame + 1) % frameRects.size();
+            SDL_FRect dstRect = {0.0f, 0.0f, framesList[i].w, framesList[i].h};
+            SDL_RenderTexture(renderer, textures[state][0], &framesList[i], &dstRect);
+
+            // Delay for the specified frame delay
+            SDL_Delay(frameDelay);
         }
-        else
+    }
+    else
+    {
+        for (size_t i = 0; i < framesList.size(); ++i)
         {
-            // Stop at the last frame if not looping
-            if (currentFrame < frameRects.size() - 1)
-            {
-                currentFrame++;
-            }
+            SDL_FRect dstRect = {0.0f, 0.0f, framesList[i].w, framesList[i].h};
+            SDL_RenderTexture(renderer, textures[state][0], &framesList[i], &dstRect);
+
+            // Delay for the specified frame delay
+            SDL_Delay(frameDelay);
         }
     }
 
-    // Determine the flip mode based on the direction and isFlipped parameter
-    SDL_FlipMode flip = SDL_FLIP_NONE;
-    if (direction == AnimationDirection::Left || isFlipped)
+    // If looping is enabled, restart the animation
+    if (loop)
     {
-        flip = SDL_FLIP_HORIZONTAL;
+        PlayAnimation(state, loop, renderer, reversed, frameDelay);
     }
-
-    // Render the current frame to the destination rectangle using SDL_RenderCopyExF
-    SDL_RenderTextureRotated(renderer, textures[state][0], &frameRects[currentFrame], destRect, 0.0, nullptr, flip);
 }
 
 void AnimatedSprite::SetDirection(AnimationDirection newDirection)

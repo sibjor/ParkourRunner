@@ -48,26 +48,26 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
         else if (key == SDLK_SPACE)
         {
             currentAnimationState = AnimationState::Jumping;
-            animatedSprite->PlayAnimation(currentAnimationState, nullptr, false, currentDirection == AnimationDirection::Left, frameDelay);
+            animatedSprite->PlayAnimation(currentAnimationState, true, renderer, false, frameDelay);
         }
         else if (key == SDLK_RIGHT || key == SDLK_D)
         {
             currentDirection = AnimationDirection::Right;
             animatedSprite->SetDirection(currentDirection);
             currentAnimationState = AnimationState::Run;
-            animatedSprite->PlayAnimation(currentAnimationState, nullptr, true, false, frameDelay);
+            
         }
         else if (key == SDLK_LEFT || key == SDLK_A)
         {
             currentDirection = AnimationDirection::Left;
             animatedSprite->SetDirection(currentDirection);
             currentAnimationState = AnimationState::Run;
-            animatedSprite->PlayAnimation(currentAnimationState, nullptr, true, true, frameDelay);
+            
         }
         else
         {
             currentAnimationState = AnimationState::Idle;
-            animatedSprite->PlayAnimation(currentAnimationState, nullptr, true, false, frameDelay);
+            
         }
     }
 
@@ -77,19 +77,15 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 /* This function runs once per frame, and is the heart of the program. */
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-    // Define destination rectangles for each object
-    SDL_FRect groundRect = {0.0f, 500.0f, 800.0f, 100.0f}; // Ground position and size
-    SDL_FRect obstacleVaultRect = {400.0f, 400.0f, 64.0f, 64.0f}; // Obstacle_Vault position and size
-    SDL_FRect animatedSpriteRect = {300.0f, 300.0f, 128.0f, 128.0f}; // AnimatedSprite position and size
 
     /* Clear the screen */
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
 
-    environmentNavigated->DisplayTextures(renderer, &groundRect, EnvironmentObject::Ground);     // Display environment artwork
-    environmentNavigated->DisplayTextures(renderer, &obstacleVaultRect, EnvironmentObject::Obstacle_Vault); // Display environment artwork
+    environmentNavigated->DisplayTextures(renderer, EnvironmentObject::Ground);     // Display environment artwork
+    environmentNavigated->DisplayTextures(renderer, EnvironmentObject::Obstacle_Vault); // Display environment artwork
     /* Play the current animation */
-    animatedSprite->PlayAnimation(currentAnimationState, &animatedSpriteRect, true, false, frameDelay);
+    animatedSprite->PlayAnimation(currentAnimationState, true, renderer, false, frameDelay);
 
     /* Present the rendered frame */
     SDL_RenderPresent(renderer);
