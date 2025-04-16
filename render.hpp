@@ -51,8 +51,8 @@ extern Uint32 window_flags;
 class Sprite
 {
 public:
-    void SliceSpriteSheet();
-    void AnimateSprite();
+    void SliceSpriteSheet(float frameSize);
+    void AnimateSprite(Animation animation);
 private:
     SDL_Texture* texture;
     SDL_Rect srcRect;
@@ -63,12 +63,13 @@ private:
     int y_pos;
     int frameCount;
     int frameDelay;
-    std::vector<std::pair<Animation, std::string>  
+    std::vector<std::pair<Animation, std::string>> paths;
 };
 
 class Level
 {
 public:
-    void RenderGround();
+    void RenderObject(EnvironmentObject object);
 private:
+    std::vector<std::pair<EnvironmentObject, std::string>> paths;
 };
