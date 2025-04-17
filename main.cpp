@@ -13,6 +13,7 @@
 #include "render.hpp"
 
 Level *level;
+Sprite *player;
 
 void RenderWhiteBackground()
 {
@@ -32,6 +33,10 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
     }
 
     level = new Level();
+    player = new Sprite();
+
+    player->SliceAllSpriteSheets();
+
     return SDL_APP_CONTINUE;
 }
 
@@ -52,6 +57,8 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     RenderWhiteBackground();
     level->RenderEntireObject(EnvironmentObject::Ground);
+    
+
 
     SDL_RenderPresent(renderer);
 

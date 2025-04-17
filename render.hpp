@@ -54,9 +54,10 @@ extern Uint32 window_flags;
 class Sprite
 {
 public:
-    void SliceSpriteSheet(float frameSize);
+    void SliceSpriteSheet(Animation animation);
+    void SliceAllSpriteSheets();
 private:
-
+    std::vector<std::pair<Animation, SDL_FRect>> slicedSheets;
 };
 
 class Level
