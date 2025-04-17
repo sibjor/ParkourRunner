@@ -55,18 +55,8 @@ class Sprite
 {
 public:
     void SliceSpriteSheet(float frameSize);
-    void AnimateSprite(Animation animation);
 private:
-    SDL_Texture* texture;
-    SDL_Rect srcRect;
-    SDL_Rect destRect;
-    int width;
-    int height;
-    int x_pos;
-    int y_pos;
-    int frameCount;
-    int frameDelay;
-    std::vector<std::pair<Animation, std::string>> paths;
+
 };
 
 class Level
