@@ -26,6 +26,11 @@ std::vector<std::pair<Animation, std::string>> spritePaths{
     {Animation::TopClimb, "assets/Basic vault pack/SpriteSheet/On top climbing.png"}
     };
 
+void Sprite::AnimatePlayer(Animation animation)
+{
+    
+}
+
 void Level::RenderEntireObject(EnvironmentObject object)
 {
     SDL_Surface *surface;
