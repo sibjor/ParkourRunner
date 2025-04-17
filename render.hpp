@@ -1,5 +1,8 @@
 #pragma once
 
+#include <algorithm>
+#include <iostream>
+#include <unordered_map>
 #include <string>
 #include <map>
 #include <vector>
@@ -69,7 +72,7 @@ private:
 class Level
 {
 public:
-    void RenderObject(EnvironmentObject object);
+    void RenderEntireObject(EnvironmentObject object);
 private:
-    std::vector<std::pair<EnvironmentObject, std::string>> paths;
+    
 };

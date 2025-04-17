@@ -12,6 +12,8 @@
 #define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
 #include "render.hpp"
 
+Level *level;
+
 void RenderWhiteBackground()
 {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -28,6 +30,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
         SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
+
+    level = new Level();
     return SDL_APP_CONTINUE;
 }
 
@@ -47,6 +51,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderClear(renderer);
 
     RenderWhiteBackground();
+    level->RenderEntireObject(EnvironmentObject::Ground);
 
     SDL_RenderPresent(renderer);
 
@@ -63,4 +68,3 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
     /* Quit SDL */
     SDL_Quit();
 }
-
