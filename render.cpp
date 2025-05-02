@@ -1,11 +1,6 @@
 #include "render.hpp"
 
 SDL_Renderer *renderer = nullptr;
-SDL_Window *window = nullptr;
-const char *window_title = "Validator 13";
-int window_width = 1200;
-int window_height = 1000;
-Uint32 window_flags = SDL_EVENT_WINDOW_SHOWN;
 
 std::vector<std::pair<EnvironmentObject, std::string>> objectPaths{
     {EnvironmentObject::Ground, "assets/Ground.png"}};
@@ -25,26 +20,15 @@ std::vector<std::pair<Animation, std::string>> spritePaths{
     {Animation::Hanging, "assets/Basic vault pack/SpriteSheet/hanging.png"},
     {Animation::TopClimb, "assets/Basic vault pack/SpriteSheet/On top climbing.png"}};
 
-void Level::RenderObject(EnvironmentObject object)
+void Level::PrepareAll(std::vector<std::tuple<std::pair<EnvironmentObject, std::string>, SDL_Texture *, SDL_FRect>> objectTuple)
 {
-    SDL_Surface *surface;
-    SDL_Texture *texture;
 
-    surface = IMG_Load(objectPaths[static_cast<int>(object)].second.c_str());
-    texture = SDL_CreateTextureFromSurface(renderer, surface);
-
-    SDL_RenderTexture(renderer, texture, nullptr, nullptr);
-
-    SDL_DestroySurface(surface);
-    SDL_DestroyTexture(texture);
 }
 
-void Sprite::SliceSpriteSheet(Animation animation)
+void Sprite::PrepareAll(std::vector<std::tuple<std::pair<Animation, std::string>, SDL_Texture *, SDL_FRect>> spriteTuple)
 {
     SDL_Surface *surface;
     SDL_Texture *texture;
-
-    surface = IMG_Load(spritePaths[static_cast<int>(animation)].second.c_str());
 
     float sheetWidth = surface->w;
     float sheetHeight = surface->h;
@@ -55,34 +39,8 @@ void Sprite::SliceSpriteSheet(Animation animation)
     int columns = 16;
     int rows = 1;
 
-    std::vector<SDL_FRect> spriteClips;
-
-    for (int y = 0; y < rows; y++)
+    while(spriteTuple.size() < spritePaths.size())
     {
-        for (int x = 0; x < columns; x++)
-        {
-            SDL_FRect clip;
-            clip.x = x * spriteWidth;
-            clip.y = y * spriteHeight;
-            clip.w = spriteWidth;
-            clip.h = spriteHeight;
 
-            spriteClips.push_back(clip);
-            for (const auto &clip : spriteClips)
-            {
-                slicedSheets.push_back(std::make_pair(animation, clip));
-            }
-        }
-    }
-
-    SDL_DestroySurface(surface);
-    SDL_DestroyTexture(texture);
-}
-
-void Sprite::SliceAllSpriteSheets()
-{
-    for (int i = 0; i < spritePaths.size(); i++)
-    {
-        SliceSpriteSheet(static_cast<Animation>(i));
     }
 }

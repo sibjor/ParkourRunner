@@ -2,16 +2,18 @@
 
 #include <algorithm>
 #include <iostream>
-#include <unordered_map>
 #include <string>
-#include <map>
+#include <tuple>
 #include <vector>
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
 #include <SDL3_mixer/SDL_mixer.h>
 
-enum class Direction {
+extern SDL_Renderer *renderer;
+
+enum class Direction
+{
     None,
     Up,
     Down,
@@ -19,7 +21,8 @@ enum class Direction {
     Right,
 };
 
-enum class Animation {
+enum class Animation
+{
     Idle,
     InAir,
     Jumping,
@@ -35,7 +38,8 @@ enum class Animation {
     TopVault,
 };
 
-enum class EnvironmentObject{
+enum class EnvironmentObject
+{
     Ground,
     ObstacleClimb,
     ObstacleHang,
@@ -44,31 +48,33 @@ enum class EnvironmentObject{
     ObstacleVault,
 };
 
-extern SDL_Renderer* renderer;
-extern SDL_Window* window;
-extern const char* window_title;
-extern int window_width;
-extern int window_height;
-extern Uint32 window_flags;
-
 class Sprite
 {
 public:
-    void SliceSpriteSheet(Animation animation);
-    void SliceAllSpriteSheets(); 
+    std::vector<std::tuple<std::pair<Animation, std::string>, SDL_Texture *, SDL_FRect>> spriteTuple;
+    void PrepareAll(std::vector<std::tuple<std::pair<Animation, std::string>, SDL_Texture *, SDL_FRect>> spriteTuple);
+
 private:
-    std::vector<std::pair<Animation, SDL_FRect>> slicedSheets;
+    std::vector<std::pair<Animation, std::string>> spritePaths;
 };
 
 class Level
 {
 public:
-    void RenderObject(EnvironmentObject object);
+    std::vector<std::tuple<std::pair<EnvironmentObject, std::string>, SDL_Texture *, SDL_FRect>> objectTuple;
+    void PrepareAll(std::vector<std::tuple<std::pair<EnvironmentObject, std::string>, SDL_Texture *, SDL_FRect>> objectTuple);
+    void RenderWhiteBackground()
+{
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+}
+
 private:
-    
+    std::vector<std::pair<EnvironmentObject, std::string>> objectPaths;
 };
 
 class AssetManager : public Sprite, public Level
 {
-
+public:
+    void LoadAssets();
+    void PlaceAssets();
 };
