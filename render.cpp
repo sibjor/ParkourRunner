@@ -20,7 +20,7 @@ std::vector<std::pair<Animation, std::string>> spritePaths{
     {Animation::Hanging, "assets/Basic vault pack/SpriteSheet/hanging.png"},
     {Animation::TopClimb, "assets/Basic vault pack/SpriteSheet/On top climbing.png"}};
 
-void Level::PrepareAll(std::vector<std::tuple<std::pair<EnvironmentObject, std::string>, SDL_Texture *, SDL_FRect>> objectTuple)
+void GameObject::PrepareAll(std::vector<std::tuple<std::pair<EnvironmentObject, std::string>, SDL_Texture *, SDL_FRect>> objectTuple)
 {
 
 }

@@ -58,7 +58,7 @@ private:
     std::vector<std::pair<Animation, std::string>> spritePaths;
 };
 
-class Level
+class GameObject
 {
 public:
     std::vector<std::tuple<std::pair<EnvironmentObject, std::string>, SDL_Texture *, SDL_FRect>> objectTuple;
@@ -72,7 +72,7 @@ private:
     std::vector<std::pair<EnvironmentObject, std::string>> objectPaths;
 };
 
-class AssetManager : public Sprite, public Level
+class AssetManager : public Sprite, public GameObject
 {
 public:
     void LoadAssets();

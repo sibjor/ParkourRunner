@@ -7,8 +7,8 @@ class GameManager : public AssetManager
 public:
     SDL_Window *window = nullptr;
     const char *window_title = "Validator 13";
-    int window_width = 1200;
-    int window_height = 1000;
+    int window_width = 1600;
+    int window_height = 900;
     Uint32 window_flags = SDL_EVENT_WINDOW_SHOWN;
     
     GameManager();
