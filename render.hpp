@@ -55,7 +55,7 @@ class Sprite
 {
 public:
     void SliceSpriteSheet(Animation animation);
-    void SliceAllSpriteSheets();
+    void SliceAllSpriteSheets(); 
 private:
     std::vector<std::pair<Animation, SDL_FRect>> slicedSheets;
 };
@@ -63,7 +63,7 @@ private:
 class Level
 {
 public:
-    void RenderEntireObject(EnvironmentObject object);
+    void RenderObject(EnvironmentObject object);
 private:
     
 };

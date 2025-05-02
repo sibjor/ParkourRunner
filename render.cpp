@@ -23,15 +23,9 @@ std::vector<std::pair<Animation, std::string>> spritePaths{
     {Animation::TopVault, "assets/Basic vault pack/SpriteSheet/on top vault.png"},
     {Animation::Climbing, "assets/Basic vault pack/SpriteSheet/climbing.png"},
     {Animation::Hanging, "assets/Basic vault pack/SpriteSheet/hanging.png"},
-    {Animation::TopClimb, "assets/Basic vault pack/SpriteSheet/On top climbing.png"}
-    };
+    {Animation::TopClimb, "assets/Basic vault pack/SpriteSheet/On top climbing.png"}};
 
-void Sprite::AnimatePlayer(Animation animation)
-{
-    
-}
-
-void Level::RenderEntireObject(EnvironmentObject object)
+void Level::RenderObject(EnvironmentObject object)
 {
     SDL_Surface *surface;
     SDL_Texture *texture;

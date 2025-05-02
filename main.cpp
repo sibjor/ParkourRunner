@@ -9,7 +9,7 @@
   including commercial applications, and to alter it and redistribute it
   freely.
 */
-#define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
+#define SDL_MAIN_USE_CALLBACKS 1 /* use the callbacks instead of main() */
 #include "render.hpp"
 
 Level *level;
@@ -20,14 +20,14 @@ void RenderWhiteBackground()
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 }
 
-
 /* Here follows the main loop! */
 
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
     /* Create the window and renderer */
-    if (!SDL_CreateWindowAndRenderer(window_title, window_width, window_height, window_flags, &window, &renderer)) {
+    if (!SDL_CreateWindowAndRenderer(window_title, window_width, window_height, window_flags, &window, &renderer))
+    {
         SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
@@ -44,8 +44,9 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 {
     if (event->type == SDL_EVENT_KEY_DOWN ||
-        event->type == SDL_EVENT_QUIT) {
-        return SDL_APP_SUCCESS;  /* end the program, reporting success to the OS. */
+        event->type == SDL_EVENT_QUIT)
+    {
+        return SDL_APP_SUCCESS; /* end the program, reporting success to the OS. */
     }
     return SDL_APP_CONTINUE;
 }
@@ -56,12 +57,9 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderClear(renderer);
 
     RenderWhiteBackground();
-    level->RenderEntireObject(EnvironmentObject::Ground);
-    
-
+    level->RenderObject(EnvironmentObject::Ground);
 
     SDL_RenderPresent(renderer);
-
 
     return SDL_APP_CONTINUE;
 }
