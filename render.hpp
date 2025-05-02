@@ -67,3 +67,8 @@ public:
 private:
     
 };
+
+class AssetManager : public Sprite, public Level
+{
+
+};
